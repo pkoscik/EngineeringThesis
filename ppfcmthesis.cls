@@ -118,12 +118,12 @@
 \begin{center}
 \if@pppolish
   \includegraphics[width=\textwidth]{wit/sygnet-pp.eps} \\
-WYDZIA{\L} INFORMATYKI I TELEKOMUNIKACJI\\
-Instytut Informatyki
+WYDZIA{\L} AUTOMATYKI, ROBOTYKI I ELEKTROTECHNIKI\\
+Instytut Automatyki i Robotyki 
 \else
   \includegraphics[width=\textwidth]{wit/sygnet-pp-eng.eps} \\
-FACULTY OF COMPUTING AND TELECOMMUNICATION\\
-Institute of Computing Science
+FACULTY OF CONTROL, ROBOTICS AND ELECTRICAL ENGINEERING\\
+Institute of Automatics and Robotics
 \fi\end{center}}
 
 \pretitle{\vspace{4cm}\begin{center}%
@@ -175,7 +175,7 @@ Supervisor\\\@ppsupervisor
 Instytut Informatyki, Wydzia{\l} Informatyki i Telekomunikacji\\%
 Politechnika Pozna\'nska%
 \else%
-Poznan University of Technology\\Faculty of Computing and Telecommunication\\Institute of Computing Science
+Poznan University of Technology\\Faculty of control, robotics and electrical engineering\\Institute of Automatics and Robotics
 \fi
 
 \medskip\noindent%
