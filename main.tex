@@ -68,10 +68,7 @@
 
 %Najwygodniej jeśli każdy rozdział znajduje się w oddzielnym pliku
 \mainmatter%
-\input{chapters/01-wstep.tex}
-\input{chapters/02-teoria.tex}
-\input{chapters/03-praca-wlasna.tex}
-\input{chapters/04-zakonczenie.tex}
+\input{chapters/01-introduction.tex}
 
 %--------------------------------------
 % Literatura
@@ -85,7 +82,8 @@
 
 \cleardoublepage\appendix%
 \newpage
-\input{chapters/zalacznik.tex}
+% Removing all includes from this section breaks some conditional
+\if
 
 %--------------------------------------
 % Informacja o prawach autorskich
