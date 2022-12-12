@@ -27,3 +27,14 @@ from about four weeks, in the begging of the year 2020, to over twenty weeks at 
 the parallelization of the software and hardware development, enabling developers to work on both aspects
 simultaneously and reducing the overall time and effort required to bring a product to market.
 
+\section{Motivation and goals of the thesis}
+
+A large part of the recognized platform and/or core architecture emulators use opcode translation to run guest code
+on the host platform. The most prevalent and widely used open source tools in this category include Renode \cite{Renode}
+and QEMU \cite{Qemu}.%
+\footnote{The Renode's CPU translation library is partly based on QEMU}
+Due to major optimization this method of the simulation yields great results performance-wise, on the other hand
+such heavy efficacy improvements come with a price of greatly complicating the codebase, making it difficult
+to maintain and integrate new functionality. Another downside of the translation based approach is the need
+to execute the guest code, as this requires complicated just in time (\textit{JIT}) recompilers.
+
