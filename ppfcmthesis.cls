@@ -212,7 +212,7 @@ Typeset using \LaTeX\.
 \makepsmarks{ppfcmthesis}{\@ppfcmthesismarks}
 \makeatother
 \makeevenhead{ppfcmthesis}{\thepage}{}{\normalfont\small\itshape\leftmark}
-\makeoddhead{ppfcmthesis}{\normalfont\small\itshape\rightmark}{}{\thepage}
+\makeoddhead{ppfcmthesis}{\normalfont\small\itshape\leftmark}{}{\thepage}
 
 %--------------------------------------
 % Strona ze spisem treści
