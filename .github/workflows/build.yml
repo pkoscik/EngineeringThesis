@@ -1,0 +1,28 @@
+name: Create-PDF-document
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: docker-practice/actions-setup-docker@master
+      
+      - name: Run a compilation script
+        run: |
+          sudo bash build.sh -b
+          
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with: 
+          name: document
+          path: main.pdf
