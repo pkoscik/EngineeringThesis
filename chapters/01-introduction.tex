@@ -33,8 +33,39 @@ A large part of the recognized platform and/or core architecture emulators use o
 on the host platform. The most prevalent and widely used open source tools in this category include Renode \cite{Renode}
 and QEMU \cite{Qemu}.%
 \footnote{The Renode's CPU translation library is partly based on QEMU}
-Due to major optimization this method of the simulation yields great results performance-wise, on the other hand
-such heavy efficacy improvements come with a price of greatly complicating the codebase, making it difficult
-to maintain and integrate new functionality. Another downside of the translation based approach is the need
-to execute the guest code, as this requires complicated just in time (\textit{JIT}) recompilers.
+Due to major optimizations (translation blocks, caching, block chaining, ...), this method of the simulation yields
+great results performance-wise, but on the other hand such heavy efficiency improvements come with a price of greatly 
+complicating the codebase, making it difficult to maintain and integrate new functionality. Another downside of the
+translation based approach is the need to \textbf{execute} the guest code, this requires complicated just in
+time (\textit{JIT}) recompilers. A possible alternative to translation based CPU simulators are the interpretation
+based CPU simulators. This approach tend to be much simpler as these simulators do not require code recompilation,
+and usually do not implement very complicated optimizations, instead focusing on simple, maintainable and easily
+expandable implementation of the simulated core instructions. While the lack of optimizations results in simpler
+code, the simulation performance might suffer.
 
+The main goal of the thesis is to integrate an already existing interpretation-based CPU simulator within the Renode
+embedded system simulation framework. Then to compare the performance and accuracy of the simulation using benchmarks
+and real world applications such as automatic control systems, general purpose real-time operating systems 
+\textit{(RTOS)}, and even higher complexity binaries, for example AI solutions for the embedded devices.
+By doing so, we hope to gain a better understanding of the performance capabilities and limitations of this approach,
+and to identify potential areas for improvement and future work in this topic.
+
+% Not indenting here as this is connected to the previous paragraph
+\noindent Intermediate goals of the thesis include:
+\begin{itemize}
+	\item{Description of the existing translation and interpretation based approach CPU simulators}
+	\item{Integrating an chosen interpretation CPU simulator into the Renode framework}
+	\item{Implementation of the test software on the simulated platform with data gathering}
+	\item{Comparative analysis of interpreter-based and translation-based solutions with regard to the performance}
+\end{itemize}
+
+\section{Thesis organization}
+
+The work is divided into the following chapters:
+\begin{itemize}
+	\item{Chapter 2 will provide an in-depth description of the Renode's translation CPU simulation library}.
+	\item{Chapter 3 provides an overview of Dromajo, the chosen simulation library}.
+	\item{Chapter 4 focuses on integrating Dromajo into the Renode framework}.
+	\item{Chapter 5 describes the benchmarks and the test binaries and presents their results}.
+	\item{Chapter 6 concludes the thesis and suggests future work}.
+\end{itemize}
