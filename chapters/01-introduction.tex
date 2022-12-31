@@ -43,10 +43,10 @@ and usually do not implement very complicated optimizations, instead focusing on
 expandable implementation of the simulated core instructions. While the lack of optimizations results in simpler
 code, the simulation performance might suffer.
 
-The main goal of the thesis is to integrate an already existing interpretation-based CPU simulator within the Renode
-embedded system simulation framework. Then to compare the performance and accuracy of the simulation using benchmarks
-and real world applications such as automatic control systems, general purpose real-time operating systems 
-\textit{(RTOS)}, and even higher complexity binaries, for example AI solutions for the embedded devices.
+The main goal of the thesis is to to compare the performance and accuracy of the CPU simulation using translation
+and interpretation approaches, by integrating an already existing interpretation-based simulator withing the Renode
+embedded system framework. The analysis will be done using benchmarks and real world applications such as automatic control
+systems, general purpose real-time operating systems \textit{(RTOS)}, and even higher complexity binaries, for example AI solutions for the embedded devices.
 By doing so, we hope to gain a better understanding of the performance capabilities and limitations of this approach,
 and to identify potential areas for improvement and future work in this topic.
 
@@ -63,9 +63,10 @@ and to identify potential areas for improvement and future work in this topic.
 
 The work is divided into the following chapters:
 \begin{itemize}
-	\item{Chapter 2 will provide an in-depth description of the Renode's translation CPU simulation library}.
-	\item{Chapter 3 provides an overview of Dromajo, the chosen simulation library}.
-	\item{Chapter 4 focuses on integrating Dromajo into the Renode framework}.
-	\item{Chapter 5 describes the benchmarks and the test binaries and presents their results}.
-	\item{Chapter 6 concludes the thesis and suggests future work}.
+	\item{Chapter 2 will cover the basics of the CPU simulation, their fundamental limitations, and types of simulators}
+	\item{Chapter 3 will provide an in-depth description of the Renode's translation CPU simulation library}.
+	\item{Chapter 4 provides an overview of Dromajo, the chosen simulation library}.
+	\item{Chapter 5 focuses on integrating Dromajo into the Renode framework}.
+	\item{Chapter 6 describes the benchmarks and the test binaries and presents their results}.
+	\item{Chapter 7 concludes the thesis and suggests future work}.
 \end{itemize}
