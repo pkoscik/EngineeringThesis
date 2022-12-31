@@ -14,6 +14,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[OT4]{fontenc}
 
+% Fix footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% Better table formatting
+\usepackage{makecell}               % Makecell for breaking a long text
+\renewcommand{\cellalign}{tl}       % Makecell left alignment
+\renewcommand{\arraystretch}{1.75}  % More vertical padding
+
 %--------------------------------------
 % Strona tytułowa
 %--------------------------------------
@@ -69,6 +77,7 @@
 %Najwygodniej jeśli każdy rozdział znajduje się w oddzielnym pliku
 \mainmatter%
 \input{chapters/01-introduction.tex}
+\input{chapters/02-simulation_basics.tex}
 
 %--------------------------------------
 % Literatura
