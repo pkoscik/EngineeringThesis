@@ -73,3 +73,17 @@ How will the document will be divided:
 - Chapter 4: Implementation of Interpretation based simulator in the place of the Translation based one (renode)
 - Chapter 5: Benchmarks, graphs etc...
 - Chapter 6: Future works / summary / etc...
+
+
+
+## Chapter 2: CPU simulation basics
+
+This chapter aims to present the concept of the CPU simulation, fundamental limitations, types etc...
+
+__Contents__
+1. Simulation basics
+  - Fundamental simulator constraints (Accuracy/Performance/Flexibility)
+  - The meaning of the simulation with a slick image
+  - Trace / event driven
+  - System / CPU / syscalls simulators (Renode/Tlib,Dromajo/Wine)
+  - Types of simulators (translation and interpretation, this as a last point!)
