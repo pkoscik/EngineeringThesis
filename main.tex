@@ -22,6 +22,46 @@
 \renewcommand{\cellalign}{tl}       % Makecell left alignment
 \renewcommand{\arraystretch}{1.75}  % More vertical padding
 
+% Code snippets
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0.00,0.60,0.00}
+\definecolor{preprocesorbrown}{rgb}{0.50,0.25,0.23} 
+\definecolor{codelightblue}{rgb}{0.30,0.70,0.60}
+
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{codelightblue},
+  commentstyle=\color{codegreen},
+  stringstyle=\color{preprocesorbrown},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2,
+  captionpos=b
+}
+
+% Lists without bulletpoints
+\usepackage{enumitem}
+
+\lstdefinestyle{lstC}
+{
+	language = C,
+	keywordstyle     =   \color{blue}\ttfamily,
+  	commentstyle     =   \color{codegreen}\ttfamily,
+  	stringstyle      =   \color{red},
+  	emphstyle        =   \color{codelightblue}\ttfamily,
+  	directivestyle   =   \color{preprocesorbrown}\ttfamily,
+     morekeywords   =   {inline, target_ulong},
+  	emph             =   {_Bool}
+}
+
 %--------------------------------------
 % Strona tytułowa
 %--------------------------------------
@@ -78,6 +118,7 @@
 \mainmatter%
 \input{chapters/01-introduction.tex}
 \input{chapters/02-simulation_basics.tex}
+\input{chapters/03-translation.tex}
 
 %--------------------------------------
 % Literatura

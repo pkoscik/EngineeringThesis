@@ -87,3 +87,36 @@ __Contents__
   - Trace / event driven
   - System / CPU / syscalls simulators (Renode/Tlib,Dromajo/Wine)
   - Types of simulators (translation and interpretation, this as a last point!)
+
+
+
+## Chapter 3: CPU simulation by translation
+
+This chapter aims to present the concept of the CPU simulation using the binary translation.
+The examples will be provided from the Renode's Translation Library
+A neat graph from https://lugatgt.org/content/qemu_internals/downloads/slides.pdf
+
+Main points:
+- Execution driven, therefore not cycle accurate
+- Simulates the CPU using translation
+
+__Contents__
+1. A description of the translation process
+2. Trasnaltion using TCG
+  - Guest to IR and IR to Host
+  - In general the backendend frontend notation
+  - Handling non generic insn via translation helpers
+  - Register mappings
+  - TCG vars
+3. Code caching and organisation using Translation blocks
+  - Generated using TCG
+  - Prolugue/epilogue
+  - Block chaining
+  - Execution
+  - Block invalidation
+4. Code execution
+  - Softmmu
+    - What is a MMU unit?
+    - MMU implementation in QEMU (tlb, cache...)
+
+What if guest has more registers than host? shadooowing
