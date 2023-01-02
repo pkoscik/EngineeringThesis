@@ -93,6 +93,7 @@ void cpu_gen_code(CPUState *env, TranslationBlock *tb, ...)
 \end{lstlisting}
 
 \subsection{TCG frontend}
+\label{sec:tcg-frontend}
 
 The first two calls from the code (\ref{lst:cpu-gen-code}), are responsible for generating an intermediate
 representation. The \texttt{tcg\_func\_start()} initializes TCG, while the \texttt{cpu\_gen\_code\_inner()} prepares
@@ -387,6 +388,7 @@ at the Direct block chaining section \cite{QemuDocsChaining}.
 
 \begin{figure}[h]
 	\centering
+    \label{fig:qemu-execution-with-blocks}
 	\includegraphics[width=0.7\textwidth]{figures/TbExecution-Chain.pdf}
 	\caption{Execution flow with block chaining}
 \end{figure}
