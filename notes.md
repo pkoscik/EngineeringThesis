@@ -120,3 +120,23 @@ __Contents__
     - MMU implementation in QEMU (tlb, cache...)
 
 What if guest has more registers than host? shadooowing
+
+## Chapter 5: Integrating Dromajo into Renode Framework
+
+This chapter aims to cover the process of the integrating the Dromajo simulator
+into the Renode Framework.
+
+Main points:
+- Renode:
+  - Basics: written in C# (mono/.NET), multiplatform, x86 only (hence dromajo to change it)
+  - Platform basics: explain IO accesses, the concept of sysbus, peripherials (excluding CPU)
+  - CPU basics: inhereting from BaseCPU, explain used interfaces, etc.
+- Integrating:
+  - Explain the way C# can use C library (NativeBinder) and callbacks
+  - Explain, in little detail, each implemented interface, why? how does it work, and according dromajo modicications
+- Problems:
+  - Explain main problems, and how I've solved them, mainly:
+  - MappedMemory
+  - Interrupts
+  - Time handling when exiting C to C# (SyncTime)
+- Diagram of integration, both for ExternalSimInterface, DromajoAPI, and Renode integration
