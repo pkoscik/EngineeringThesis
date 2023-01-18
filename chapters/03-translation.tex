@@ -166,7 +166,6 @@ in the \texttt{tcg\_gen\_code()} function:
     ]
 static inline int tcg_gen_code_common(TCGContext *s, uint8_t *gen_code_buf)
 {
-    ...
     for (;;) {
         opc = tcg->gen_opc_buf[op_index];
         def = &tcg_op_defs[opc];
@@ -194,13 +193,26 @@ static inline int tcg_gen_code_common(TCGContext *s, uint8_t *gen_code_buf)
 \noindent
 This method handles special IR micro-ops first, such as exiting the block or calling a helper function (more about them
 later). If the \texttt{opc} does not match any of the special cases, the code falls through to the \texttt{default}
-block, where the \dots
+block, where the \texttt{tcg\_reg\_alloc\_op()} is called, witch then calls target-specific \texttt{tcg\_out\_op()} method.
 
-\noindent
-{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}\\
-{I HAVE NO IDEA WHAT THE HELL IS HAPPENING HERE}
-{THIS NEEDS TO BE FREAKING FIXED}\\
-{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}
+\begin{lstlisting}[
+    style=lstC,
+    label={lst:tcg-out-op},
+    caption={Generating \textit{target} instructions from IR.}
+    ]
+static inline void tcg_out_op(TCGContext *s, TCGOpcode opc, const TCGArg *args, ...)
+{
+    switch(opc) {
+        case INDEX_op_exit_tb:
+            tcg_out_movi(s, TCG_TYPE_PTR, TCG_REG_EAX, args[0]);
+            tcg_out_jmp(s, (tcg_target_long) tb_ret_addr);
+            break;
+        case INDEX_op_br:
+            tcg_out_jxx(s, JCC_JMP, args[0], 0);
+            break;
+    }
+}
+\end{lstlisting}
 
 \pagebreak
 \subsection{Example of code translation using TCG}
