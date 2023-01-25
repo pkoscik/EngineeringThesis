@@ -1,0 +1,462 @@
+
+\chapter{Integrating Dromajo into Renode framework}
+
+This chapter aims to introduce the reader to general implementation concepts of the Dromajo simulator in the Renode Framework.
+To provide a reader with a better understanding of the integration process, this chapter also covers
+the basics of the Dromajo and Renode, the structure of the simulated devices, and the basics of CPU simulation
+implementation in the framework.
+
+In order to integrate Dromajo within the Renode simulation framework, the following steps must be completed:
+\begin{itemize}
+    \item{Creating an external simulator API for Dromajo}
+    \item{Creating a DromajoCPU interface in Renode}
+    \item{Binding Dromajo's C library to Renode C\# managed code}
+\end{itemize}
+
+\noindent
+The process of implementation is outlined in two distinct stages. The first part describes the implementation of an
+external simulator API in the Dromajo. The second part focuses on the Renode side and covers the details of creating a
+DromajoCPU instance and binding C\# managed code to C++ library.
+
+\section{Dromajo}
+
+Dromajo is an Esperanto Technologies RISC-V (RV64GC) emulator designed for RTL co-simulation.%
+\footnote{RTL (register-transfer level) co-simulation is a technique used in hardware design and verification to
+simulate the behavior of a digital circuit design (CPU) at the RTL level.}
+Dromajo's semantic model is based on Fabrice Bellard's RISCVEMU (later renamed TinyEMU), but extensively verified,
+bug-fixed, and enhanced to take it to ISA 2.3/priv 1.11 \cite{Dromajo}. It has been released under Chips Alliance
+\cite{ChipsAlliance} under an Apache 2.0 License.
+
+Dromajo at the core is either an RTL co-simulation engine or a whole machine emulator, both implementing an
+Interpretation CPU emulator, which inner workings have been described in the Chapter 4. Dromajo does not provide any API
+for implementation in other simulators, this issue will be resolved as a part of this thesis. The majority of the
+codebase is written in C, but due to a few C++ dependent functionality (for example \texttt{LiveCache}), the project is
+compiled as a C++ project, using \texttt{Cmake} build engine.
+
+\pagebreak
+
+\subsection{External Simulator API for Dromajo}
+
+The Dromajo CPU simulator operates on an internal emulator state (\texttt{struct RISCVCPUState}), therefore each
+instance of the library must implement its own, global-scoped \texttt{*env} state. Since this approach is not considered
+a good practice in most cases, the existing methods were not compatible with such approach. This was solved by
+creating \texttt{wrappers} for already existing methods, that passed the global state as a parameter to the existing
+functions. To implement this approach with as few changes to an already existing source code, there was a need to
+extract the essential functionality to an independent compile unit.%
+\footnote{A compilation unit, often referred to as translation unit, is a final representation of the source code,
+from which the object file is generated.}
+
+\vspace{10px}
+\noindent
+List of exposed API functions (the \texttt{dromajo\_} prefix has been omitted):
+\begin{multicols}{2}
+    \begin{itemize}
+        \item{\textbf{init\_cpu}\\Initializes the \texttt{*env} state, sets a \texttt{hartid} }
+        \item{\textbf{map\_range}\\Registers a RAM page in an emulator}
+        \item{\textbf{virt\_to\_phys}\\Translates guest to host RAM address}
+        \item{\textbf{set\_mip\_bit\_bit\_state}\\Sets or resets selected MIP CSR flag}
+        \item{\textbf{execute}\\Interprets a number of instructions}
+        \item{\textbf{get\_power\_down\_flag}\\Returns CPU power down flag}
+        \item{\textbf{get\_pc}\\Returns current program counter}
+        \item{\textbf{set\_pc}\\Sets program counter to a requested value}
+        \item{\textbf{get\_hart\_id}\\Returns CPU \texttt{hartid}}
+        \item{\textbf{set\_hart\_id}\\Sets \texttt{hartid} to a requested value}
+        \item{\textbf{get\_register}\\Returns selected CPU register}
+        \item{\textbf{set\_register}\\Sets CPU register to a requested value}
+    \end{itemize}
+\end{multicols}
+
+\noindent
+The listing below presents a sample of the implementation:
+
+\begin{lstlisting}[
+    style=lstC,
+    label={lst:dromajo-api-state},
+    caption={Examples of External Simulator API function wrapper.}
+    ]
+RISCVCPUState *env;
+
+void dromajo_set_mip_bit_bit_state(uint32_t number, BOOL value) {
+    uint32_t mask = 1 << number;
+
+    //The riscv_cpu_* functions are a part of existing Dromajo code
+    value ? riscv_cpu_set_mip(env, mask) : riscv_cpu_reset_mip(env, mask);
+}
+
+uint32_t dromajo_get_power_down_flag() {
+    return riscv_cpu_get_power_down(env);
+}
+...
+\end{lstlisting}
+
+\noindent
+This interface is good enough for basic usage, but it does not enable the external simulator to control the CPU
+execution flow precisely. This issue is touched on in the next section.
+
+\pagebreak
+
+\subsection{External Simulator Interface API for Dromajo}
+
+To further extend the functionality of the API, the \textit{External Simulator Interface} has been also added, as a
+means to more comprehensively integrate the CPU emulator into an external simulator. The main motivation for this
+feature is the ability to add breakpoints and to provide an organized interface to add callbacks to an external
+simulator. This functionality implements a \texttt{struct ExternalSimulator} embedded, as a member, into the
+\texttt{RISCVCPUState}.
+
+\vspace{10px}
+\noindent
+List of exposed interface API functions (the \texttt{external\_sim\_} prefix has been omitted):
+\begin{multicols}{2}
+    \begin{itemize}
+        \item{\textbf{init}\\Initializes the \texttt{ExternalSimulator} with the passed external simulator callbacks}
+        \item{\textbf{get\_execution\_stopped\_flag}\\Returns the exit status of the execution:
+        \texttt{\{OK,Breakpoint,WFI\}}}
+        \item{\textbf{get\_executed\_instructions}\\Returns the ammount of executed insn. since the last call}
+        \item{\textbf{check\_breakpoint}\\Checks if breakpoint exists at current PC}
+        \item{\textbf{set\_ignore\_bp\_flag}\\Tells the emulator to ignore next breakpoint}
+        \item{\textbf{set\_any\_bp\_flag}\\Tells the emulator to ignore every breakpoint}
+        \item{\textbf{add\_breakpoint}\\Adds a breakpoint at a given PC}
+        \item{\textbf{remove\_breakpoint}\\Removes a breakpoint at a given PC}
+    \end{itemize}
+\end{multicols}
+
+\noindent
+The listing below presents a sample of the implementation:
+
+\begin{lstlisting}[
+    style=lstC,
+    label={lst:dromajo-interface},
+    caption={Examples of External Simulator API function wrapper.}
+    ]
+uint64_t external_sim_get_executed_instructions() {
+    uint64_t result = sim->instruction_count_value;
+    sim->instruction_count_value = 0;
+    return result;
+}
+
+BOOL external_sim_check_breakpoint(target_ulong pc) {
+    Breakpoints* bps = sim->breakpoints;
+
+    for (size_t i = 0; i < bps->size; i++) {
+        Breakpoint bp = bps->entries[i];
+        if (likely(bp.pc == pc && bp.active)) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+\end{lstlisting}
+
+\noindent
+Such an interface provides a tightly coupled external simulator $\leftrightarrow$ CPU emulator relation. Not only does
+it organizes callbacks, but also provides necessary functionality to implement extended flow control, used for example
+for debugging using GDB.
+
+\pagebreak
+
+\subsection{External Simulator Register API}
+
+To standardize register numbering convention%
+\footnote{In the case of RISC-V, the ABI (Application Binary Interface)
+already does that, but only for general purpose registers. The CSRs (Control and Status Registers) and Floating Point
+register numbering is implementation specific.}%
+, external API implements an \texttt{DROMAJO\_REGISTERS} enumeration, that aims to provide a stable representation of
+all implemented registers.
+
+\begin{lstlisting}[
+    style=lstC,
+    label={lst:dromajo-register-interface},
+    caption={Dromajo API register convention enumeration.}
+    ]
+typedef enum {
+    ZERO     = 0,
+    RA       = 1,
+    SP       = 2,
+    GP       = 3,
+    TP       = 4,
+    FP       = 8,
+    PC       = 32,
+    SSTATUS  = 321,
+    SIE      = 325,
+    STVEC    = 326,
+    SSCRATCH = 385,
+    SEPC     = 386,
+    ...
+} DROMAJO_REGISTERS
+\end{lstlisting}
+
+\subsection{Building Dromajo as a library}
+
+To build Dromajo as an external simulator library, the \texttt{CMakeLists.txt} have been appended with an additional
+target:
+
+\begin{lstlisting}[
+    label={lst:dromajo-cmakelists},
+    caption={Dromajo \texttt{CMakeLists.txt}}
+    ]
+install(TARGETS dromajo_cosim DESTINATION .)
+add_library(dromajo_external_simulator SHARED
+        src/external_simulator_api.cpp
+        src/external_simulator_interface.cpp
+        src/external_simulator_registers.cpp
+        ...
+        )
+target_compile_definitions(dromajo_external_simulator PUBLIC EXTERNAL_SIMULATOR)
+target_compile_definitions(dromajo_external_simulator PUBLIC EXTERNAL_SIMULATOR_TIME_CSR)
+\end{lstlisting}
+
+\noindent
+The last two target compile definitions are used in the preprocessing step of the compilation and are used to enable
+or disable certain functionalities at the compile time. Building a project with this target will result in an output
+of a \texttt{dromajo\_external\_simulator.so}, a shared library, that can be used in any external simulator.
+
+\pagebreak
+
+\section{Renode Framework}
+The Renode Framework is Antmicro's open-source, permissively licensed (MIT), embedded device simulation framework.
+Being mostly written in C\#, the framework provides an organized, easily expandable codebase, rich in
+object-oriented principles. It can be compiled using both, \texttt{mono} and \texttt{.NET} build systems, for
+all mainstream operating systems.
+
+The framework provides the user with the ability to emulate a wide range of microcontroller-enabled solutions:
+\begin{itemize}
+    \item{\textbf{System on Chip} emulation allows the user to assemble virtual System-on-Chips from building blocks,
+    including Cortex-M, RISC-V, and other architectures, as well as a variety of communication buses and interfaces.}
+    %
+    \item{\textbf{Device}, by adding additional elements, such as buttons, LEDs, communication modules, etc. users can
+    emulate entire devices, such as development boards or production-ready devices}
+    %
+    \item{\textbf{Multi-node systems} connecting two or more devices using a simulated communication protocol opens
+    up a possibility of simulating and testing the deployment of systems at scale.}
+\end{itemize}
+
+\noindent
+This granularity provides the users and developers with a way to easily test and create software for the desired
+development platforms, create functional and performance tests, and easily debug the internal workings of the platform.
+All of this functionality is confined to a single piece of software, eliminating the need to create costly, or in some
+cases, unaffordable physical testing rigs, while providing the freedom to copy, distribute and scale as needed.
+
+With Industry 4.0 well on the rise, the importance of rapid development cycles, throughout testing and verification
+on each level of the infrastructure (especially at the scale), and debugging abilities is paramount.
+
+\section*{Source code structure}
+The framework source code \cite{Renode} is divided into three submodules:
+
+\begin{itemize}
+    \item{\textbf{Renode}, this is the main project repository, it contains the general project resources, build
+    scripts, required libraries, additional tools, and plugins for external integration.}
+    %
+    \item{\textbf{Infrastructure}, is the main emulation layer for peripherals, and an interface for CPU emulation
+    libraries. This submodule also provides internal interfaces and frameworks used for modeling devices}
+    %
+    \item{\textbf{Tlib}, a shorthand for \textit{Translation Library}, is an implementation of a Translation CPU
+    simulator}
+\end{itemize}
+
+\noindent
+The work done in this thesis mainly focuses on the Infrastructure submodule, as this is the part that already implements
+a Translation CPU emulator interface.
+
+\section*{CPU emulation in Renode}
+
+The CPU is simulated using the beforementioned \textit{Translation Library}, a Translation CPU simulator
+forked from QEMU, supporting Cortex-M, Cortex-A, RISC-V, PPC, SPARC, Xtensa, and i386.\\
+The Translation Library is written in C, compiled as a shared library (\texttt{.so}), and then binded to Renode using
+Renode's C\# utility called \texttt{NativeBinder}.
+
+\pagebreak
+
+\subsection{Implementing DromajoCPU class in Renode}
+
+The Renode Framework provides a CPU stub class, \texttt{ExternalCPU.cs}, that can be utilized to implement other
+emulators into the framework. This has been used as a template and expanded upon when integrating the Dromajo.
+This work is going to only discuss the most important functionality and interfaces.
+
+\vspace{10px}
+\noindent
+The \texttt{DromajoCPU} class implements the following interfaces and classes:
+\begin{multicols}{2}
+    \begin{itemize}
+        \item{\textbf{BaseCPU}\\Implements the basic CPU functionality in Renode}
+        \item{\textbf{IGPIOReciver}\\Exposes the peripheral to GPIO events, used for IRQs}
+        \item{\textbf{ITimeSink}\\Represents an object that is aware of virtual time flow}
+        \item{\textbf{ICPUWithMappedMemory}\\Implements the \texttt{MappedMemory}}
+        \item{\textbf{ICPUWithRegisters}\\Enables Renode register interface}
+        \item{\textbf{ICPUWithHooks}\\Add hooks interface to the CPU}
+        \item{\textbf{ICpuSupportingGdb}\\Exposes the CPU to the GDB stub}
+    \end{itemize}
+\end{multicols}
+
+\noindent
+The following sections describe each of the interfaces in more detail.
+
+\subsection*{GPIO Receiver}
+This interface allows the CPU to be connected in a Renode Platform description (\texttt{.resc}), to other devices,
+on an example of RISC-V, the CPU is connected to a Platform Level Interrupt Controller \textit{(PLIC)} and
+Core Level Interrupt Controller \textit{(CLINT)}. Both of these devices handle interrupt requests and provide similar
+functionality to ARM's Nested Vector Interrupt Controller.
+
+\begin{lstlisting}[
+    label={lst:renode-repl},
+    caption={Renode \texttt{.repl} file with \textit{DromajoCPU}}
+    ]
+U74_1: CPU.DromajoCPU @ sysbus
+    cpuType: "dromajo"
+    hartId: 0
+    ...
+
+clint: IRQControllers.CoreLevelInterruptor  @ sysbus 0x02000000
+    [0, 1] -> U74_1@[3, 7]
+    ...
+
+plic: IRQControllers.PlatformLevelInterruptController @ sysbus 0x0c000000
+    [0, 1] -> U74_1@[11, 9]
+    ...
+\end{lstlisting}
+
+\noindent
+This interface definies one method, used for handling the IRQs
+
+\begin{lstlisting}[
+    style=lstCsharp,
+    label={lst:renode-ongpio},
+    caption={DromajoCPU \texttt{OnGPIO}}
+    ]
+public void OnGPIO(int number, bool value)
+{
+    DromajoSetMipBit((uint)number, value ? 1u : 0u);
+}
+\end{lstlisting}
+
+\pagebreak
+
+\subsection*{Time Sink}
+This interface enables the peripheral to use the \textit{Virtual Time Framework}, an integral part of Renode, used to
+separate real and simulated time flow. While this interface only provides one member, \texttt{TimeHandle}, a correct
+implementation of this interface and its features has proved to be crucial. Incorrect handling of virtual time resulted
+in non-deterministic and buggy behavior of the guest software.
+
+\subsection*{CPU With Mapped Memory}
+To understand this interface, the introduction to the Renode's guest memory handling is necessary. The framework
+provides guest with two possible memory access flows, with access method being the main differentiator:
+
+\begin{itemize}
+    \item{\textbf{MappedMemory}: a type of native-code accessed memory, initialized and managed by C\# (freed, etc.)
+    region, that is \textit{mapped} (via pointers) to the simulator's internal structures.} Using this type of memory,
+    all of the CPU memory accesses are executed directly in the native (C,C++) code. This approach avoids a slow C\#
+    callback upon every access, allowing the simulated CPU to run faster.
+    %
+    \item{\textbf{IO Access}: a type of managed-code accessed memory, this method uses C\# callbacks from the native
+    code, to access the memory (accessing the memory via \texttt{SystemBus} methods). The IO access is much simpler,
+    at a cost of performance degradation. This method should be only used for accessing the peripherals, but
+    if desired might be used for accessing the RAM.}
+\end{itemize}
+
+\noindent
+Implementing this interface on a class, allows the CPU to utilize the MappedMemory memory implementation, via the means
+of \texttt{void MapMemory()} method:
+
+\begin{lstlisting}[
+    style=lstCsharp,
+    label={lst:renode-mapped-memory},
+    caption={DromajoCPU \texttt{MapMemory}}
+    ]
+public void MapMemory(IMappedSegment segment)
+{
+    currentMappings.Add(new SegmentMapping(segment));
+    DromajoMapRange(offset, size);
+}
+\end{lstlisting}
+
+\subsection*{CPU With Registers}
+This interface implements methods that allow the CPU to use Renode Register API, the beforementioned Dromajo's External
+Simulator Register API mapping is used here. This interface is a requirement for \texttt{ICpuSupportingGdb}.
+
+\subsection*{CPU With Hooks}
+This interface allows the CPU to use methods for advanced execution control, such as \texttt{AddHook, RemoveHook},
+allowing Renode to stop the execution of the emulated processor at any address, at any point in time.
+This interface is a requirement for \texttt{ICpuSupportingGdb}.
+
+\pagebreak
+
+\subsection*{CPU Supporting GDB}
+
+This interface enables the functionality of the CPU in the Renode GDB stub services. When this interface is correctly
+implemented, the processor can be natively debugged using GDB's Remote Server Protocol.
+
+\subsection{Binding and callbacks}
+
+The last point of the implementation covers the issue of Language binding. This is handled by the Renode, with the help
+of the custom NativeBinder utility. When the DromajoCPU class is created, the NativeBinder object is created with
+the Dromajo library. The binding utility then loads the library, parses symbols and attempts to resolve
+\textbf{Calls To Managed} (C $\rightarrow$ C\#) and \textbf{Calls To Native} (C\# $\rightarrow$ C).
+
+\subsection*{Resolving calls to native code}
+
+The utility parses all parent class methods marked with an \texttt{[Import]} attribute, finds the correct symbol in the
+loaded library, creates a C\# delegate pointing to the library function, and sets the desired method value to the
+matching delegate. For example this method will try to bind to C symbol \texttt{dromajo\_set\_mip\_bit\_bit\_state}:
+
+\begin{lstlisting}[
+    style=lstCsharp,
+    label={lst:renode-calls-to-native},
+    caption={An example of call to native code from C\#. \protect\footnotemark}
+    ]
+[Import(Name = "dromajo_set_mip_bit_bit_state", UseExceptionWrapper = false)]
+private ActionUInt32UInt32 DromajoSetMipBit;
+\end{lstlisting}
+
+\footnotetext{The \texttt{ExceptionWrapper} is a mechanism used in the Translation Library to propagate C\# exceptions
+trough the native function calls. This implementation does not implement this functionality, thus it is explicitly
+disabled.}
+
+\subsection*{Resolving calls to managed code}
+
+This functionality is often referred to as \textit{callbacks}. The process of adding a callback is twofold. First stage
+consists of adding of a \textbf{Callback pointer} and \textbf{Binder function} to the library. The callback pointer
+is a raw pointer to a function of the desired callback delegate type. For example:
+
+\begin{lstlisting}[
+    style=lstC,
+    label={lst:dromajo-calls-to-managed-binding},
+    caption={Callback pointer declaration and Binder function definition.}
+    ]
+// Callback type
+typedef uint32_t (*ext_sim_read_byte_fnc)(uint64_t);
+
+// Callback pointer
+ext_sim_read_byte_fnc external_sim_read_byte;
+
+// Binder function
+void bind_ext_sim_read_byte(ext_sim_read_byte_fnc ptr) {
+    external_sim_read_byte = ptr;
+}
+
+// Usage
+void foo() {
+    uint64_t address = 0xDEADBEEF;
+    uint32_t value = external_sim_read_byte(address)
+}
+\end{lstlisting}
+
+\pagebreak
+
+\noindent
+The second stage of creating a callback consists of running the \textbf{native} Binder function, with \textbf{managed}
+delegate pointer as parameter.
+
+\begin{lstlisting}[
+    style=lstCsharp,
+    label={lst:renode-calls-to-managed},
+    caption={An example of delegate to managed code.}
+    ]
+[Export(Binder = "bind_ext_sim_read_byte", DelegateType = typeof(FuncUInt32UInt64))]
+protected uint ReadByteFromBus(ulong offset) // ulong = UInt64
+{
+    return machine.SystemBus.ReadByte(offset);
+}
+\end{lstlisting}
+
+\noindent
+After that is complete, the callback is finished, and the library is able to call the managed code. This concludes the
+implementation chapter.
