@@ -26,6 +26,8 @@
 \usepackage{listings}
 \usepackage{color}
 
+\usepackage{multicol}
+
 \definecolor{codegreen}{rgb}{0.00,0.60,0.00}
 \definecolor{preprocesorbrown}{rgb}{0.50,0.25,0.23} 
 \definecolor{codelightblue}{rgb}{0.30,0.70,0.60}
@@ -58,8 +60,23 @@
   	stringstyle      =   \color{red},
   	emphstyle        =   \color{codelightblue}\ttfamily,
   	directivestyle   =   \color{preprocesorbrown}\ttfamily,
-     morekeywords   =   {inline, target_ulong, uint32_t, no_inline},
-  	emph             =   {_Bool}
+     morekeywords   =   {inline, target_ulong, uint32_t, uint64_t, no_inline, BOOL, _Bool},
+}
+
+\lstdefinestyle{lstCsharp} 
+{
+	language = C++, % No C# support
+	keywordstyle     =\color{blue}\ttfamily,
+  	commentstyle     =\color{codegreen}\ttfamily,
+  	stringstyle      =\color{red},
+  	emphstyle        =\color{codelightblue}\ttfamily,
+  	directivestyle   =\color{preprocesorbrown}\ttfamily,
+  	morekeywords     ={var,async,await,using,byte,string,get,set,uint, checked},
+  	emph             ={Descendants,First,FormUrlEncodedContent,HttpClient,
+  					   HttpWebRequest,HttpWebResponse,JObject,JProperty,
+  					   KeyValuePair,Length,List,OfType,
+  					   PropertyChangedEventHandler,Stream,StreamReader,
+  					   Value,WebRequest,Where}
 }
 
 %--------------------------------------
@@ -120,6 +137,7 @@
 \input{chapters/02-simulation_basics.tex}
 \input{chapters/03-translation.tex}
 \input{chapters/04-interpretation.tex}
+\input{chapters/05-implementation.tex}
 
 %--------------------------------------
 % Literatura
