@@ -1,0 +1,89 @@
+\chapter{Performance analysis}
+
+The following chapter contains the results of the performance analysis of Translation and Interpretation CPU simulators,
+presents the results, and compares the performance of the different solutions. The first section of this chapter focuses
+on the description of the test environment in terms of hardware, software, and simulated guest parameters and
+characteristics. The second section describes the benchmarks and binaries and motivates their importance in the field
+of automatics and robotics, especially in the context of the Industry 4.0. The last section presents and interprets
+the results.
+
+\section{Test enviroment}
+In order to achieve representative and reproducible results, the test environment must be carefully controlled, as not
+to introduce any inaccurate and misleading conclusions. All of the tests were performed on the following testbench:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{l|l}
+    CPU              & Intel(R) Core(TM) i7-8700             \\
+    \hline
+    Memory           & 32GB DDR4 @ 2133 Mhz                  \\
+    \hline
+    Operating System & Linux Fedora 36 (6.0.9-200)           \\
+    \hline
+    C stdlib         & GNU libc 2.35                         \\
+    \hline
+    .NET Runtime     & Mono JIT compiler version 6.12.0.122
+    \end{tabular}
+\end{table}
+
+\noindent
+In terms of the software, both Renode Translation Library and Dromajo are compiled using \texttt{-O3} optimization
+level. In addition to that, the libraries are \textbf{not using} any architecture specific optimizations, as in,
+they were compiled \textbf{without} \texttt{-march=native} and \texttt{-mtune=native} flags. This is important
+to note, as using these flags might significantly improve the overall performance of the simulators, but since
+this work only focuses on performance deltas, these flags do not provide any additional value, and in the worst
+case might introduce unwanted behavior.
+
+The simulated guest platform is a \textbf{BeagleV Starlight JH7100} and \textbf{SiFive HiFive Unleashed},
+with the only difference between the benchmark test cases begin the used CPU emulator.
+
+In order to provide deterministic results, every test case is performed with \textbf{SetGlobalSerialExecution}
+flag set to true. This Renode setting forces emulated processors to perform sequentially, removing the variability
+introduced by the host operating system scheduler, thus maintaining full determinism.
+
+\pagebreak
+
+\section{Benchmark payloads and tested parameters}
+
+\begin{itemize}
+    \item{\textbf{Zephyr RTOS boot-up routine} this test performs a Zephyr RTOS payload boot-up sequence and waits for
+    a 'hello-world' messeage on a UART device \cite{ZephyrHello}.\\
+    \textbf{Motivation:} This test will determine whether the performance benefits/detriments are noticeable when
+    running a very simple payload. This is as important as performance deltas in more complicated payloads because
+    the current trend in the industry heads into the direction of decentralization using simpler devices, and the
+    developers need to be prepared to test their deployments at scale.}
+    %
+    \item{\textbf{Zephyr RTOS PI calculating sample} This sample application calculates Pi independently in many
+    threads, and demonstrates the benefit of multiple execution units (CPU cores) when compute-intensive tasks can be
+    run in parallel, with no cross-dependencies or shared resources \cite{ZephyrPi}.\\
+    \textbf{Motivation:} In the context of Industry 4.0, this payload might represent the arithmetic operations
+    performed while calculating an advanced automatic control system, or other algorithmically and/or numerically
+    advanced tasks.}
+    %
+    \item{\textbf{Zephyr RTOS TensorFlow Lite Micro Module} this test runs the TensorFlow Lite Micro Zephyr module,
+    runs the payload, and waits for it to finish. The model included with the sample is trained to replicate a sine
+    function and generates x values to print alongside the y values predicted by the model. The x values iterate from 0
+    to an approximation of 2$\pi$ \cite{ZephyrTF}.\\
+    \textbf{Motivation:} A lot of the Industry 4.0 endpoints, such as sensors and actuators, use simple AI/DNN
+    deployments, either to prematurely filter collected data or to assist in the decision-making. The proposed sample
+    fits, as it is not too complicated, and runs on a real-time operating system.}
+    %
+    \item{\textbf{Linux kernel boot-up} this test loads all necessary payloads to boot the Linux kernel.\\
+    As the Linux kernel is a relatively complicated payload, this test checks a wide range of the CPU simulation use
+    cases\\
+    \textbf{Motivation:} In Industry 4.0 times, the Linux kernel had become an unrepeatable part of almost every
+    automatic control, internet of things, robotics, etc. infrastructure stack. Because of that it is important to
+    provide a qualitative and performance evaluation of the simulation.}
+\end{itemize}
+
+\noindent
+Each test will be repeated three times, and evaluated under the following criteria:
+\begin{itemize}
+    \item{\textbf{Qualitative evaluation}, has the test finished successfully and returned correct data?\\
+    Verified on case-by-case basics.}
+    %
+    \item{\textbf{Performance evaluation}, how long did the test take?\\To guarantee accuracy and validity, this metric is
+     provided by Renode Virtual Time framework.}
+\end{itemize}
+
+% \section{Performance results}
