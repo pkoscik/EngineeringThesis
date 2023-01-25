@@ -1,0 +1,4 @@
+04:20:07.0429 [INFO] BeagleV-Dromajo: Machine started.
+04:20:07.0601 [WARNING] plic: Unhandled write to offset 0x200000, value 0x0.
+04:20:07.0662 [INFO] uart3: [host: 94.55ms (+94.55ms)|virt: 39µs (+39µs)] *** Booting Zephyr OS build zephyr-v3.1.0  ***
+04:20:07.0670 [INFO] uart3: [host:   95.4ms (+0.86ms)|virt: 0.1ms (+61µs)] Hello World! beaglev_starlight_jh7100

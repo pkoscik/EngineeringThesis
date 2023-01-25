@@ -1,0 +1,103 @@
+11:18:16.6113 [INFO] BeagleV-Dromajo: Machine started.
+11:18:16.6311 [WARNING] plic: Unhandled write to offset 0x200000, value 0x0.
+11:18:16.6370 [INFO] uart3: [host: 0.19s (+0.19s)|virt: 0.53ms (+0.53ms)] *** Booting Zephyr OS build zephyr-v3.2.0  ***
+11:18:16.6435 [INFO] uart3: [host: 0.19s (+6.4ms)|virt:  1.8ms (+1.27ms)] x_value: 1.0*2^-127, y_value: 1.0*2^-127
+11:18:16.6436 [INFO] uart3: [host: 0.19s (+0.24ms)|virt:      1.8ms (+0s)] 
+11:18:16.6444 [INFO] uart3: [host: 0.19s (+0.84ms)|virt:     2ms (+0.2ms)] x_value: 1.2566366*2^-2, y_value: 1.4910772*2^-2
+11:18:16.6445 [INFO] uart3: [host:   0.19s (+71µs)|virt:        2ms (+0s)] 
+11:18:16.6453 [INFO] uart3: [host: 0.19s (+0.81ms)|virt:   2.1ms (+0.1ms)] x_value: 1.2566366*2^-1, y_value: 1.1183078*2^-1
+11:18:16.6454 [INFO] uart3: [host:   0.19s (+70µs)|virt:      2.1ms (+0s)] 
+11:18:16.6463 [INFO] uart3: [host: 0.19s (+0.91ms)|virt:   2.3ms (+0.2ms)] x_value: 1.8849551*2^-1, y_value: 1.677462*2^-1
+11:18:16.6463 [INFO] uart3: [host:   0.19s (+69µs)|virt:      2.3ms (+0s)] 
+11:18:16.6471 [INFO] uart3: [host:  0.2s (+0.75ms)|virt:   2.4ms (+0.1ms)] x_value: 1.2566366*2^0, y_value: 1.9316229*2^-1
+11:18:16.6472 [INFO] uart3: [host:    0.2s (+68µs)|virt:      2.4ms (+0s)] 
+11:18:16.6480 [INFO] uart3: [host:  0.2s (+0.85ms)|virt:   2.6ms (+0.2ms)] x_value: 1.5707957*2^0, y_value: 1.0420598*2^0
+11:18:16.6481 [INFO] uart3: [host:    0.2s (+70µs)|virt:      2.6ms (+0s)] 
+11:18:16.6489 [INFO] uart3: [host:  0.2s (+0.79ms)|virt:   2.7ms (+0.1ms)] x_value: 1.8849551*2^0, y_value: 1.9146791*2^-1
+11:18:16.6489 [INFO] uart3: [host:    0.2s (+83µs)|virt:      2.7ms (+0s)] 
+11:18:16.6498 [INFO] uart3: [host:  0.2s (+0.83ms)|virt:   2.9ms (+0.2ms)] x_value: 1.0995567*2^1, y_value: 1.6435742*2^-1
+11:18:16.6498 [INFO] uart3: [host:    0.2s (+69µs)|virt:      2.9ms (+0s)] 
+11:18:16.6506 [INFO] uart3: [host:  0.2s (+0.78ms)|virt:     3ms (+0.1ms)] x_value: 1.2566366*2^1, y_value: 1.0674761*2^-1
+11:18:16.6507 [INFO] uart3: [host:    0.2s (+69µs)|virt:        3ms (+0s)] 
+11:18:16.6515 [INFO] uart3: [host:  0.2s (+0.82ms)|virt:   3.2ms (+0.2ms)] x_value: 1.4137159*2^1, y_value: 1.8977352*2^-3
+11:18:16.6516 [INFO] uart3: [host:    0.2s (+68µs)|virt:      3.2ms (+0s)] 
+11:18:16.6523 [INFO] uart3: [host:  0.2s (+0.77ms)|virt:   3.3ms (+0.1ms)] x_value: 1.5707957*2^1, y_value: 1.0844199*2^-7
+11:18:16.6524 [INFO] uart3: [host:    0.2s (+98µs)|virt:      3.3ms (+0s)] 
+11:18:16.6533 [INFO] uart3: [host:  0.2s (+0.89ms)|virt:   3.5ms (+0.2ms)] x_value: 1.7278753*2^1, y_value: -1.2199725*2^-2
+11:18:16.6535 [INFO] uart3: [host:  0.2s (+0.15ms)|virt:      3.5ms (+0s)] 
+11:18:16.6543 [INFO] uart3: [host:  0.2s (+0.84ms)|virt:   3.6ms (+0.1ms)] x_value: 1.8849551*2^1, y_value: -1.0674761*2^-1
+11:18:16.6544 [INFO] uart3: [host:    0.2s (+68µs)|virt:      3.6ms (+0s)] 
+11:18:16.6552 [INFO] uart3: [host:  0.2s (+0.77ms)|virt:   3.8ms (+0.2ms)] x_value: 1.0210171*2^2, y_value: -1.5588537*2^-1
+11:18:16.6553 [INFO] uart3: [host:  0.2s (+0.11ms)|virt:      3.8ms (+0s)] 
+11:18:16.6560 [INFO] uart3: [host:  0.2s (+0.75ms)|virt:   3.9ms (+0.1ms)] x_value: 1.0995567*2^2, y_value: -1.9316229*2^-1
+11:18:16.6561 [INFO] uart3: [host:    0.2s (+68µs)|virt:      3.9ms (+0s)] 
+11:18:16.6569 [INFO] uart3: [host: 0.21s (+0.83ms)|virt:   4.1ms (+0.2ms)] x_value: 1.1780966*2^2, y_value: -1.1098361*2^0
+11:18:16.6570 [INFO] uart3: [host:   0.21s (+69µs)|virt:      4.1ms (+0s)] 
+11:18:16.6578 [INFO] uart3: [host: 0.21s (+0.79ms)|virt:   4.2ms (+0.1ms)] x_value: 1.2566366*2^2, y_value: -1.965511*2^-1
+11:18:16.6578 [INFO] uart3: [host:   0.21s (+68µs)|virt:      4.2ms (+0s)] 
+11:18:16.6587 [INFO] uart3: [host: 0.21s (+0.82ms)|virt:   4.4ms (+0.2ms)] x_value: 1.3351763*2^2, y_value: -1.4910772*2^-1
+11:18:16.6587 [INFO] uart3: [host:   0.21s (+69µs)|virt:      4.4ms (+0s)] 
+11:18:16.6596 [INFO] uart3: [host: 0.21s (+0.84ms)|virt:   4.5ms (+0.1ms)] x_value: 1.4137159*2^2, y_value: -1.0674761*2^-1
+11:18:16.6597 [INFO] uart3: [host: 0.21s (+0.11ms)|virt:      4.5ms (+0s)] 
+11:18:16.6606 [INFO] uart3: [host: 0.21s (+0.94ms)|virt:   4.7ms (+0.2ms)] x_value: 1.4922558*2^2, y_value: -1.4233011*2^-2
+11:18:16.6607 [INFO] uart3: [host: 0.21s (+0.11ms)|virt:      4.7ms (+0s)] 
+11:18:16.6615 [INFO] uart3: [host:  0.21s (+0.8ms)|virt:   4.8ms (+0.1ms)] x_value: 1.0*2^-127, y_value: 1.0*2^-127
+11:18:16.6616 [INFO] uart3: [host: 0.21s (+0.11ms)|virt:      4.8ms (+0s)] 
+11:18:16.6626 [INFO] uart3: [host: 0.21s (+0.92ms)|virt:     5ms (+0.2ms)] x_value: 1.2566366*2^-2, y_value: 1.4910772*2^-2
+11:18:16.6627 [INFO] uart3: [host: 0.21s (+0.11ms)|virt:        5ms (+0s)] 
+11:18:16.6635 [INFO] uart3: [host: 0.21s (+0.85ms)|virt:   5.1ms (+0.1ms)] x_value: 1.2566366*2^-1, y_value: 1.1183078*2^-1
+11:18:16.6636 [INFO] uart3: [host: 0.21s (+0.11ms)|virt:      5.1ms (+0s)] 
+11:18:16.6645 [INFO] uart3: [host: 0.21s (+0.86ms)|virt:   5.3ms (+0.2ms)] x_value: 1.8849551*2^-1, y_value: 1.677462*2^-1
+11:18:16.6646 [INFO] uart3: [host:   0.21s (+98µs)|virt:      5.3ms (+0s)] 
+11:18:16.6654 [INFO] uart3: [host:  0.21s (+0.8ms)|virt:   5.4ms (+0.1ms)] x_value: 1.2566366*2^0, y_value: 1.9316229*2^-1
+11:18:16.6655 [INFO] uart3: [host:   0.21s (+72µs)|virt:      5.4ms (+0s)] 
+11:18:16.6663 [INFO] uart3: [host:  0.21s (+0.8ms)|virt:   5.6ms (+0.2ms)] x_value: 1.5707957*2^0, y_value: 1.0420598*2^0
+11:18:16.6663 [INFO] uart3: [host:   0.21s (+69µs)|virt:      5.6ms (+0s)] 
+11:18:16.6670 [INFO] uart3: [host: 0.22s (+0.73ms)|virt:   5.7ms (+0.1ms)] x_value: 1.8849551*2^0, y_value: 1.9146791*2^-1
+11:18:16.6671 [INFO] uart3: [host:   0.22s (+69µs)|virt:      5.7ms (+0s)] 
+11:18:16.6679 [INFO] uart3: [host:  0.22s (+0.8ms)|virt:   5.9ms (+0.2ms)] x_value: 1.0995567*2^1, y_value: 1.6435742*2^-1
+11:18:16.6680 [INFO] uart3: [host:   0.22s (+69µs)|virt:      5.9ms (+0s)] 
+11:18:16.6688 [INFO] uart3: [host: 0.22s (+0.77ms)|virt:     6ms (+0.1ms)] x_value: 1.2566366*2^1, y_value: 1.0674761*2^-1
+11:18:16.6689 [INFO] uart3: [host:   0.22s (+87µs)|virt:        6ms (+0s)] 
+11:18:16.6697 [INFO] uart3: [host: 0.22s (+0.88ms)|virt:   6.2ms (+0.2ms)] x_value: 1.4137159*2^1, y_value: 1.8977352*2^-3
+11:18:16.6698 [INFO] uart3: [host: 0.22s (+0.11ms)|virt:      6.2ms (+0s)] 
+11:18:16.6707 [INFO] uart3: [host:  0.22s (+0.9ms)|virt:   6.3ms (+0.1ms)] x_value: 1.5707957*2^1, y_value: 1.0844199*2^-7
+11:18:16.6708 [INFO] uart3: [host:   0.22s (+77µs)|virt:      6.3ms (+0s)] 
+11:18:16.6716 [INFO] uart3: [host: 0.22s (+0.83ms)|virt:   6.5ms (+0.2ms)] x_value: 1.7278753*2^1, y_value: -1.2199725*2^-2
+11:18:16.6717 [INFO] uart3: [host:   0.22s (+74µs)|virt:      6.5ms (+0s)] 
+11:18:16.6725 [INFO] uart3: [host: 0.22s (+0.79ms)|virt:   6.6ms (+0.1ms)] x_value: 1.8849551*2^1, y_value: -1.0674761*2^-1
+11:18:16.6726 [INFO] uart3: [host:   0.22s (+72µs)|virt:      6.6ms (+0s)] 
+11:18:16.6734 [INFO] uart3: [host: 0.22s (+0.83ms)|virt:   6.8ms (+0.2ms)] x_value: 1.0210171*2^2, y_value: -1.5588537*2^-1
+11:18:16.6735 [INFO] uart3: [host:   0.22s (+75µs)|virt:      6.8ms (+0s)] 
+11:18:16.6753 [INFO] uart3: [host:  0.22s (+1.8ms)|virt:   6.9ms (+0.1ms)] x_value: 1.0995567*2^2, y_value: -1.9316229*2^-1
+11:18:16.6754 [INFO] uart3: [host: 0.22s (+0.12ms)|virt:      6.9ms (+0s)] 
+11:18:16.6763 [INFO] uart3: [host: 0.22s (+0.86ms)|virt:   7.1ms (+0.2ms)] x_value: 1.1780966*2^2, y_value: -1.1098361*2^0
+11:18:16.6764 [INFO] uart3: [host: 0.23s (+0.11ms)|virt:      7.1ms (+0s)] 
+11:18:16.6772 [INFO] uart3: [host: 0.23s (+0.84ms)|virt:   7.2ms (+0.1ms)] x_value: 1.2566366*2^2, y_value: -1.965511*2^-1
+11:18:16.6773 [INFO] uart3: [host: 0.23s (+0.11ms)|virt:      7.2ms (+0s)] 
+11:18:16.6782 [INFO] uart3: [host: 0.23s (+0.84ms)|virt:   7.4ms (+0.2ms)] x_value: 1.3351763*2^2, y_value: -1.4910772*2^-1
+11:18:16.6782 [INFO] uart3: [host:   0.23s (+84µs)|virt:      7.4ms (+0s)] 
+11:18:16.6791 [INFO] uart3: [host: 0.23s (+0.82ms)|virt:   7.5ms (+0.1ms)] x_value: 1.4137159*2^2, y_value: -1.0674761*2^-1
+11:18:16.6791 [INFO] uart3: [host:   0.23s (+83µs)|virt:      7.5ms (+0s)] 
+11:18:16.6800 [INFO] uart3: [host: 0.23s (+0.81ms)|virt:   7.7ms (+0.2ms)] x_value: 1.4922558*2^2, y_value: -1.4233011*2^-2
+11:18:16.6800 [INFO] uart3: [host:   0.23s (+72µs)|virt:      7.7ms (+0s)] 
+11:18:16.6807 [INFO] uart3: [host: 0.23s (+0.72ms)|virt:   7.8ms (+0.1ms)] x_value: 1.0*2^-127, y_value: 1.0*2^-127
+11:18:16.6808 [INFO] uart3: [host:   0.23s (+70µs)|virt:      7.8ms (+0s)] 
+11:18:16.6816 [INFO] uart3: [host: 0.23s (+0.82ms)|virt:     8ms (+0.2ms)] x_value: 1.2566366*2^-2, y_value: 1.4910772*2^-2
+11:18:16.6817 [INFO] uart3: [host:   0.23s (+74µs)|virt:        8ms (+0s)] 
+11:18:16.6825 [INFO] uart3: [host: 0.23s (+0.77ms)|virt:   8.1ms (+0.1ms)] x_value: 1.2566366*2^-1, y_value: 1.1183078*2^-1
+11:18:16.6826 [INFO] uart3: [host:   0.23s (+71µs)|virt:      8.1ms (+0s)] 
+11:18:16.6834 [INFO] uart3: [host: 0.23s (+0.81ms)|virt:   8.3ms (+0.2ms)] x_value: 1.8849551*2^-1, y_value: 1.677462*2^-1
+11:18:16.6834 [INFO] uart3: [host:   0.23s (+72µs)|virt:      8.3ms (+0s)] 
+11:18:16.6842 [INFO] uart3: [host: 0.23s (+0.77ms)|virt:   8.4ms (+0.1ms)] x_value: 1.2566366*2^0, y_value: 1.9316229*2^-1
+11:18:16.6843 [INFO] uart3: [host:   0.23s (+72µs)|virt:      8.4ms (+0s)] 
+11:18:16.6850 [INFO] uart3: [host: 0.23s (+0.77ms)|virt:   8.6ms (+0.2ms)] x_value: 1.5707957*2^0, y_value: 1.0420598*2^0
+11:18:16.6851 [INFO] uart3: [host:   0.23s (+70µs)|virt:      8.6ms (+0s)] 
+11:18:16.6859 [INFO] uart3: [host: 0.23s (+0.77ms)|virt:   8.7ms (+0.1ms)] x_value: 1.8849551*2^0, y_value: 1.9146791*2^-1
+11:18:16.6860 [INFO] uart3: [host:   0.23s (+71µs)|virt:      8.7ms (+0s)] 
+11:18:16.6868 [INFO] uart3: [host: 0.24s (+0.81ms)|virt:   8.9ms (+0.2ms)] x_value: 1.0995567*2^1, y_value: 1.6435742*2^-1
+11:18:16.6868 [INFO] uart3: [host:   0.24s (+71µs)|virt:      8.9ms (+0s)] 
+11:18:16.6876 [INFO] uart3: [host: 0.24s (+0.77ms)|virt:     9ms (+0.1ms)] x_value: 1.2566366*2^1, y_value: 1.0674761*2^-1
+11:18:16.6877 [INFO] uart3: [host:   0.24s (+72µs)|virt:        9ms (+0s)] 
+11:18:16.6885 [INFO] uart3: [host: 0.24s (+0.81ms)|virt:   9.2ms (+0.2ms)] x_value: 1.4137159*2^1, y_value: 1.8977352*2^-3
+11:18:16.6886 [INFO] uart3: [host:   0.24s (+72µs)|virt:      9.2ms (+0s)] 
