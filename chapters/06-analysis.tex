@@ -86,4 +86,195 @@ Each test will be repeated three times, and evaluated under the following criter
      provided by Renode Virtual Time framework.}
 \end{itemize}
 
-% \section{Performance results}
+\pagebreak
+
+\section{Benchmark results}
+
+Plots below are created by performing each benchmark three times, the bar value represents the mean, with the error bars
+representing standard deviation. These characteristics have also been provided in text form below the plot. The
+\texttt{1c} and \texttt{2c} in the chart title represent number of virtual cores used when performing the test.
+
+\subsection{Zephyr RTOS boot-up routine}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/benchmarks/Hello1c.pdf}
+	\caption{Zephyr RTOS Boot times}
+\end{figure}
+\noindent
+\textbf{Qualitative evaluation}: Both simulators were able to correctly boot up Zephyr RTOS.
+\vspace*{15px}
+
+\subsection{Zephyr RTOS PI calculating sample}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width=1.2\linewidth]{figures/benchmarks/Pi1c.pdf}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width=1.2\linewidth]{figures/benchmarks/Pi2c.pdf}
+    \end{subfigure}
+    \caption{Zephyr RTOS PI calculating times}
+\end{figure}
+\textbf{Qualitative evaluation}: Both simulators have correctly executed the algorithm.
+
+\pagebreak
+
+\subsection{Zephyr RTOS TensorFlow Lite Micro Module}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width=1.2\linewidth]{figures/benchmarks/Tensorflow1c.pdf}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width=1.2\linewidth]{figures/benchmarks/Tensorflow2c.pdf}
+    \end{subfigure}
+    \caption{Zephyr RTOS Tensorflow execution time}
+\end{figure}
+\textbf{Qualitative evaluation}: Both simulators have correctly executed the algorithm.
+\vspace*{15px}
+
+\subsection{Linux kernel boot-up}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width=1.2\linewidth]{figures/benchmarks/Linux1c.pdf}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width=1.2\linewidth]{figures/benchmarks/Linux2c.pdf}
+    \end{subfigure}
+    \caption{Zephyr RTOS Tensorflow execution time}
+\end{figure}
+\textbf{Qualitative evaluation}: Both simulators have correctly brought up the Linux kernel.
+\vspace*{15px}
+
+\noindent
+The Linux kernel, being the biggest benchmark performed, generates a lot of logs on the UART console. This opened up a
+possiblity to use Renode Log Tester, to trace the time between each new message. This approach is called
+\textit{Profiling} and is most typically used to perform a performance analysis for code execution. While some events
+might be ommited (non-log emitting events), it is still an interesting data source, that is worth investigating.
+
+\pagebreak
+
+\subsection{Linux boot profiling}
+This section will provide two types of charts:
+\begin{itemize}
+    \item{\textbf{Boot profile chart}, a graph on a plane of virtual time versus host time. Each point represents a
+    UART console message at a given point in time. This plot represents two pieces of information, the cumulative
+    speedup or slowdown and the rate of change of the beforementioned characteristic. The increasing slope means that
+    simulating the virtual processor, at this point, takes more time than is passing in real time. The decreasing slope
+    represents the case when the simulated CPU is executing instructions faster than real time. If the chart slope
+    matches the gray line slope, the simulated processor is executing instructions at exactly realtime speed.
+    The gray line represents the "one-to-one" time mapping. If the execution chart is above this line, this means
+    that the virtual CPU is lagging behind the real time and vice versa.}
+    %
+    \item{\textbf{Cumulative speedup chart}, provides a normalised version of the boot profile chart.
+    The gray y-axis line represents "one-to-one" time mapping, with the same interpretation as in the boot profile
+    chart.}
+\end{itemize}
+
+\pagebreak
+
+\subsection*{Linux boot profiling - Tlib}
+\begin{figure}[h]
+	\centering
+    \hspace*{-2cm}
+	\includegraphics[width=1.2\textwidth]{figures/benchmarks/linux_boot/adnotated/TlibBoot.pdf}
+	\caption{Linux boot profile chart - Translation Library}
+\end{figure}
+
+\noindent
+The translation library simulated CPU was able to maintain a one-to-one virtual host time relation for most of
+its execution, only falling behind when the I/O devices were accessed. This is expected, as this mode of memory
+access is not a subject to optimization methods described in the Chapter 3. Additionally, these accesses require a C
+$\rightarrow$ C\# callback, witch is also exceptionally slow. After these accesses have been completed, the slope of the
+chart returns to almost realtime, but not quite reaching it.
+
+The area bounded by the red markers represents the time when the Linux kernel payload was unpacking initramfs. In terms
+of the Linux kernel, this means extracting the initialization utilities from the \textit{gzip} archive into the
+device random access memory, allowing the kernel to use RAM as a temporary rootfs. Since the boot process is not
+progressing any further, it is not sending any messages to the UART device, thus expalining the lack of the data
+points.
+
+\begin{figure}[h]
+	\centering
+    \hspace*{-2cm}
+	\includegraphics[width=1.2\textwidth]{figures/benchmarks/linux_boot/adnotated/TlibSpeedup.pdf}
+	\caption{Linux speedup chart - Translation Library}
+\end{figure}
+
+\pagebreak
+
+\subsection*{Linux boot profiling - Dromajo}
+
+\begin{figure}[h]
+	\centering
+    \hspace*{-2cm}
+	\includegraphics[width=1.2\textwidth]{figures/benchmarks/linux_boot/adnotated/DromajoBoot.pdf}
+	\caption{Linux boot profile chart - Dromajo}
+\end{figure}
+
+\noindent
+The Dromajo simulated CPU was not able to maintain a one-to-one virtual host time relation, it has immediately fallen
+behind the real time execution. The characteristics of the chart are the same as the Translation Library, but the
+execution slope is always much bigger than one.
+
+\begin{figure}[h]
+	\centering
+    \hspace*{-2cm}
+	\includegraphics[width=1.2\textwidth]{figures/benchmarks/linux_boot/adnotated/DromajoSpeedup.pdf}
+	\caption{Linux speedup chart - Dromajo}
+\end{figure}
+
+\pagebreak
+
+\section{Performance conclusions}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l|l|l}
+    Benchmark             & Translation Library & Dromajo  \\ \hline
+    Zephyr boot-up        & 0.13                & 0.09     \\ \hline
+    Zephyr PI calculation & 0.33                & 0.48     \\ \hline
+    Zephyr Tensorflow     & 0.25                & 0.24     \\ \hline
+    Linux kernel boot-up  & 45.57               & 124.3
+    \end{tabular}
+    \caption{Benchmark summary results for single core tests}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l|l|l}
+    Benchmark             & Translation Library & Dromajo  \\ \hline
+    Zephyr boot-up        & -                   & -        \\ \hline
+    Zephyr PI calculation & 0.27                & 0.41     \\ \hline
+    Zephyr Tensorflow     & 0.28                & 0.25     \\ \hline
+    Linux kernel boot-up  & 81.68               & 174.77
+    \end{tabular}
+    \caption{Benchmark summary results for dual core tests}
+\end{table}
+
+\noindent
+Both of the simulation methods managed to pass the qualitative evaluation. The virtual CPUs behaved in a stable
+and expected way. A low standard deviation in both cases also confirms the stability and repeatability of the test
+results.
+
+In the terms of performance, the Translation Library simulated central processing unit performs better at every more
+complex test, by as much as two times in the Linux test. This behavior is a merit of the block caching and chaining,
+exceptionally speeding up the simulation process. The techniques applied in this method of simulation allow the virtual
+processor to reach near real time execution performance.
+
+The Dromajo simulated CPU performed better in the simpler payloads, such as booting the Zephyr RTOS, where the
+optimization techniques used in the translation approach had become a noticeably big overhead, as in, the process of
+block caching and chaining had costed some time, and did not have any noticeable effect on the simulation, as it had
+already ended. This suggests that for small payloads block caching and chaining is simply not a feasible optimization
+method.
