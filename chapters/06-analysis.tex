@@ -49,9 +49,9 @@ introduced by the host operating system scheduler, thus maintaining full determi
     \item{\textbf{Zephyr RTOS boot-up routine} this test performs a Zephyr RTOS payload boot-up sequence and waits for
     a 'hello-world' messeage on a UART device \cite{ZephyrHello}.\\
     \textbf{Motivation:} This test will determine whether the performance benefits/detriments are noticeable when
-    running a very simple payload. This is as important as performance deltas in more complicated payloads because
-    the current trend in the industry heads into the direction of decentralization using simpler devices, and the
-    developers need to be prepared to test their deployments at scale.}
+    running a very simple payload. This is important as, the current trend in the industry heads into the
+    direction of implementing decentralized in control, IoT and edge computing solutions, often using cheaper and
+    smaller devices running leaner payloads.}
     %
     \item{\textbf{Zephyr RTOS PI calculating sample} This sample application calculates Pi independently in many
     threads, and demonstrates the benefit of multiple execution units (CPU cores) when compute-intensive tasks can be
@@ -66,7 +66,7 @@ introduced by the host operating system scheduler, thus maintaining full determi
     to an approximation of 2$\pi$ \cite{ZephyrTF}.\\
     \textbf{Motivation:} A lot of the Industry 4.0 endpoints, such as sensors and actuators, use simple AI/DNN
     deployments, either to prematurely filter collected data or to assist in the decision-making. The proposed sample
-    fits, as it is not too complicated, and runs on a real-time operating system.}
+    is a good match, as the neural network is not overly complicated, and runs on a real-time operating system.}
     %
     \item{\textbf{Linux kernel boot-up} this test loads all necessary payloads to boot the Linux kernel.\\
     As the Linux kernel is a relatively complicated payload, this test checks a wide range of the CPU simulation use
