@@ -359,7 +359,7 @@ QEMU runtime. This will be described in the next section.
 Block chaining is a technique used to reduce the time spent on context switching between translated guest code and the
 runtime of the simulator. The majority of the context switch time comes from the fact that the CPU state, such as
 registers and status flags, has to be saved into memory. Memory operations and context swaps tend to be
-the slowest things a CPU does, as they might require up to a hundred cycles \cite{FIND-A-CITATION}.
+the slowest things a CPU does, as they might require up to a hundred cycles.
 % mabye put some google scheduler slides idk?
 
 \subsection*{No block chaining}
