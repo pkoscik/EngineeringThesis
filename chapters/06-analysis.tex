@@ -34,8 +34,8 @@ to note, as using these flags might significantly improve the overall performanc
 this work only focuses on performance deltas, these flags do not provide any additional value, and in the worst
 case might introduce unwanted behavior.
 
-The simulated guest platform is a \textbf{BeagleV Starlight JH7100} and \textbf{SiFive HiFive Unleashed},
-with the only difference between the benchmark test cases begin the used CPU emulator.
+The simulated guest platform is a \textbf{BeagleV Starlight JH7100}, with the only difference between the benchmark test
+cases being the used CPU emulator.
 
 In order to provide deterministic results, every test case is performed with \textbf{SetGlobalSerialExecution}
 flag set to true. This Renode setting forces emulated processors to perform sequentially, removing the variability
