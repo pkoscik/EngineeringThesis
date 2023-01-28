@@ -215,7 +215,7 @@ points.
 	\centering
     \hspace*{-2cm}
 	\includegraphics[width=1.2\textwidth]{figures/benchmarks/linux_boot/adnotated/TlibSpeedup.pdf}
-	\caption{Linux speedup chart - Translation Library}
+	\caption{Linux speedup chart - Translation Libraries}
 \end{figure}
 
 \pagebreak
@@ -261,11 +261,11 @@ execution slope is always much bigger than one.
 \begin{table}[h]
     \centering
     \begin{tabular}{l|l|l}
-    Benchmark             & Translation Library & Dromajo  \\ \hline
-    Zephyr boot-up        & -                   & -        \\ \hline
-    Zephyr $\pi$ calculation & 0.27                & 0.41     \\ \hline
-    Zephyr Tensorflow     & 0.28                & 0.25     \\ \hline
-    Linux kernel boot-up  & 81.68               & 174.77
+    Benchmark             & Translation Libraries & Dromajo  \\ \hline
+    Zephyr boot-up        & -                     & -        \\ \hline
+    Zephyr $\pi$ calculation & 0.27               & 0.41     \\ \hline
+    Zephyr Tensorflow     & 0.28                  & 0.25     \\ \hline
+    Linux kernel boot-up  & 81.68                 & 174.77
     \end{tabular}
     \caption{Benchmark summary results for dual core tests}
 \end{table}
@@ -276,7 +276,7 @@ and expected way. A low standard deviation in both cases also confirms the stabi
 results.
 %Standard deviation for 3 runs is... questionable. If someone asks you about it, you might be in trouble. Just saying.
 
-In terms of performance, the Translation Library simulated central processing unit performs better at every more
+In terms of performance, the Translation Libraries simulated central processing unit performs better at every more
 complex test, by as much as two times in the Linux test. This behavior is a merit of the block caching and chaining,
 exceptionally speeding up the simulation process. The techniques applied in this method of simulation allow the virtual
 processor to reach near real time execution performance.
