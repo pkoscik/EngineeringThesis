@@ -1,44 +1,48 @@
 
 \chapter{CPU simulation using interpretation}
 
-The CPU simulators using interpretation are more akin to the functional simulators, as in, they directly implement
+CPU simulators using interpretation are more akin to functional simulators, as they directly implement
 functional characteristics in the simulator code, without any translation layers. This chapter aims to provide a
-general overview of the mechanisms used in such simulators and compare the general concepts with the translation
-simulators. Because of their inherent simplicity, this chapter will be much shorter than the previous one.
+general overview of the mechanisms used in such simulators and compare the general concepts with translation
+simulators.
+% I would skip this sentence tbh
+Because of their inherent simplicity, this chapter will be much shorter than the previous one.
 
 Code snippets from the Dromajo RISC-V CPU simulator will be provided to support the explanations. This document will not
-cover Dromajo's implementation of machine simulation instead will focus mainly on the CPU simulation aspect.
+cover Dromajo's implementation of machine simulation, but will focus mainly on the CPU simulation aspect.
 
 \section*{Interpretation simulator fundamentals}
 
 Since the code doesn't need to be translated, the simulator directly executes the loaded binary. As is the case with
-QEMU and Renode Tlib's, Dromajo also implements a virtual memory management unit, although this implementation is too
-very simplified, implementing only \texttt{sv39} and \texttt{sv48} page based, virtual-memory systems \cite{RISC-PRIV}.
+QEMU and Renode Tlib's, Dromajo also implements a virtual memory management unit, although this implementation is
+simplified, implementing only \texttt{sv39} and \texttt{sv48} page based virtual-memory systems \cite{RISC-PRIV}. % as compared to... ?
 
-After the code has been loaded, and the program counter has been set to the correct value, the interpretation method
+After the code has been loaded and the program counter has been set to the correct value, the interpretation method
 can be called. In the case of the Dromajo, the method starting the execution is \texttt{riscv\_cpu\_interp()}, which
-then calls the \texttt{riscv\_cpu\_interp64()}, defined in the \texttt{dromajo\_template.h} file. The simulator then
-enters the main execution loop, which checks for the interrupts, TLB status, and finally proceeds to interpret the code.
+then calls either \texttt{riscv\_cpu\_interp32} or \texttt{riscv\_cpu\_interp64()}, defined in the \texttt{dromajo\_template.h} file. The simulator then
+enters the main execution loop, which checks for interrupts, TLB status, and finally proceeds with the interpretation of the code.
 
 \section{Code interpretation}
 
 The code interpretation is a step equivalent to the TCG Frontend, described in the section \ref{sec:tcg-frontend}.
-Loaded instruction is separated into an opcode and operands. After that, the simulator interprets the instruction
+The loaded instruction is separated into an opcode and operands. After that, the simulator interprets the instruction
 and executes it by modifying the internal CPU state.
 
-The lack of a translation process is a key characteristic that distinguishes interpretation CPU simulators from their
+Lack of a translation process is a key characteristic that distinguishes interpretation CPU simulators from their
 translation counterparts, and is one of the main arguments in favor of using interpretation simulators, as they
-are inherently portable. They do not require guest to host or intermediate representation to host translators, witch
-means that they can be used under any architecture they can be compiled for.
+% I don't understand "They do not require guest to host or intermediate representation"
+are inherently portable. They do not require guest to host or intermediate representation to host translators, which
+means that they can be used with any architecture they can be compiled for.
 
-Since Dromajo is written in \texttt{C++} and uses \texttt{Cmake} as a build system, it can be run on most, if not all,
+Since Dromajo is written in pure \texttt{C++} and uses \texttt{CMake} as the build system, it can be run on most, if not all,
+% Wait, whaaaaat? All operating systems? You mean Linux/Windows/macOS only? :> Also, cmake does not really improve portability imho. Portability across archs is guaranteed when you don't use asm and don't use libs that are not portable 
 of the current operating systems and architectures.
 
 \pagebreak
 
 \section{Code execution}
 
-The code execution takes place in the main execution loop, a concept similar to the QEMU main execution loop.
+Code execution takes place in the main execution loop, a concept similar to the QEMU main execution loop.
 
 \begin{lstlisting}[
     style=lstC,
@@ -68,19 +72,19 @@ int no_inline glue(riscv_cpu_interp, XLEN)(RISCVCPUState *s, int n_cycles) {
 
 \noindent
 This \texttt{switch/case} block contains all of the supported instructions. After executing the instruction, the code
-executes \texttt{NEXT\_INSN} macro, which expands to \texttt{code\_ptr += 4; break}, incrementing the code pointer, and
+executes the \texttt{NEXT\_INSN} macro, which expands to \texttt{code\_ptr += 4; break}, incrementing the code pointer,
 exiting the switch block, and returning to the beginning of the main loop. This process is then repeated indefinitely,
-until an exception or an interrupt has been raised, or the simulator had finished executing the requested amount of
+until an exception or an interrupt is raised, or the simulator finishes executing the requested amount of
 instructions.
 
 \section{Exception and interrupt handling}
 
-Similar to the case of QEMU and Tlib, both the exceptions and interrupts are handled by the same function, with the only
+Similar to the case of QEMU and Tlib, both exceptions and interrupts are handled by the same function, with the only
 the difference being the way they are generated.
 
-\subsection*{Exception Generating}
+\subsection*{Exception generation}
 
-An exception can be triggered for example upon execution of trap raising instruction, such as \texttt{ecall}:
+An exception can be triggered for example upon execution of a trap raising instruction, such as \texttt{ecall}:
 
 \begin{lstlisting}[
     style=lstC,
@@ -114,7 +118,7 @@ exception:
     raise_exception2(s, s->pending_exception, s->pending_tval);
 \end{lstlisting}
 
-\subsection*{Interrupt generating}
+\subsection*{Interrupt generation}
 
 Interrupts requests are checked and generated at the very top of the execution loop:
 
@@ -153,7 +157,7 @@ At the end of the \texttt{raise\_interrupt()} function is called, invoking the s
 \section*{Handling the exceptions}
 
 Exception and interrupt handling is done in the \texttt{raise\_interrupt()} function, which is an implementation of
-a RISC-V excetpion handling model. This method determines if the event is an IRQ or an internal CPU trap, handles
+a RISC-V exception handling model. This method determines if the event is an IRQ or an internal CPU trap, handles
 delegating the event to the lower privilege modes, etc.
 
 \pagebreak
@@ -172,5 +176,6 @@ The flow will be presented based on the Dromajo simulator, but it is generally a
 \noindent
 The flow is much simpler than the one QEMU implements, described in the previous chapter. Keeping in mind the general
 simulator constraints mentioned in the second chapter, it should be clear that such simplicity comes at the cost of
-performance. An analysis how much performance is lost due to the lack of optimizations that translation CPU simulators
-implement is the main point of this work and will be conducted in Chapter 5.
+performance. An analysis of how much performance is lost due to the lack of optimizations that translation CPU simulators
+implement is the main point of this work and will be conducted in Chapter 6.
+% I think it's actually chapter 6, right?
