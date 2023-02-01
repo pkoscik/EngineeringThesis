@@ -1,12 +1,13 @@
 
 \chapter{CPU simulation using translation}
+\label{chap:translation}
 
 The general concept of the CPU simulation using translation implements the notion of, in a literal sense, translating
-code from one instruction set to another, this code is later natively executed on the host CPU. This chapter aims to
+code from one instruction set to another. This code is later natively executed on the host CPU. This chapter aims to
 provide an overview of the general concept and ideas involved in simulating a central processing unit using translation,
 potential optimizations, and challenges in implementing such an approach.
 
-Code snippets from Renode's CPU Translation library (\textit{Tlib})  will be provided to support the explanations, but
+Code snippets from Renode's CPU Translation Libraries (\textit{Tlib})  will be provided to support the explanations, but
 all of the described techniques can be also applied to QEMU unless stated otherwise. This document will mainly focus on
 the generic and RISC-V specific parts of the code.
 
@@ -16,52 +17,55 @@ Understanding the inner workings of such simulators may initially seem intimidat
 individual components, it is important to divide the simulation process into the following phases:
 
 \begin{itemize}
-    \item{\textbf{Code translation}, this phase is responsible for parsing the guest binary to the host architecture.
-    In our example this is realized by QEMU's \textbf{Tiny Code Generator}.}
-    \item{\textbf{Translated code caching}, this process is a key distinguishing factor for translation simulators.
-    Since parts of the translated code can be contained in individual entities, they can be cached to increase the speed
+    \item{\textbf{Code translation} (\ref{sect:code-translation}), this phase is responsible for parsing the guest binary to the host architecture.
+    In our example this is realized 
+    using Fabrice Bellard's Tiny Code Generator, used by both QEMU and Renode \textbf{Tiny Code Generator}.}
+    \item{\textbf{Translated code caching} (\ref{sect:transltion-blocks}), this process is a key distinguishing factor for translation simulators.
+    Parts of the translated code can be 
+    grouped together -
+    therefore they can be cached to increase the speed
     of execution by the means of reducing simulator overhead. In our case, this functionality uses the mechanism of
     \textbf{Translation Blocks}.}
-    \item{\textbf{Code execution}, this is the final step for an execution driven simulator. In this section, we will
+    \item{\textbf{Code execution} (\ref{sect:code-execution}), this is the final step for an execution driven simulator. In this section, we will
     examine the various problematic states in which the simulator can find itself. This covers the things such as
     I/O access, MMU, etc.}
 \end{itemize}
 
-\section{Code translation}
-
-Translation CPU simulation (later referred to as \textit{Translators}), as the name implies, relies on the ability to
-translate the code from one architecture, to another. The translation step might be accompanied by a translation to an
-intermediate representation. Such is the case in our example with the Tiny Code Generator (later referred to as
-\textit{TCG}), where the guest code is at first translated to an intermediate, architecture independent representation,
-to be later translated into the host code.
 
 \pagebreak
+\section{Code translation}
+\label{sect:code-translation}
 
-% image here showing the TCG layers
+Translation CPU simulation (later referred to as \textit{Translators}), as the name implies, relies on the ability to
+translate the code from one architecture to another. The translation step might be accompanied by a translation to an
+intermediate representation. Such is the case in our example with the Tiny Code Generator (later referred to as
+\textit{TCG}), where the guest code is at first translated to an intermediate, architecture independent representation,
+to be later translated into the host machine code.
+
 \begin{figure}[h]
 	\centering
 	\vspace{10px}
 	\includegraphics[height=70px]{figures/Translation_Guest-TCG-Host.pdf}
 	\caption{TCG translation process}
+    \label{fig:tcg}
 \end{figure}
 
 \noindent
-The translation process is twofold, first phase consists of translating the guest code, for example a RISC-V compiled
-workload, to an \textbf{TCG Intermediate Representation} (referred to as \textit{TCG IR}), this part is
-called \textit{The frontend}. The second phase translates the TCG IR to the host ISA code, this part is called
-\textit{The backend}.%
-\footnote{Such notion of the backend and frontend operations allows the simulator to separate the adaptation
+This process is presented in Figure \ref{fig:tcg}. The first phase is responsible for translating the guest code, for example a RISC-V or ARM compiled
+workload, to a \textbf{TCG Intermediate Representation} (referred to as \textit{TCG IR}). This part of the translator is
+called \textit{the frontend}. The second phase translates the TCG IR to the host ISA code - this part is called
+\textit{the backend}.%
+\footnote{Such notion of the backend and frontend operations allows the simulator to separate the adoption
 of new guest and host architectures, making the simulator more flexible.}
 
-The following sections will only explain the basics of both TCG operations, as these mechanisms are very
-complicated. Note that this flow only happens when there is no cached Translation Block found. The topic of TBs and
-their caching will be explained later, for now, we only care about the code translation mechanisms.
+For simplicity, the following sections will only explain the basics of both TCG operations.
+Note that this flow only happens when there is no cached Translation Block found. The topic of TBs and
+their caching will be explained in the section \ref{sect:transltion-blocks}. For now we only care about the code translation mechanisms.
 
 \subsection{Main execution loop}
-
-The main CPU execution method, \texttt{cpu\_exec()}, tries to find a cached translation block using
-\texttt{tb\_find\_fast()}, if this fails the \texttt{tb\_find\_slow()} is called. If a block is found, the host starts
-executing the translated code. If this function does not find the block, the \texttt{tb\_gen\_code()} is called.
+The main CPU execution method, tries to find a cached translation block, if this fails the alternative, slower, method of
+finding the translation block is called. When the block is found, the host starts executing the translated code. 
+If this function does not find any matching translation block, the block generating function is called.
 This function allocates memory for a to-be-created translation block and sets needed flags in it. After that is done,
 the \texttt{cpu\_gen\_code()} is called:
 
@@ -73,25 +77,19 @@ the \texttt{cpu\_gen\_code()} is called:
     ]
 void cpu_gen_code(CPUState *env, TranslationBlock *tb, ...)
 {
+    // TCG frontend
     tcg_func_start(s);
     cpu_gen_code_inner(env, tb);
+    ...
 
-    /* generate machine code */
-    gen_code_buf = tb->tc_ptr;
-    tb->tb_next_offset[0] = 0xffff;   tb->tb_next_offset[1] = 0xffff;
-
-    s->tb_next_offset = tb->tb_next_offset;
-    s->tb_jmp_offset = tb->tb_jmp_offset;
-    s->tb_next = NULL;
-
+    // TCG backend
     gen_code_size = tcg_gen_code(s, gen_code_buf);
     *gen_code_size_ptr = gen_code_size;
-
-    search_size = encode_search(tb, gen_code_buf + gen_code_size);
-    *search_size_ptr = search_size;
+    ...
 }
 \end{lstlisting}
 
+\pagebreak
 \subsection{TCG frontend}
 \label{sec:tcg-frontend}
 
@@ -100,15 +98,15 @@ representation. The \texttt{tcg\_func\_start()} initializes TCG, while the \text
 \textit{DisasContext},%
 \footnote{A DisasContext typically includes information such as the address of the machine code being disassembled,
 the size of the code, and the type of CPU architecture the code is intended for. It may also include pointers to other
-data structures or functions that are used by the disassembler}
+data structures or functions that are used by the code generator.}
 and starts a translation loop.
 
-The main part of the translation loop is the \texttt{gen\_intermediate\_code()} call, this is a platform-specific
+The main part of the translation loop is the \texttt{gen\_intermediate\_code()} call, a platform-specific
 IR generation method. This function later calls the \texttt{disas\_insn()} routine, responsible for disassembling
-the instruction, I.e. in the RISC-V implementation this function determines whether the type of opcode under the current
+the instruction, i.e. in the RISC-V implementation this function determines the type of opcode pointed to by the current
 program counter (is it a compressed instruction? does the opcode belong to a custom extension?). After determining
-the type of the opcode, the according decode function is called. Since we are considering RISC-V ISA, the decode function
-is \texttt{decode\_RV32\_64G()}. The decode function then parses opcode according to the ISA standard, and calls a
+the type of the opcode, the appropriate decode function is called. Since we are considering the RISC-V ISA, the decode function for a base instruction set
+is \texttt{decode\_RV32\_64G()}. The decode function parses the opcode according to the ISA specification, and calls a
 function that will generate IR opcodes:
 
 \begin{lstlisting}[
@@ -124,7 +122,6 @@ static void decode_RV32_64G(CPUState *env, DisasContext *dc)
     rd = GET_RD(dc->opcode);
     imm = GET_IMM(dc->opcode);
     rm = GET_RM(dc->opcode);
-
     switch (op) {
         case OPC_RISC_ARITH_IMM:
         gen_arith_imm(dc, MASK_OP_ARITH_IMM(dc->opcode), rd, rs1, imm);
@@ -137,7 +134,7 @@ static void gen_arith_imm(DisasContext *dc, uint32_t opc, int rd, int rs1, long 
 {
     switch (opc) {
     case OPC_RISC_ADDI:
-        tcg_gen_addi_tl(source1, source1, imm); //#define tcg_gen_addi_tl   tcg_gen_addi_i32
+        tcg_gen_addi_i32(source1, source1, imm);
         break;
     ...
     }
@@ -145,18 +142,20 @@ static void gen_arith_imm(DisasContext *dc, uint32_t opc, int rd, int rs1, long 
 \end{lstlisting}
 
 \noindent
-The translation loop continues indefinitely until one of the following conditions is met:
+The translation loop continues until one of the following conditions is met:
 \begin{itemize}
-    \item{Number of instructions in TB has reached a maximum allowed value, or an error occurred,}
-    \item{There are breakpoints defined, and the breakpoint address matches the current PC,}
-    \item{Last translated opcode is a jump instruction.}
+    \setlength\itemsep{0.1em}
+    \item{the number of instructions in TB has reached a maximum allowed value,}
+    \item{there are breakpoints defined, and the breakpoint address matches the current PC,}
+    \item{the last translated opcode is a jump instruction,}
+    \item{an error occurred.}
 \end{itemize}
 
 \pagebreak
 \subsection{TCG backend}
 
-The rest of the function from (\ref{lst:cpu-gen-code}) is responsible for recompiling an IR to the host architecture.
-The first part of the code prepares the translation block and can be skipped for now. The actual transition occurs
+The rest of the function from the Listing \ref{lst:cpu-gen-code} is responsible for recompiling an IR to the host architecture.
+The first part of the code prepares the translation block and can be skipped for now. The actual translation occurs
 in the \texttt{tcg\_gen\_code()} function:
 
 \begin{lstlisting}[
@@ -191,9 +190,9 @@ static inline int tcg_gen_code_common(TCGContext *s, uint8_t *gen_code_buf)
 \end{lstlisting}
 
 \noindent
-This method handles special IR micro-ops first, such as exiting the block or calling a helper function (more about them
-later). If the \texttt{opc} does not match any of the special cases, the code falls through to the \texttt{default}
-block, where the \texttt{tcg\_reg\_alloc\_op()} is called, witch then calls target-specific \texttt{tcg\_out\_op()} method.
+This method handles special IR micro-ops first, for example, calling a helper function (described
+in \ref{ssect:helper-functions}). If the \texttt{opc} does not match any of the special cases, the code falls through to the \texttt{default}
+block, where the \texttt{tcg\_reg\_alloc\_op()} is called, witch then calls host-specific \texttt{tcg\_out\_op()} method.
 
 \begin{lstlisting}[
     style=lstC,
@@ -217,9 +216,9 @@ static inline void tcg_out_op(TCGContext *s, TCGOpcode opc, const TCGArg *args, 
 \pagebreak
 \subsection{Example of code translation using TCG}
 
-The best way to illustrate the operations of TCG, is to provide an example, let's look at an example of RISC-V to IR to
-x86 translation. This example comes from booting a Zephyr RTOS "Hello World" demo on a QEMU-RV32 system:%
-\footnote{The QEMU flags to create such logs: \texttt{-d in\_asm, -d out\_asm, -d op}.}
+The best way to illustrate the operations of TCG is to provide an example. Let's consider an example of RISC-V to IR to
+x86\_64 translation. This example comes from booting a Zephyr RTOS "Hello World" sample on a QEMU-RV32 system:
+\footnote{QEMU flags used to create these logs: \texttt{-d in\_asm, -d out\_asm, -d op}.}
 
 \begin{itemize}
     \item{RISC-V guest machine code:
@@ -272,23 +271,24 @@ x86 translation. This example comes from booting a Zephyr RTOS "Hello World" dem
 \end{itemize}
 
 \noindent
-The \textit{TB Prologues} have been omitted, as they will be covered in a section discussing the translation blocks.
-Upon further inspection, one can notice that the guest \texttt{csrrs} opcode has emitted an host \texttt{call} opcode.
+\textit{TB Prologues} have been omitted, as they will be covered in a section (\ref{sect:transltion-blocks}).
+Upon further inspection, one can notice that the guest \texttt{csrrs} opcode has emitted a host \texttt{call} opcode.
 This brings us to the topic of helper functions.
 
 \pagebreak
 \subsection{Helper functions}
+\label{ssect:helper-functions}
 
 Helper functions serve the purpose of emulating incompatible instructions by delegating their execution to the
 simulation layer, essentially bypassing the main TCG translation mechanisms. Examples of such functions include
 architecture-specific instructions, for example, accessing guests' control and status registers, and memory access
-instructions, which are handled by SoftMMU.
+instructions. It is generally much easier to write a helper function, than implementing the same functionality in TCG.
 
 Helper functions are akin to the idea of callbacks or trampolines in higher-level programming languages. Helpers calls
-are dynamically included in the TCG IR, when the opcode gets parsed in the decode function (for example in previously
-mentioned (\ref{lst:decode-rv32})).
+are dynamically included in the TCG IR when the opcode gets parsed in the decode function (for example in the previously
+mentioned Listing \ref{lst:decode-rv32}).
 
-These are not called directly in code, both Tlibs and QEMU implement helper generation evil pre-processor macros.
+These helpers are not called directly from code, both Tlibs and QEMU implement pre-processor macros for helper generation.
 
 
 \begin{lstlisting}[
@@ -308,47 +308,47 @@ target_ulong helper_csrrs(CPUState *env, target_ulong src, target_ulong csr, tar
 \end{lstlisting}
 
 \section{Translation Blocks}
+\label{sect:transltion-blocks}
 
 The previously described translation process may seem overly convoluted, but when paired with the ability to cache and
 reuse translated code, it significantly enhances the overall performance of the simulator. This is immensely important
 in this context, as speed is one of the main distinguishing features of QEMU and Tlib.
 
-Building up upon the knowledge from the previous section, when TCG is translating the code, it divides the
-code into the \textbf{smallest possible standalone pieces of code}, by this, we understand the code that has only one
+Building up upon the knowledge from the previous section, when TCG is translating code, it divides it into the \textbf{largest possible standalone pieces of code}. By this we understand a block of code code that has only one
 possible exit point. In other words, translation blocks always end on:
 \begin{itemize}
-    \item{Branching instructions, including both conditional and unconditional jumps, calls, and returns.}
-    \item{Helper callbacks, because they call an external code, the TB execution must be halted. This can be seen
-    in the TCG IR micro-ops (\ref{lst:tcg:tcgir-microops}) example, where the \texttt{tb\_exit} micro-op is emitted
-    after an \texttt{csrrs} helper was called.}
+    \item{Branching instructions, including both conditional and unconditional jumps, calls, and returns, as presented in Figure \ref{fig:block-division}.}
+    \item{Helper callbacks, because they call external code, the TB execution must be halted. This can be seen
+    in the TCG IR micro-ops example (Listing \ref{lst:tcg:tcgir-microops}), where the \texttt{tb\_exit} micro-op is emitted
+    after the \texttt{csrrs} helper was called.}
 \end{itemize}
 
-In the case of conditional branches, the QEMU and Tlibs implement a \textit{Lazy evaluation of the CPU condition codes},
-as in, the TCG only translates one path of the branching instruction. If the TCG were to generate native machine code
+In the case of conditional branches, QEMU and Tlibs implement \textit{lazy evaluation of the CPU condition codes},
+as in, TCG only translates one path of the branching instruction. If TCG was to generate native machine code
 for both the taken and not-taken paths of the branch, it would have to generate twice as much machine code as is needed.
-By using lazy evaluation, the TCG can generate the native machine code for the taken path of the branch only when the
+By using lazy evaluation, TCG can generate the native machine code for the taken path of the branch only when the
 branch is taken, rather than generating machine code for both paths in advance \cite{QemuInternalsTech}.
 
 \pagebreak
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=400px]{figures/TranslactionBlocks.pdf}
-	\caption{An example of basic block division.}
+	\caption{Example of basic block division.}
     \label{fig:block-division}
 \end{figure}
 
 \subsection{Translation Block caching}
 
 After each block translation, the translated block is appended to the \textbf{TCG Translation Block Cache}.
-The QEMU Internals, states that "A 32 MByte cache holds the most recently used translations. For simplicity, it is
+The QEMU Internals documentation states that "A 32 MByte cache holds the most recently used translations. For simplicity, it is
 completely flushed when it is full" \cite{QemuInternalsTech}. The cache also needs to be flushed when the code modifies
-itself, this is accomplished by setting a host memory page holding the code to be read-only. Then if the
-write-protected region is modified, the Linux will emit a \texttt{SEGV} signal, that will be handled by QEMU. This
+itself. This is accomplished by setting a host memory page holding the code to be read-only. Then, if the
+write-protected region is modified, Linux will emit a \texttt{SEGV} signal which will be handled by QEMU. This
 invalidates and flushes the cache, as well as flushes direct block chaining lists.
 
-This feature significantly improves the performance of the simulator, as the code usually needs to be translated only
-once, significantly reducing the simulation overhead. This optimization also enables another performance improvement,
-that aims to mitigate the performance penalty needed for the context switch between the translated guest code and the
+The cache feature significantly improves the performance of the simulator, as the code usually needs to be translated only
+once, significantly reducing the simulation overhead. This optimization also enables another performance improvement
+that aims to mitigate the penalty needed for the context switch between the translated guest code and the
 QEMU runtime. This will be described in the next section.
 
 \pagebreak
@@ -358,9 +358,8 @@ QEMU runtime. This will be described in the next section.
 
 Block chaining is a technique used to reduce the time spent on context switching between translated guest code and the
 runtime of the simulator. The majority of the context switch time comes from the fact that the CPU state, such as
-registers and status flags, has to be saved into memory. Memory operations and context swaps tend to be
-the slowest things a CPU does, as they might require up to a hundred cycles.
-% mabye put some google scheduler slides idk?
+registers and status flags, has to be saved to memory. Memory operations and context swaps tend to be
+the slowest things a CPU does, as they might require up to a hundred cycles on an x86 processor.
 
 \subsection*{No block chaining}
 
@@ -373,7 +372,7 @@ Assuming there is no block chaining, each block execution will look like this:
 
 \noindent
 The \textit{Context switching} block consists of two elements, a \textit{Prologue} and an \textit{Epilogue}. The former
-saves the Runtime context, swaps the previously saved context to the host code execution, and jumps to the code pointer.
+saves the runtime context, swaps the previously saved context to the host code execution, and jumps to the code pointer.
 The latter saves the host code execution context, restores the simulator runtime context, and jumps to the
 \texttt{cpu\_exec()} loop.
 Looking at the example Translation Blocks from Fig. (\ref{fig:block-division}), one might notice that returning to a
@@ -382,18 +381,18 @@ overall performance of the simulator.
 
 \subsection*{Direct block chaining}
 
-To mitigate this issue, the QEMU developers came up with a mechanism, that chains the block execution. This allows the
+To mitigate this issue, QEMU developers came up with a mechanism that chains the execution of subsequent blocks. This allows the
 simulator to directly link each block with another, greatly reducing the overhead from context swapping.
 This comes at the price of increased code complexity and additional possible issues stemming from the
-self-modifying code, with the latter being especially prevalent in the SMP system emulation.
+self-modifying code, with the latter being especially prevalent in the SMP systems emulation.
 
-This is accomplished by leaving extra space in a translated code, just before a return to the epilogue. Later, when
-the code is finished executing and has not been patched to jump to any other TB, the block returns to the epilogue,
-in turn, exits to the \texttt{cpu\_exec()}. The main loop then tries to chain this block, to the next block. This
+Chaining is accomplished by leaving extra space in the translated code, just before a return to the epilogue. Later, when
+the code is finished executing and has not been patched to jump to any other TB, the block returns to the epilogue and then
+exits to \texttt{cpu\_exec()}. The main loop then tries to chain this block to the next block. This
 process is repeated for every exiting block.
 
-There are other ways to chain TB that do not require exiting the host code, instead, these methods are executed at the
-translation phase of the code. These mechanisms are explained in detail in the QEMU Translator Internals documentation,
+There are other ways to chain TB that do not require exiting the generated code. Instead, these methods are executed at the
+translation phase. These mechanisms are explained in detail in the QEMU Translator Internals documentation,
 at the Direct block chaining section \cite{QemuDocsChaining}.
 
 \pagebreak
@@ -406,12 +405,12 @@ at the Direct block chaining section \cite{QemuDocsChaining}.
 \end{figure}
 
 \noindent
-This relatively simple mechanism can create high-speed execution loops, even to the point where the host code
+This relatively simple mechanism can create high-speed execution loops, even to the point where the generated code
 might not exit a loop for a very long time.
 
 This is an interesting case, because such behavior can be classified as
 blocking, and might be an issue when dealing with asynchronous interrupts. Let's assume that the binary doesn't fill up
-the whole transition cache, the code never overwrites itself, and the TBs have been patched in a way that creates a
+the whole translation cache, the code never overwrites itself, and TBs have been patched in a way that creates a
 loop. In such cases, handling asynchronous exceptions is not possible, as the code never exits back to the main loop.
 
 This problem has been solved by adding another thread, that is polling for interrupts, and if one is received, the
@@ -420,14 +419,15 @@ simulator will invalidate all of the TB's chains, exiting to the main loop at th
 \pagebreak
 
 \section{Code Execution}
+\label{sect:code-execution}
 
-In the final section of this chapter, we will examine various issues and questions that may arise during the execution
+In the final section of this chapter we will examine various issues and questions that may arise during the execution
 of translated code.
 
 \subsection{Staring the execution of the translated code}
 
-When the simulator finds the Translation Block it executes the \texttt{tcg\_tb\_exec()} function, which is a
-macro-definition, which casts a translation buffer to a function pointer, then calls it with arguments.
+When the simulator finds the Translation Block, it executes the \texttt{tcg\_tb\_exec()} function, which is a
+macro definition that casts a translation buffer to a function pointer, and then calls it with arguments.
 
 \begin{lstlisting}[
     style=lstC,
@@ -454,24 +454,24 @@ int cpu_exec(CPUState *env)
 
 \subsection{Exception and interrupt handling}
 
-Exceptions and interrupts are an inseparable part of the CPU simulation, without them, the CPU would not be able to
+Exceptions and interrupts are an inseparable part of the CPU simulation. Without them, the CPU would not be able to
 handle most workloads. The logic handling them is fully architecture dependent, but this section will cover the
 generic code. All of the examples are shown using a RISC-V instruction set.
 
-By exception, we understand an event that occurs from the CPU itself. These events might happen upon user request, such
-as \texttt{ecall} instruction or they might happen spontaneously, for example, a \texttt{mbadaddr} condition.
+By \textit{exception} we understand an event that occurs within the CPU itself. These events might happen upon user request, such
+as \texttt{ecall} instruction, or they might happen spontaneously, for example, an \texttt{mbadaddr} condition.
 
-The term interrupts, often referred to as asynchronous exceptions, are a result of an external device sending an
-interrupt request (\textit{IRQ}) to the CPU. An example of such an event is an External Timer sending an interrupt that
-compares time has been reached, or a network device to signal that a new packet is ready to be handled.
+\textit{Interrupts}, often referred to as asynchronous exceptions, are a result of an external device sending an
+interrupt request (\textit{IRQ}) to the CPU. Example reasons for such an event may be an External Timer sending an interrupt indicating that 
+a certain time has been reached, or a network device signaling that a new packet is ready to be handled.
 
 \pagebreak
-\subsection*{Exception generating}
-The exceptions are generated using the beforementioned helper functions:
+\subsection*{Exception generation}
+Exceptions are generated internally using the beforementioned helper functions:
 
 \begin{lstlisting}[
     style=lstC,
-    caption={Generating exceptions using handlers.}
+    caption={Generating exceptions using helpers}
     ]
 static inline void __attribute__ ((__noreturn__))
 do_raise_exception_err(CPUState *env, uint32_t excpt, uintptr_t pc, uint32_t call_hook)
@@ -489,24 +489,24 @@ void helper_raise_exception_mbadaddr(CPUState *env, uint32_t excpt, target_ulong
 }
 \end{lstlisting}
 
-\subsection*{Interrupt generating}
+\subsection*{Interrupt generation}
 The interrupts are generated in a different flow. A virtual device can \textit{send} an interrupt, by setting the
-\texttt{exception\_index} to a value matching the ISA standards. The rest of the flow is identical to the exception
+\texttt{exception\_index} to a value matching the ISA specification. The rest of the flow is identical to the exception
 handling.
 
-In the case of the QEMU, the interrupts are handled by the QEMU system module. In Renode's Tlibs, the external
-interrupts are sent from the Renode framework, in this scenario extra care needs to be put in when dealing with
-interrupt requests, such as using atomic operations, using locks on variables, etc.
+In the case of QEMU, interrupts are handled by the QEMU system module. In Renode's Tlibs, the external
+interrupts are sent from the Renode framework, this approach requires extra care in terms of the process synchronisation - 
+additional mechanisms, such as atomic operations and locks, are used to guarantee correct behavior.
 
-\subsection*{Handling the exceptions in the main loop}
+\subsection*{Handling exceptions in the main loop}
 
-The main loop makes use of C library \texttt{setjmp/longjmp} for exception handling inside the simulated CPU.
-The \texttt{setjmp} env is set just before the main execution loop. If the exception occurs the execution loop handles
-the exception, then using \texttt{longjmp} jumps back to the point before an event occurred. This implementation allows
+The main loop makes use of the standard C library \texttt{setjmp/longjmp} functions for exception handling inside the simulated CPU.
+The \texttt{setjmp} environment is set just before the main execution loop. If the exception occurs, the execution loop handles
+the exception, then jumps back to the point before it occurred using \texttt{longjmp}. This implementation allows
 the CPU thread to exit deep and complex TCG translation functions.
 
 It is worth noting that exceptions and interrupts are handled by the same function, the only aspect where they are
-different is a way, in which the event is generated.
+different is the way in which the event is generated.
 
 \pagebreak
 
@@ -530,14 +530,15 @@ int cpu_exec(CPUState *env)
             }
         }
         ...
-        /* TC execution */
+        /* TB execution */
         for(;;)
         {
+            ...
             if (unlikely(env->exception_index != -1)) {
                 cpu_loop_exit_without_hook(env);
             }
+            ...
         }
-    ...
 \end{lstlisting}
 
 \noindent
@@ -564,6 +565,5 @@ void do_interrupt(CPUState *env)
     if (hasbadaddr) {
         env->mtval = env->badaddr;
     }
-    ...
 }
 \end{lstlisting}

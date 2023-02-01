@@ -1,16 +1,15 @@
 
 \chapter{Introduction}
 
-In a embedded devices development context, platform simulation is referring to a method of simulating 
+In embedded devices development context, platform simulation is a method of simulating 
 the behavior of an entire platform, or only a few selected components, in order to test and evaluate
-the functionality and performance of the system before it is deployed. This can be done using specialized
+the functionality and performance of the system before it is deployed on hardware. This can be done using specialized
 software tools and techniques that simulate the hardware, software, and other components of the platform,
-allowing developers to run and test their code in a virtual (simulated) environment before it is implemented
-onto the physical hardware.
+allowing developers to run and test their code in a virtual (simulated) environment early in the development cycle of the whole product.
 
 Platform simulation became an indispensable tool in the modern-day embedded system development. Such technology
-provides each engineer with an dedicated, deterministic and reproducible system for development, testing and debugging.
-This approach allows the developers to use advanced debugging software to perform a wide range of tests to ensure that
+provides each engineer with a dedicated, deterministic and reproducible system for development, testing and debugging.
+This approach allows developers to use advanced debugging software to perform a wide range of tests to ensure that
 the embedded system is functioning correctly and meeting the desired performance and reliability requirements. 
 This allows developers to detect, identify and fix bugs early in the development process, saving time and resources.
 
@@ -18,13 +17,15 @@ The advantages of the platform simulation also reach beyond the software develop
 phases of the product lifespan. One such advantage is the ability to easily integrate these systems into existing
 continuous integration (CI) systems that check for regressions with each software/hardware iteration.
 This is because the entire platform is contained within a simulation layer, making integration much simpler than it
-would be with hardware platforms, which would require a hardware/software integration layer. An another example of
-the benefit brought by emulation is an ability to create software, without having an hardware platform ready.
-This is an especially important in the post COVID-19 pandemic times, where the supply chains have been massively
+would be with hardware platforms, which would require a hardware/software integration layer. Another example of
+the benefit brought by emulation is 
+the ability to create software, without having the hardware platform ready.
+This is especially important in the post COVID-19 pandemic times, where the 
+supply chain has been massively
 disrupted, with lead time on some parts, especially for the most advanced elements, rising as much as four times,
 from about four weeks, in the begging of the year 2020, to over twenty weeks at the end of 2021
 \cite{Covid19-AUTOMOTIVE} \cite{Covid19-LEAD-TIME} \cite{Covid19-LEAD-TIME-BLOOMBERG}. Hardware emulation allows for
-the parallelization of the software and hardware development, enabling developers to work on both aspects
+the parallelization of software and hardware development, enabling developers to work on both aspects
 simultaneously and reducing the overall time and effort required to bring a product to market.
 
 \section{Motivation and goals of the thesis}
@@ -32,13 +33,14 @@ simultaneously and reducing the overall time and effort required to bring a prod
 A large part of the recognized platform and/or core architecture emulators use opcode translation to run guest code
 on the host platform. The most prevalent and widely used open source tools in this category include Renode \cite{Renode}
 and QEMU \cite{Qemu}.%
-\footnote{The Renode's CPU translation library is partly based on QEMU}
-Due to major optimizations (translation blocks, caching, block chaining, ...), this method of the simulation yields
-great results performance-wise, but on the other hand such heavy efficiency improvements come with a price of greatly 
-complicating the codebase, making it difficult to maintain and integrate new functionality. Another downside of the
-translation based approach is the need to \textbf{execute} the guest code, this requires complicated just in
-time (\textit{JIT}) recompilers. A possible alternative to translation based CPU simulators are the interpretation
-based CPU simulators. This approach tend to be much simpler as these simulators do not require code recompilation,
+\footnote{The Renode's CPU Translation Libraries is based on the same concept and translation infrastructure as QEMU.}
+Due to major optimizations (translation blocks caching, block chaining, ...), this method of simulation yields
+great results performance-wise. But on the other hand such heavy efficiency improvements come with a price 
+of a more complex codebase,
+making it difficult to maintain and integrate new functionality. Another downside of the
+translation based approach is the requirement to be ran in an environment that allows to execute generated code.
+A possible alternative to translation based CPU simulators are the interpretation
+based CPU simulators. This approach tends to be much simpler as these simulators do not require code recompilation,
 and usually do not implement very complicated optimizations, instead focusing on simple, maintainable and easily
 expandable implementation of the simulated core instructions. While the lack of optimizations results in simpler
 code, the simulation performance might suffer.
@@ -47,26 +49,26 @@ The main goal of the thesis is to to compare the performance and accuracy of the
 and interpretation approaches, by integrating an already existing interpretation-based simulator withing the Renode
 embedded system framework. The analysis will be done using benchmarks and real world applications such as automatic control
 systems, general purpose real-time operating systems \textit{(RTOS)}, and even higher complexity binaries, for example AI solutions for the embedded devices.
-By doing so, we hope to gain a better understanding of the performance capabilities and limitations of this approach,
+By doing so, we hope to gain a better understanding of the performance capabilities and limitations of these approaches,
 and to identify potential areas for improvement and future work in this topic.
 
 % Not indenting here as this is connected to the previous paragraph
 \noindent Intermediate goals of the thesis include:
 \begin{itemize}
-	\item{Description of the existing translation and interpretation based approach CPU simulators}
-	\item{Integrating an chosen interpretation CPU simulator into the Renode framework}
-	\item{Implementation of the test software on the simulated platform with data gathering}
-	\item{Comparative analysis of interpreter-based and translation-based solutions with regard to the performance}
+	\item{description of the existing translation and interpretation based approach CPU simulators,}
+	\item{integration of a selected interpretation CPU simulator into the Renode framework,}
+	\item{implementation of the test software on the simulated platform with data gathering,}
+	\item{comparative analysis of interpreter-based and translation-based solutions with regard to the performance,}
 \end{itemize}
 
 \section{Thesis organization}
 
 The work is divided into the following chapters:
 \begin{itemize}
-	\item{Chapter 2 will cover the basics of the CPU simulation, their fundamental limitations, and types of simulators}
-	\item{Chapter 3 will provide an in-depth description of the Renode's translation CPU simulation library}.
-	\item{Chapter 4 provides an overview of Dromajo, the chosen simulation library}.
+	\item{Chapter 2 covers the basics of the CPU simulation, their fundamental limitations, and types of simulators}
+	\item{Chapter 3 provides an in-depth description of the Renode's translation CPU simulation library}.
+	\item{Chapter 4 provides an overview of Dromajo, the selected simulation library}.
 	\item{Chapter 5 focuses on integrating Dromajo into the Renode framework}.
-	\item{Chapter 6 describes the benchmarks and the test binaries and presents their results}.
+	\item{Chapter 6 describes the benchmarks and the test binaries, and presents their results}.
 	\item{Chapter 7 concludes the thesis and suggests future work}.
 \end{itemize}
