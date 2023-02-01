@@ -3,28 +3,27 @@
 
 \section{Summary}
 
-The thesis offers a comprehensive examination of the various simulation methods employed in the field, ranging from
+The thesis offers a comprehensive examination of various simulation methods employed in the field, ranging from
 relatively simple API emulators to complex whole-system simulators. It delves into the fundamental limitations
-encountered in the design of simulators, the challenges faced by users and developers, and the crucial need for such
+encountered in the design of simulators, challenges faced by users and developers, and the crucial need for such
 software in the context of automatic control, robotics, Internet of Things (IoT), and edge computing solutions.
-Additionally, the thesis provides an overview of the types of mechanisms utilized in central processing unit emulation
+Additionally, the thesis provides an overview of types of mechanisms utilized in central processing unit emulation
 software and their intended purposes
 
 The thesis specifically focuses on two fundamental approaches used in CPU simulators: the translation approach and the
-interpretation approach. The translation approach is examined in-depth, with the author analyzing the mechanisms of code
-translation using TCG back-end and front-end, providing a sample of translated code, and examining the execution flow
+interpretation approach. The translation approach is examined in-depth, with the analysis of mechanisms of code
+translation using TCG back-end and front-end, providing a sample of translated code, and examination of the execution flow
 in such simulators. Special attention is given to the optimization methods employed in these simulators, such as
-translation block caching and chaining. The chapter concludes with an examination of the code flow, exception and
+translation block caching and chaining. This analysis concludes with an examination of the code flow, exception and
 interrupt handling, and the important concept of helper functions. This approach is described using the example of QEMU
-and Translation Library, with accompanying code samples.
-
+and Renode Translation Libraries, with accompanying code samples.
 
 The interpretation approach is also extensively examined, with the work delving into the methods employed in such
 simulators, providing an in-depth examination of the inner workings of the Dromajo simulator, and comparing the two
-simulation techniques. The author goes on to implement the tnterpretation processor simulator (Dromajo) into Renode, an
-open-source whole-system simulation framework. The work describes the necessary interfaces for CPU emulation, explains
+simulation techniques. The author goes on to implement the interpretation processor simulator (Dromajo) with Renode.
+The work describes the necessary interfaces for CPU emulation, explains
 the process of integrating an API into an existing C library, and details the steps involved in the integration of a new
-processor emulator into the Renode framework. Finally, the thesis presents a performance analysis of both types of
+processor emulator with the Renode framework. Finally, the thesis presents a performance analysis of both types of
 simulators and conducts a comparison of the results.
 
 \pagebreak
@@ -36,15 +35,15 @@ performance advantage in terms of execution speed. This conclusion holds true fo
 exception of less complex binaries, where the optimization methods employed in the translation approach can create a
 non-negligible overhead.
 
-However, this advantage in execution speed comes at the cost of increased memory usage, and much higher complexity in
+However, this advantage in execution speed comes at the cost of increased memory usage and much higher complexity in
 the codebase. These trade-offs must be carefully considered when choosing between translation and interpretation
 simulators, as they might not only have an instantaneous impact on the performance of the project but might also
 have long-lasting negative effects in terms of the complicated codebase, lower maintainability and reduced
 expandability.
 
-Interpretation simulators usually also offer the additional advantage of being fully portable, as in, they do not need
-to be heaavly customized to run on another platform. This is not the case with translation simulators, which must
-implement an additional \textit{intermiediate representation} to host translation layer.
+Interpretation simulators usually also offer the additional advantage of being fully portable, they do not need
+to be heavily customized to run on another platform. This is not the case with translation simulators, which must
+implement an additional \textit{intermediate representation} to host the translation layer, and they need to maintain architecture-specific backends.
 
 \section{Future work}
 
@@ -65,4 +64,7 @@ thesis. Some possible directions for future research include:
      systems, robotics, and other dynamic systems. Further research can be done to explore new methods for achieving
      real-time performance in simulation, such as using multi-core processors, distributed computing, or specialized
      hardware.}
+     %
+     \item{\textbf{Further evaluation}: Additional tests can be performed against the given solutions to further increase understanding of their strengths and shortcomings.
+     More detailed analysis of impact of specific optimisations of the translation-based simulator can also be performed, to gauge their relative benefit against maintenance cost.}
 \end{itemize}

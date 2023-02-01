@@ -1,10 +1,11 @@
 \chapter{Performance analysis}
+\label{chap:analysis}
 
-The following chapter contains the results of the performance analysis of Translation and Interpretation CPU simulators,
-presents the results, and compares the performance of the different solutions. The first section of this chapter focuses
+The following chapter presents the results of performance analysis of Translation and Interpretation CPU simulators,
+and compares the performance of different solutions. The first section of this chapter focuses
 on the description of the test environment in terms of hardware, software, and simulated guest parameters and
 characteristics. The second section describes the benchmarks and binaries and motivates their importance in the field
-of automatics and robotics, especially in the context of the Industry 4.0. The last section presents and interprets
+of automatics and robotics, especially in the context of Industry 4.0. The last section presents and interprets
 the results.
 
 \section{Test enviroment}
@@ -27,17 +28,17 @@ to introduce any inaccurate and misleading conclusions. All of the tests were pe
 \end{table}
 
 \noindent
-In terms of the software, both Renode Translation Library and Dromajo are compiled using \texttt{-O3} optimization
-level. In addition to that, the libraries are \textbf{not using} any architecture specific optimizations, as in,
-they were compiled \textbf{without} \texttt{-march=native} and \texttt{-mtune=native} flags. This is important
-to note, as using these flags might significantly improve the overall performance of the simulators, but since
+In terms of software, both Renode Translation Libraries and Dromajo are compiled using the \texttt{-O3} optimization
+level. In addition to that, the libraries are \textbf{not using} any architecture specific optimizations:
+they were compiled \textbf{without} \texttt{-march=native} and \texttt{-mtune=native} flags. This is an important
+to note, as using these flags might significantly improve the overall performance of simulators, but since
 this work only focuses on performance deltas, these flags do not provide any additional value, and in the worst
 case might introduce unwanted behavior.
 
-The simulated guest platform is a \textbf{BeagleV Starlight JH7100}, with the only difference between the benchmark test
+The simulated guest platform is \textbf{BeagleV Starlight JH7100}, with the only difference between the benchmark test
 cases being the used CPU emulator.
 
-In order to provide deterministic results, every test case is performed with \textbf{SetGlobalSerialExecution}
+In order to provide deterministic results, every test case is performed with the \textbf{SetGlobalSerialExecution}
 flag set to true. This Renode setting forces emulated processors to perform sequentially, removing the variability
 introduced by the host operating system scheduler, thus maintaining full determinism.
 
@@ -46,14 +47,14 @@ introduced by the host operating system scheduler, thus maintaining full determi
 \section{Benchmark payloads and tested parameters}
 
 \begin{itemize}
-    \item{\textbf{Zephyr RTOS boot-up routine} this test performs a Zephyr RTOS payload boot-up sequence and waits for
+    \item{\textbf{Zephyr RTOS boot-up routine} this test runs a Zephyr RTOS payload boot-up sequence and waits for
     a 'hello-world' messeage on a UART device \cite{ZephyrHello}.\\
     \textbf{Motivation:} This test will determine whether the performance benefits/detriments are noticeable when
-    running a very simple payload. This is important as, the current trend in the industry heads into the
-    direction of implementing decentralized in control, IoT and edge computing solutions, often using cheaper and
+    running a very simple payload. This is important as the current trend in the industry heads in the
+    direction of implementing decentralized IoT and edge computing solutions, often using cheaper and
     smaller devices running leaner payloads.}
     %
-    \item{\textbf{Zephyr RTOS PI calculating sample} This sample application calculates Pi independently in many
+    \item{\textbf{Zephyr RTOS $\pi$ calculating sample} This sample application calculates the value of $\pi$ independently in many
     threads, and demonstrates the benefit of multiple execution units (CPU cores) when compute-intensive tasks can be
     run in parallel, with no cross-dependencies or shared resources \cite{ZephyrPi}.\\
     \textbf{Motivation:} In the context of Industry 4.0, this payload might represent the arithmetic operations
@@ -61,26 +62,26 @@ introduced by the host operating system scheduler, thus maintaining full determi
     advanced tasks.}
     %
     \item{\textbf{Zephyr RTOS TensorFlow Lite Micro Module} this test runs the TensorFlow Lite Micro Zephyr module,
-    runs the payload, and waits for it to finish. The model included with the sample is trained to replicate a sine
-    function and generates x values to print alongside the y values predicted by the model. The x values iterate from 0
+    runs the ML model, and waits for it to finish. The model included with the sample is trained to replicate a sine
+    function and generates x values to print alongside the y values predicted by the model. X values iterate from 0
     to an approximation of 2$\pi$ \cite{ZephyrTF}.\\
-    \textbf{Motivation:} A lot of the Industry 4.0 endpoints, such as sensors and actuators, use simple AI/DNN
-    deployments, either to prematurely filter collected data or to assist in the decision-making. The proposed sample
+    \textbf{Motivation:} A lot of the Industry 4.0 endpoints, such as sensors and actuators, use simple AI/ML
+    deployments, either to prematurely filter collected data or to assist in decision-making. The proposed sample
     is a good match, as the neural network is not overly complicated, and runs on a real-time operating system.}
     %
     \item{\textbf{Linux kernel boot-up} this test loads all necessary payloads to boot the Linux kernel.\\
     As the Linux kernel is a relatively complicated payload, this test checks a wide range of the CPU simulation use
     cases\\
-    \textbf{Motivation:} In Industry 4.0 times, the Linux kernel had become an unrepeatable part of almost every
+    \textbf{Motivation:} In Industry 4.0 times, the Linux kernel had become an inseparable part of almost every
     automatic control, internet of things, robotics, etc. infrastructure stack. Because of that it is important to
     provide a qualitative and performance evaluation of the simulation.}
 \end{itemize}
 
 \noindent
-Each test will be repeated three times, and evaluated under the following criteria:
+Each test was repeated three times, and evaluated under the following criteria:
 \begin{itemize}
     \item{\textbf{Qualitative evaluation}, has the test finished successfully and returned correct data?\\
-    Verified on case-by-case basics.}
+    Verified on a case-by-case basis.}
     %
     \item{\textbf{Performance evaluation}, how long did the test take?\\To guarantee accuracy and validity, this metric is
      provided by Renode Virtual Time framework.}
@@ -99,13 +100,13 @@ representing standard deviation. These characteristics have also been provided i
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/benchmarks/Hello1c.pdf}
-	\caption{Zephyr RTOS Boot times}
+	\caption{Zephyr RTOS boot times}
 \end{figure}
 \noindent
 \textbf{Qualitative evaluation}: Both simulators were able to correctly boot up Zephyr RTOS.
 \vspace*{15px}
 
-\subsection{Zephyr RTOS PI calculating sample}
+\subsection{Zephyr RTOS $\pi$ calculating sample}
 
 \begin{figure}[h]
     \centering
@@ -117,7 +118,7 @@ representing standard deviation. These characteristics have also been provided i
       \centering
       \includegraphics[width=1.2\linewidth]{figures/benchmarks/Pi2c.pdf}
     \end{subfigure}
-    \caption{Zephyr RTOS PI calculating times}
+    \caption{Zephyr RTOS $\pi$ calculating times}
 \end{figure}
 \textbf{Qualitative evaluation}: Both simulators have correctly executed the algorithm.
 
@@ -159,9 +160,9 @@ representing standard deviation. These characteristics have also been provided i
 
 \noindent
 The Linux kernel, being the biggest benchmark performed, generates a lot of logs on the UART console. This opened up a
-possiblity to use Renode Log Tester, to trace the time between each new message. This approach is called
+possiblity to use Renode Log Tester to trace the time between each new message. This approach is called
 \textit{Profiling} and is most typically used to perform a performance analysis for code execution. While some events
-might be ommited (non-log emitting events), it is still an interesting data source, that is worth investigating.
+might be ommited (non-log emitting events), it is still an interesting data source that is worth investigating.
 
 \pagebreak
 
@@ -182,21 +183,16 @@ This section will provide two types of charts:
     chart.}
 \end{itemize}
 
-\pagebreak
 
-\subsection*{Linux boot profiling - Tlib}
-\begin{figure}[h]
-	\centering
-    \hspace*{-2cm}
-	\includegraphics[width=1.2\textwidth]{figures/benchmarks/linux_boot/adnotated/TlibBoot.pdf}
-	\caption{Linux boot profile chart - Translation Library}
-\end{figure}
+\subsection*{Linux boot profiling - Translation libraries}
 
-\noindent
-The translation library simulated CPU was able to maintain a one-to-one virtual host time relation for most of
-its execution, only falling behind when the I/O devices were accessed. This is expected, as this mode of memory
-access is not a subject to optimization methods described in the Chapter 3. Additionally, these accesses require a C
-$\rightarrow$ C\# callback, witch is also exceptionally slow. After these accesses have been completed, the slope of the
+As presented on fig. \ref{fig:linux-tlib-bootchart}, the translation-based CPU was able to maintain a one-to-one virtual host time relation for most of
+its execution%
+\footnote{Renode limits the virtual processor performance in order to maintain 1:1 virtual to host time relation. This
+          feature can be turned off using \texttt{AdvanceImmediately} flag in the \texttt{.resc} file.}%
+, only falling behind when the I/O devices were heavily accessed. This is expected, as this mode of memory
+access is not a subject to optimization methods described in the Chapter \ref{chap:translation}. Additionally, these accesses require a C
+$\rightarrow$ C\# callback, which is also noticeably slow. After these accesses have been completed, the slope of the
 chart returns to almost realtime, but not quite reaching it.
 
 The area bounded by the red markers represents the time when the Linux kernel payload was unpacking initramfs. In terms
@@ -205,35 +201,18 @@ device random access memory, allowing the kernel to use RAM as a temporary rootf
 progressing any further, it is not sending any messages to the UART device, thus expalining the lack of the data
 points.
 
-\begin{figure}[h]
-	\centering
-    \hspace*{-2cm}
-	\includegraphics[width=1.2\textwidth]{figures/benchmarks/linux_boot/adnotated/TlibSpeedup.pdf}
-	\caption{Linux speedup chart - Translation Library}
-\end{figure}
+\subsection*{Linux boot profiling - Dromajo}
+
+As presented on fig. \ref{fig:linux-dromajo-bootchart}, the Dromajo simulated CPU was not able to maintain a one-to-one virtual host time relation, it has immediately fallen
+behind the real time execution. The characteristics of the chart are the same as in the Translation Libraries case, but the
+the speedup graph is always much lower than one (fig. \ref{fig:linux-dromajo-speedup}).
 
 \pagebreak
 
-\subsection*{Linux boot profiling - Dromajo}
-
-\begin{figure}[h]
-	\centering
-    \hspace*{-2cm}
-	\includegraphics[width=1.2\textwidth]{figures/benchmarks/linux_boot/adnotated/DromajoBoot.pdf}
-	\caption{Linux boot profile chart - Dromajo}
-\end{figure}
-
-\noindent
-The Dromajo simulated CPU was not able to maintain a one-to-one virtual host time relation, it has immediately fallen
-behind the real time execution. The characteristics of the chart are the same as the Translation Library, but the
-execution slope is always much bigger than one.
-
-\begin{figure}[h]
-	\centering
-    \hspace*{-2cm}
-	\includegraphics[width=1.2\textwidth]{figures/benchmarks/linux_boot/adnotated/DromajoSpeedup.pdf}
-	\caption{Linux speedup chart - Dromajo}
-\end{figure}
+\includepdf[pages={-},angle=90,scale=1, pagecommand={\null\enlargethispage{2\baselineskip}\vfill\captionof{figure}{Linux boot chart - Translation Libraries}\label{fig:linux-tlib-bootchart}}]{figures/benchmarks/linux_boot/adnotated/TlibBoot.pdf}
+\includepdf[pages={-},angle=90,scale=1, pagecommand={\null\enlargethispage{2\baselineskip}\vfill\captionof{figure}{Linux speedup chart - Translation Libraries}\label{fig:linux-tlib-speedup}}]{figures/benchmarks/linux_boot/adnotated/TlibSpeedup.pdf}
+\includepdf[pages={-},angle=90,scale=1, pagecommand={\null\enlargethispage{2\baselineskip}\vfill\captionof{figure}{Linux boot chart - Dromajo}\label{fig:linux-dromajo-bootchart}}]{figures/benchmarks/linux_boot/adnotated/DromajoBoot.pdf}
+\includepdf[pages={-},angle=90,scale=1, pagecommand={\null\enlargethispage{2\baselineskip}\vfill\captionof{figure}{Linux speedup chart - Dromajo}\label{fig:linux-dromajo-speedup}}]{figures/benchmarks/linux_boot/adnotated/DromajoSpeedup.pdf}
 
 \pagebreak
 
@@ -242,11 +221,11 @@ execution slope is always much bigger than one.
 \begin{table}[h]
     \centering
     \begin{tabular}{l|l|l}
-    Benchmark             & Translation Library & Dromajo  \\ \hline
-    Zephyr boot-up        & 0.13                & 0.09     \\ \hline
-    Zephyr PI calculation & 0.33                & 0.48     \\ \hline
-    Zephyr Tensorflow     & 0.25                & 0.24     \\ \hline
-    Linux kernel boot-up  & 45.57               & 124.3
+    Benchmark             & Translation Libraries [s] & Dromajo [s]  \\ \hline
+    Zephyr boot-up        & 0.13                  & 0.09     \\ \hline
+    Zephyr $\pi$ calculation & 0.33               & 0.48     \\ \hline
+    Zephyr Tensorflow     & 0.25                  & 0.24     \\ \hline
+    Linux kernel boot-up  & 45.57                 & 124.3
     \end{tabular}
     \caption{Benchmark summary results for single core tests}
 \end{table}
@@ -254,11 +233,11 @@ execution slope is always much bigger than one.
 \begin{table}[h]
     \centering
     \begin{tabular}{l|l|l}
-    Benchmark             & Translation Library & Dromajo  \\ \hline
-    Zephyr boot-up        & -                   & -        \\ \hline
-    Zephyr PI calculation & 0.27                & 0.41     \\ \hline
-    Zephyr Tensorflow     & 0.28                & 0.25     \\ \hline
-    Linux kernel boot-up  & 81.68               & 174.77
+    Benchmark             & Translation Libraries [s] & Dromajo [s]  \\ \hline
+    Zephyr boot-up        & -                     & -        \\ \hline
+    Zephyr $\pi$ calculation & 0.27               & 0.41     \\ \hline
+    Zephyr Tensorflow     & 0.28                  & 0.25     \\ \hline
+    Linux kernel boot-up  & 81.68                 & 174.77
     \end{tabular}
     \caption{Benchmark summary results for dual core tests}
 \end{table}
@@ -268,13 +247,12 @@ Both of the simulation methods managed to pass the qualitative evaluation. The v
 and expected way. A low standard deviation in both cases also confirms the stability and repeatability of the test
 results.
 
-In the terms of performance, the Translation Library simulated central processing unit performs better at every more
+In terms of performance, the Translation Libraries simulated central processing unit performs better at every more
 complex test, by as much as two times in the Linux test. This behavior is a merit of the block caching and chaining,
 exceptionally speeding up the simulation process. The techniques applied in this method of simulation allow the virtual
 processor to reach near real time execution performance.
 
 The Dromajo simulated CPU performed better in the simpler payloads, such as booting the Zephyr RTOS, where the
-optimization techniques used in the translation approach had become a noticeably big overhead, as in, the process of
-block caching and chaining had costed some time, and did not have any noticeable effect on the simulation, as it had
-already ended. This suggests that for small payloads block caching and chaining is simply not a feasible optimization
-method.
+optimization techniques used in the translation approach had become a noticeably big overhead - the process of
+preparing block cache and chaining had taken an noticeable ammount of time - and beacuse the lesser complexity of the payload,
+did not have any significant effect on the simulation. This suggests that for small payloads block caching and chaining is simply not a worthwile optimization method.

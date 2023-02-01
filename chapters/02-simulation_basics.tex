@@ -1,21 +1,20 @@
 
 \chapter{Simulation basics}
 
-In computing, a simulator is a software program that aims to simulate or emulate the behavior of a system or component.
+In computing, a simulator is a software program that aims to simulate or emulate the behavior of a system or a component.
 Central processing unit simulation refers to the subset of simulators that aim to emulate the functionality and
 characteristics of the device processor.
 
-% image here showing the guest and host with the simulation layer in between them
 \begin{figure}[h]
 	\centering
 	\vspace{10px}
 	\includegraphics[height=90px]{figures/GuestHostSimulator.pdf}
-	\caption{Image showing the guest and host with the simulation layer in between}
+	\caption{Guest and host with the simulation layer in between}
+	\label{fig:simulator-layer}
 \end{figure}
 
-
-The machine running the simulator is called a host system, while the simulated system is called a guest or a target
-system. The target system instruction set architecture is most often, but not necessarily, different from the host
+The machine running the simulator is called the host system, while the simulated system is called the guest or the target
+system, as shown on figure (\ref{fig:simulator-layer}). The target system instruction set architecture is most often, but not necessarily, different from the host
 architecture. The simulator complexity can vary significantly in the domain of complexity and detail.
 The extent of the simulation and its verbosity is largely determined by the specific requirements of the application.
 
@@ -34,7 +33,7 @@ According to the Austin et. al \cite{Simplescalar}, three fundamental factors de
 	portability, modularity, ease of implementing new features, exposed APIs, and many other factors.}
 \end{itemize}
 
-It is very difficult to maximize all three of these aspects, this is the reason why there are so many simulation
+It is very difficult to maximize all three of these aspects, and this is the reason why there are so many simulation
 solutions available. Most research models tend to optimize performance and flexibility at the expense of detail
 \cite{Simplescalar}.
 
@@ -42,12 +41,12 @@ solutions available. Most research models tend to optimize performance and flexi
 \section{CPU simulation techniques}
 
 The central processing unit can be simulated in various ways. Each of these simulation methods aims to achieve the same
-objective, but employs a distinct approach to the problem. N. Srivastava lists these \cite{Nitish-Techniques} methods:
+objective, but employs a distinct approach to the problem. N. Srivastava lists \cite{Nitish-Techniques} these methods:
 
 \begin{itemize}
-	\item{\textbf{Functional simulation}, also called an \textbf{Instruction set simulator}, focuses only on the
+	\item{\textbf{Functional simulation}, also called an \textbf{Instruction set simulation}, focuses only on the
 	fundamental characteristics of the design and correctness of the simulated instruction set architecture,
-	I.e. answers the question: "Does the architecture behave as expected?". Such simulators do not implement any
+	i.e. answers the question: "Does this software behave as expected on a given architecture?". Such simulators do not implement any
 	timing functionality, and cannot be used to gauge the performance of the simulated architecture. An example of such
 	a simulator is Spike, a RISC-V ISA Simulator \cite{Spike}.}
 	%
@@ -56,7 +55,7 @@ objective, but employs a distinct approach to the problem. N. Srivastava lists t
 	using software-based techniques, such as hardware monitoring, binary instrumentation, or trace synthesis
 	\cite{Simplescalar}. This method has numerous benefits, such as full determinism, as the whole simulation is
 	encapsulated in the trace file. However, since such simulators are limited to simulating traces, they
-	cannot easily run an arbitrary code. Additional disadvantages of this approach are the requirement for a large
+	cannot easily run arbitrary code. Additional disadvantages of this approach are the requirement for a large
 	amount of data storage space, and the poor performance when simulating parallel or timing-dependent systems
 	\cite{TraceDrivenAccuracy}. An example of such simulator is gem5 \cite{gem5}, specifically, the \textit{TraceCPU}
 	and \textit{Elastic Traces} \cite{gem5trace}.}
@@ -65,15 +64,14 @@ objective, but employs a distinct approach to the problem. N. Srivastava lists t
 	\cite{Nitish-Techniques}, by \textit{executing} the guest instructions, as if they were executed on the hardware.
 	This is achieved by translating or interpreting the guest binary code, to the host code (or if the guest
 	architecture matches the host's architecture, directly executing the code). Since no traces are needed, the
-	simulation can be performed without a trace generator, using only one machine \cite{TraceDrivenAccuracy}.
+	simulation can be performed without a trace generator \cite{TraceDrivenAccuracy}.
 	The accuracy of the simulation is exclusively determined by the accuracy of the simulator, and the levels of
-	abstraction chosen by the simulator developers. Examples of such simulators are the beforementioned QEMU and
+	abstraction chosen by the simulator developers. Examples of such simulators are the beforementioned QEMU, Renode \cite{Renode} and
 	Dromajo \cite{Dromajo}.}
 \end{itemize}
 
 This work will focus solely on the \textbf{execution driven simulators}, but it is important to understand the
-different approaches and their purpose. The table below concludes this section:
-
+different approaches and their purpose. The table \ref{tab:simulators} summarizes this classification:
 
 \begin{table}[h]
 	\centering
@@ -84,6 +82,8 @@ different approaches and their purpose. The table below concludes this section:
 	Execution driven 	& \makecell{Simulate the actions of a processor, rather than the underlying \\
 									mechanisms by which it performs those actions}
 	\end{tabular}
+	\caption{Simulation types}
+	\label{tab:simulators}
 \end{table}
 
 \pagebreak
@@ -92,37 +92,37 @@ different approaches and their purpose. The table below concludes this section:
 Execution driven simulators can be further divided into two distinct types:
 
 \begin{itemize}
-	\item{\textbf{Translation simulators} use dynamic, just-in-time (\textit{JIT}), recompilation of the binary.
+	\item{\textbf{Translation simulators} use dynamic, just-in-time (\textit{JIT}) recompilation of the binary.
 	When simulating a CPU architecture that differs from that of the host system,%
 	\footnote{If the host and guest architectures match, the translation process can, but does not have to, be skipped,
 	by implementing virtualization mechanisms, such as QEMU's KVM \cite{QemuKVM}, or other hypervisor based approaches.}
-	the process of executing guest code involves two phases. The first phase involves interpreting the guest code into
-	an intermediate (architecture-independent) representation. The second phase involves recompiling the intermediate
+	the process of executing guest code consists of two phases. The first phase involves interpreting the guest code into
+	an intermediate (architecture-independent) representation.  In the second phase, the simulator recompiles the intermediate
 	code into host architecture code, which is subsequently executed on the host's CPU. This process is called
 	\textit{Dynamic Binary Translation}, often referred to simply as \textit{translation}.%
 	\footnote{While the intermediate code representation is \textit{not} necessary, it allows for a greater degree of
 	flexibility and portability.}
 
 	The translated code can be organized into blocks called \textit{Translation Blocks}, which can be cached and
-	chained \cite{Qemu}.
+	chained, as described in the Chapter \ref{chap:translation}.
 
 	Such optimizations greatly improve the performance (\textit{redcuce the relative slowdown}), at the
 	cost of a complicated simulator codebase. Moreover, this technique implies limited portability, as there is a need
 	to implement a new recompiler for each host CPU architecture.
 
-	This method of execution driven simulation will be described thoroughly in Chapter 3, on an example of Renode's
-	\textit{Translation library} \cite{Tlib}.}
+	This method of execution driven simulation will be described thoroughly in Chapter 3, on the example of Renode's
+	\textit{Translation Libraries} \cite{Tlib}.}
 	%
 	\item{\textbf{Interpretation simulators} work by \textit{interpreting} the guest binary. Firstly the simulator
 	reads (\textit{fetches}) the opcode, then parses (\textit{executes}) said opcode according to the ISA standards.
 	The execution is implemented as a modification of an internal CPU state, which is stored in memory as a data type,
 	describing the CPU features and state, such as registers, exception flags, etc.
 
-	Since this type of simulator \textbf{does not} execute any code on the host's CPU, the recompilation step is not
+	Since this type of simulator does not generate any code for execution on the host's CPU, the recompilation step is not
 	necessary. This greatly simplifies the simulator codebase and increases portability. On the other hand, the lack of
 	features, such as translation blocks, makes various optimization techniques not possible.
 
-	One example of such a simulator is Dromajo \cite{Dromajo}. The details of the implementation will be described in
+	One example of such a simulator is Dromajo \cite{Dromajo}. The details of its implementation will be described in
 	Chapter 4.}
 \end{itemize}
 
@@ -136,19 +136,19 @@ equipment for an embedded system might consist of:
 \begin{itemize}
 	\item{Serial interfaces,}
 	\item{General-purpose input/output,}
-	\item{Communication devices, such as I$^2$C, SPI and Network controllers.}
+	\item{Communication devices, such as I$^2$C, SPI and network controllers.}
 \end{itemize}
 
 \pagebreak
 \section{Other notable simulators types}
 
 The definition of simulation is broad and extends beyond system emulation. Solutions such as WINE, VMWare Workstation
-and QEMU user-mode emulation, both focus on distinct goals and approaches:
+and QEMU user-mode emulation focus on distinct goals and approaches:
 
 \begin{itemize}
 	\item{\textbf{WINE}, recursive backronym for \textit{Wine Is Not an Emulator} \cite{Wine}, is essentially an MS
-	Windows API wrapper. This simulator does not attempt to emulate the underlying architecture of the hardware,
-	instead, it focuses on solely simulating software-defined system calls (\textit{syscalls}).}
+	Windows API wrapper. This simulator does not attempt to emulate the underlying architecture of the hardware.
+	Instead, it focuses on solely simulating software-defined system calls (\textit{syscalls}).}
 	%
 	\item{\textbf{VMWare Workstation} \cite{VMWareWorkstation} and \textbf{VirtualBox} \cite{VirtualBox}, both of these
 	focus on system emulation, but their emulation scope is focused only on simulating an x86 and AMD64/Intel64 machines.
@@ -159,13 +159,13 @@ and QEMU user-mode emulation, both focus on distinct goals and approaches:
 	not need to be translated.
 
 	Both of mentioned software are referred to as \textit{Level 2 Hypervisors}, as they run on top of the host
-	operating system. There are also commercial and open source \textit{Level 1 Hypervisors}, a software that behaves
+	operating system. There are also commercial and open source \textit{Level 1 Hypervisors}, behaving
 	as an operating system that is used to provide better guests performance, by the means of providing better and more
 	performant access to the underlying hardware \cite{Graniszewski_Waldemar_Performance_2016}.}
 	%
-	\item{\textbf{QEMU user-mode} this solution enables the execution of binaries compiled for a different CPU
+	\item{\textbf{QEMU user-mode}, this solution enables the execution of binaries compiled for a different CPU
 	architecture on the host system. This approach not only translates the code from the guest to the host but
-	additionally translates the system calls, handles POSIX signals, and enables proper threading support
+	additionally translates system calls, handles POSIX signals, and enables proper threading support
 	\cite{QemuUser}.
 
 	This solution is useful when creating and debugging Linux and BSD-based applications intended for embedded devices}
@@ -173,13 +173,13 @@ and QEMU user-mode emulation, both focus on distinct goals and approaches:
 
 Unfortunately, these methods of simulation are unsuitable for the creation and testing of embedded devices due to their
 restrictive nature and limited capabilities. In particular, their inability to simulate other architectures, limited
-debugging capabilities, and lack of customizability for system peripherals make them incapable of being utilized in this
+debugging capabilities, and lack of customizability for system peripherals make them difficult to be utilized in this
 context.
 
 \section{Conclusions}
 
-In this chapter, we briefly examined the existing CPU simulation techniques and their purposes. Divided execution
-driven simulators into two distinct types described the process of the whole system simulation, and example peripheral
+In this chapter, we briefly examined the existing CPU simulation techniques and their purposes. We divided execution
+driven simulators into two distinct types, described the process of the whole system simulation 
 in the context of embedded devices, finally, we finished by mentioning other noteworthy simulators.
 
 Overall, for most cases, the Execution-driven CPU simulator combined with a whole-system emulation framework will be the
@@ -187,4 +187,4 @@ most suitable option for most IoT and embedded device development teams, as it p
 to run arbitrary workloads, and can provide an in-depth look at the guest system.
 
 The hypervisor and syscalls emulators are not functionality rich enough to demonstrate their value in the IoT and
-embedded devices development cycle.
+embedded devices development cycle where direct interaction with the hardware layer is an important part of the programmer's work.
