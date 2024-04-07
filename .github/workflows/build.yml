@@ -1,5 +1,4 @@
-name: Create-PDF-document
-
+name: Deploy
 on:
   push:
     branches: [ "main" ]
@@ -8,21 +7,50 @@ on:
 
   workflow_dispatch:
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: docker-practice/actions-setup-docker@master
-      
       - name: Run a compilation script
         run: |
           sudo bash build.sh -b
-          
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with: 
           name: document
           path: main.pdf
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: document
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Generate static web page
+        run: |
+          mkdir page && cd page
+          URL="https://pkoscik.github.io/EngineeringThesis"
+          IDX="index.html"
+          mv ../main.pdf .
+          echo "revision: "$GITHUB_SHA" triggered by: "$GITHUB_ACTOR" on $(date '+%D %H:%M:%S')" >> "$IDX"
+          echo "<embed src=\"$URL/main.pdf\" width=\"100%\" height=\"100%\" type=\"application/pdf\">" >> "$IDX"
+          cd ..
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'page'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
