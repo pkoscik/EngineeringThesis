@@ -1,0 +1,4 @@
+04:17:15.9911 [INFO] BeagleV-Tlib: Machine started.
+04:17:15.9934 [WARNING] plic: Unhandled write to offset 0x200000, value 0x0.
+04:17:15.9948 [INFO] uart3: [host: 0.13s (+0.13s)|virt: 35µs (+35µs)] *** Booting Zephyr OS build zephyr-v3.1.0  ***
+04:17:15.9957 [INFO] uart3: [host: 0.13s (+0.99ms)|virt: 0.1ms (+65µs)] Hello World! beaglev_starlight_jh7100

@@ -1,0 +1,387 @@
+htime,haddend,hcum,vtime,vaddend,vcum,mess
+0.61s,0.61s,610.0,0.1ms,0.1ms,0.1,
+0.61s,0.23ms,610.23,0.1ms,0s,0.1, OpenSBI v0.9
+0.61s,0.53ms,610.76,0.1ms,0s,0.1,    ____                    _____ ____ _____
+0.61s,1.76ms,612.52,0.2ms,96µs,0.196,   / __ \                  / ____|  _ \_   _|
+0.61s,0.44ms,612.96,0.2ms,0s,0.196,  | |  | |_ __   ___ _ __ | (___ | |_) || |
+0.62s,0.47ms,613.4300000000001,0.3ms,0.1ms,0.29600000000000004,  | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+0.62s,0.43ms,613.86,0.3ms,0s,0.29600000000000004,  | |__| | |_) |  __/ | | |____) | |_) || |_
+0.62s,0.45ms,614.3100000000001,0.4ms,0.1ms,0.396,   \____/| .__/ \___|_| |_|_____/|____/_____|
+0.62s,0.13ms,614.44,0.4ms,0s,0.396,         | |
+0.62s,0.2ms,614.6400000000001,0.4ms,0s,0.396,         |_|
+0.62s,46µs,614.6860000000001,0.4ms,0s,0.396,
+0.62s,6.77ms,621.4560000000001,0.5ms,0.1ms,0.496, Platform Name             : StarFive VIC7100
+0.62s,0.48ms,621.9360000000001,0.5ms,0s,0.496," Platform Features         : timer,mfdeleg"
+0.62s,0.34ms,622.2760000000002,0.6ms,0.1ms,0.596, Platform HART Count       : 2
+0.62s,0.38ms,622.6560000000002,0.6ms,0s,0.596, Firmware Base             : 0x80000000
+0.62s,0.37ms,623.0260000000002,0.7ms,0.1ms,0.696, Firmware Size             : 92 KB
+0.62s,0.3ms,623.3260000000001,0.7ms,0s,0.696, Runtime SBI Version       : 0.2
+0.63s,46µs,623.3720000000002,0.7ms,0s,0.696,
+0.63s,0.34ms,623.7120000000002,0.7ms,0s,0.696, Domain0 Name              : root
+0.63s,0.34ms,624.0520000000002,0.8ms,0.1ms,0.7959999999999999, Domain0 Boot HART         : 0
+0.63s,0.34ms,624.3920000000003,0.8ms,0s,0.7959999999999999," Domain0 HARTs             : 0*,1*"
+0.63s,0.7ms,625.0920000000003,0.9ms,0.1ms,0.8959999999999999, Domain0 Region00          : 0x0000000080000000-0x000000008001ffff ()
+0.63s,0.76ms,625.8520000000003,1ms,0.1ms,0.9959999999999999," Domain0 Region01          : 0x0000000000000000-0xffffffffffffffff (R,W,X)"
+0.63s,0.42ms,626.2720000000003,1ms,0s,0.9959999999999999, Domain0 Next Address      : 0x0000000080020000
+0.63s,0.5ms,626.7720000000003,1.1ms,0.1ms,1.0959999999999999, Domain0 Next Arg1         : 0x0000000088000000
+0.63s,0.32ms,627.0920000000003,1.1ms,0s,1.0959999999999999, Domain0 Next Mode         : S-mode
+0.63s,0.35ms,627.4420000000003,1.2ms,0.1ms,1.196, Domain0 SysReset          : yes
+0.63s,51µs,627.4930000000004,1.2ms,0s,1.196,
+0.63s,0.4ms,627.8930000000004,1.2ms,0s,1.196, Boot HART ID              : 0
+0.63s,0.36ms,628.2530000000004,1.3ms,0.1ms,1.296, Boot HART Domain          : root
+0.63s,0.41ms,628.6630000000004,1.3ms,0s,1.296, Boot HART ISA             : rv64imafdcvsu
+0.63s,0.57ms,629.2330000000004,1.4ms,0.1ms,1.3960000000000001," Boot HART Features        : scounteren,mcounteren,time"
+0.63s,0.29ms,629.5230000000004,1.4ms,0s,1.3960000000000001, Boot HART PMP Count       : 16
+0.63s,0.32ms,629.8430000000004,1.4ms,0s,1.3960000000000001, Boot HART PMP Granularity : 4
+0.63s,0.35ms,630.1930000000004,1.5ms,0.1ms,1.4960000000000002, Boot HART PMP Address Bits: 38
+0.63s,0.28ms,630.4730000000004,1.5ms,0s,1.4960000000000002, Boot HART MHPM Count      : 0
+0.63s,0.31ms,630.7830000000004,1.5ms,0s,1.4960000000000002, Boot HART MHPM Count      : 0
+0.63s,0.47ms,631.2530000000004,1.6ms,0.1ms,1.5960000000000003, Boot HART MIDELEG         : 0x0000000000000222
+0.63s,0.44ms,631.6930000000004,1.6ms,0s,1.5960000000000003, Boot HART MEDELEG         : 0x000000000000b109
+0.77s,0.13s,761.6930000000004,32.6ms,31ms,32.596000000000004,
+0.77s,45µs,761.7380000000004,32.6ms,0s,32.596000000000004,
+0.77s,0.31ms,762.0480000000003,32.6ms,0s,32.596000000000004, U-Boot 2021.01-g7dac1a6e-dirty (Apr 26 2021 - 09:57:51 +0000)
+0.77s,34µs,762.0820000000003,32.6ms,0s,32.596000000000004,
+0.77s,0.98ms,763.0620000000004,32.8ms,0.2ms,32.79600000000001," ofnode_read_prop: riscv,isa: rv64imafdc"
+0.77s,0.14ms,763.2020000000003,32.8ms,0s,32.79600000000001, CPU:   rv64imafdc
+0.77s,0.41ms,763.6120000000003,32.9ms,0.1ms,32.89600000000001," Model: sifive,freedom-u74-arty"
+0.79s,20.45ms,784.0620000000004,39.6ms,6.7ms,39.59600000000001, DRAM:  8 GiB
+0.79s,3.52ms,787.5820000000003,40.3ms,0.7ms,40.296000000000014, ofnode_read_prop: tick-timer: <not found>
+1.22s,0.43s,1217.5820000000003,0.15s,0.11s,150.29600000000002, ofnode_read_u32_array: ranges: ofnode_read_u32_array: ranges: ofnode_read_u32_index: timebase-frequency: (not found)
+1.22s,0.61ms,1218.1920000000002,0.15s,0.1ms,150.39600000000002, ofnode_read_u32_index: timebase-frequency: 0x5f5e10 (6250000)
+1.23s,5.27ms,1223.4620000000002,0.15s,1.6ms,151.996, ofnode_read_u32_index: timebase-frequency: (not found)
+1.23s,0.54ms,1224.0020000000002,0.15s,0.1ms,152.096, ofnode_read_u32_index: timebase-frequency: 0x5f5e10 (6250000)
+1.23s,4.97ms,1228.9720000000002,0.16s,1.5ms,153.596, MMC:   VIC DWMMC0: 0
+1.32s,92.13ms,1321.1020000000003,0.18s,23.8ms,177.39600000000002, In:    serial
+1.33s,0.17ms,1321.2720000000004,0.18s,0s,177.39600000000002, Out:   serial
+1.33s,0.14ms,1321.4120000000005,0.18s,0s,177.39600000000002, Err:   serial
+1.33s,4.86ms,1326.2720000000004,0.18s,1.3ms,178.69600000000003," Model: sifive,freedom-u74-arty"
+1.34s,8.8ms,1335.0720000000003,0.18s,1.9ms,180.59600000000003, Net:   ofnode_read_prop: tick-timer: <not found>
+1.34s,4.97ms,1340.0420000000004,0.18s,0.73ms,181.32600000000002, dwmac.10020000
+1.4s,55.96ms,1396.0020000000004,0.2s,16.77ms,198.09600000000003, Hit any key to stop autoboot:  0
+1.4s,3.94ms,1399.9420000000005,0.2s,0.7ms,198.79600000000002, ## Loading kernel from FIT Image at a0000000 ...
+1.4s,1.21ms,1401.1520000000005,0.2s,0.3ms,199.09600000000003,    Using 'config-1' configuration
+1.41s,0.58ms,1401.7320000000004,0.2s,0.1ms,199.19600000000003,    Trying 'vmlinux' kernel subimage
+1.41s,0.31ms,1402.0420000000004,0.2s,0.1ms,199.29600000000002,      Description:  vmlinux
+1.41s,1.27ms,1403.3120000000004,0.2s,0s,199.29600000000002,      Type:         Kernel Image
+1.41s,0.61ms,1403.9220000000003,0.2s,0.1ms,199.39600000000002,      Compression:  uncompressed
+1.41s,1.05ms,1404.9720000000002,0.2s,0.3ms,199.69600000000003,      Data Start:   0xa00000c8
+1.41s,0.33ms,1405.3020000000001,0.2s,0s,199.69600000000003,      Data Size:    17660416 Bytes = 16.8 MiB
+1.41s,0.48ms,1405.7820000000002,0.2s,0.1ms,199.79600000000002,      Architecture: RISC-V
+1.41s,0.42ms,1406.2020000000002,0.2s,0.1ms,199.89600000000002,      OS:           Linux
+1.41s,0.71ms,1406.9120000000003,0.2s,0.1ms,199.996,      Load Address: 0x80200000
+1.41s,0.83ms,1407.7420000000002,0.2s,0.1ms,200.096,      Entry Point:  0x80200000
+1.41s,1.94ms,1409.6820000000002,0.2s,0.3ms,200.39600000000002,    Verifying Hash Integrity ... OK
+1.42s,7.49ms,1417.1720000000003,0.2s,1.8ms,202.19600000000003, ## Loading fdt from FIT Image at a0000000 ...
+1.42s,1.12ms,1418.2920000000001,0.2s,0.3ms,202.49600000000004,    Using 'config-1' configuration
+1.42s,0.83ms,1419.122,0.2s,0.2ms,202.69600000000003,    Trying 'fdt' fdt subimage
+1.42s,0.5ms,1419.622,0.2s,0.1ms,202.79600000000002,      Description:  unavailable
+1.42s,0.33ms,1419.952,0.2s,0s,202.79600000000002,      Type:         Flat Device Tree
+1.42s,0.45ms,1420.402,0.2s,0.1ms,202.89600000000002,      Compression:  uncompressed
+1.42s,0.67ms,1421.0720000000001,0.2s,0.1ms,202.996,      Data Start:   0xa4f297f8
+1.43s,0.42ms,1421.4920000000002,0.2s,0.1ms,203.096,      Data Size:    16655 Bytes = 16.3 KiB
+1.43s,0.49ms,1421.9820000000002,0.2s,0s,203.096,      Architecture: RISC-V
+1.43s,0.59ms,1422.5720000000001,0.2s,0.1ms,203.196,      Load Address: 0x86000000
+1.43s,1.34ms,1423.912,0.2s,0.2ms,203.396,    Verifying Hash Integrity ... OK
+1.43s,1.91ms,1425.8220000000001,0.21s,0.3ms,203.696,    Loading fdt from 0xa4f297f8 to 0x86000000
+1.43s,2.12ms,1427.942,0.21s,0.4ms,204.096,    Booting using the fdt blob at 0x86000000
+1.43s,2.68ms,1430.622,0.21s,0.8ms,204.89600000000002, ## Loading loadables from FIT Image at a0000000 ...
+1.44s,1.16ms,1431.7820000000002,0.21s,0.1ms,204.996,    Trying 'ramdisk' loadables subimage
+1.44s,0.54ms,1432.3220000000001,0.21s,0.1ms,205.096,      Description:  buildroot initramfs
+1.44s,0.57ms,1432.892,0.21s,0s,205.096,      Type:         RAMDisk Image
+1.44s,0.8ms,1433.692,0.21s,0.1ms,205.196,      Compression:  uncompressed
+1.44s,1.36ms,1435.052,0.21s,0.3ms,205.496,      Data Start:   0xa10d7b7c
+1.44s,0.36ms,1435.4119999999998,0.21s,0s,205.496,      Data Size:    65346560 Bytes = 62.3 MiB
+1.44s,0.44ms,1435.8519999999999,0.21s,0.1ms,205.596,      Architecture: RISC-V
+1.44s,0.37ms,1436.2219999999998,0.21s,0s,205.596,      OS:           Linux
+1.44s,0.53ms,1436.7519999999997,0.21s,0.1ms,205.696,      Load Address: 0x86100000
+1.44s,0.52ms,1437.2719999999997,0.21s,0.1ms,205.796,      Entry Point:  unavailable
+1.44s,1.2ms,1438.4719999999998,0.21s,0.3ms,206.096,    Verifying Hash Integrity ... OK
+1.44s,2.17ms,1440.6419999999998,0.21s,0.6ms,206.696,    Loading loadables from 0xa10d7b7c to 0x86100000
+12.08s,10.63s,12070.642,3.48s,3.27s,3476.696,    Loading Kernel Image
+12.91s,0.84s,12910.642,3.6s,0.12s,3596.696, ## Flattened Device Tree blob at 86000000
+12.91s,0.37ms,12911.012,3.6s,0s,3596.696,    Booting using the fdt blob at 0x86000000
+12.94s,30.59ms,12941.602,3.61s,8.4ms,3605.096,"    Using Device Tree in place at 0000000086000000, end 000000008600710e"
+12.98s,37.24ms,12978.842,3.62s,10.2ms,3615.296,
+12.98s,0.26ms,12979.102,3.62s,0s,3615.296, Starting kernel ...
+12.98s,39µs,12979.141000000001,3.62s,0s,3615.296,
+13.05s,68.04ms,13047.181000000002,3.63s,15.73ms,3631.026," [    0.000000] Linux version 5.10.6-g93604a0a3ecc (root@runner-7005a2b9-project-3475-concurrent-0) (riscv64-buildroot-linux-gnu-gcc.br_real (Buildroot -g2e13b6d) 10.2.0, GNU ld (GNU Binutils) 2.34) #1 SMP Mon Apr 26 09:57:54 UTC 2021"
+13.05s,4.38ms,13051.561000000002,3.63s,0.29ms,3631.316, [    0.000000] OF: fdt: Ignoring memory range 0x80000000 - 0x80200000
+13.06s,3.93ms,13055.491000000002,3.63s,0.24ms,3631.5559999999996, [    0.000000] earlycon: sbi0 at I/O port 0x0 (options '')
+13.06s,4.57ms,13060.061000000002,3.64s,0.25ms,3631.8059999999996, [    0.000000] printk: bootconsole [sbi0] enabled
+13.07s,6.11ms,13066.171000000002,3.64s,0.9ms,3632.7059999999997, [    0.000000] efi: UEFI not found.
+13.07s,4.67ms,13070.841000000002,3.64s,0.33ms,3633.0359999999996, [    0.000000] Initial ramdisk at: 0x(____ptrval____) (99614720 bytes)
+13.09s,19.18ms,13090.021000000002,3.64s,3.26ms,3636.296," [    0.000000] Reserved memory: created CMA memory pool at 0x00000000a0000000, size 640 MiB"
+13.1s,6.43ms,13096.451000000003,3.64s,0.4ms,3636.696," [    0.000000] OF: reserved mem: initialized node linux,cma, compatible id shared-dma-pool"
+13.32s,0.22s,13316.451000000003,3.65s,6.41ms,3643.1059999999998, [    0.000000] Zone ranges:
+13.33s,4.2ms,13320.651000000003,3.65s,0.35ms,3643.4559999999997, [    0.000000]   DMA32    [mem 0x0000000080200000-0x00000000ffffffff]
+13.33s,4.16ms,13324.811000000003,3.65s,0.35ms,3643.8059999999996, [    0.000000]   Normal   [mem 0x0000000100000000-0x000000027fffffff]
+13.33s,3.17ms,13327.981000000003,3.65s,0.23ms,3644.0359999999996, [    0.000000] Movable zone start for each node
+13.34s,3.68ms,13331.661000000004,3.65s,0.2ms,3644.2359999999994, [    0.000000] Early memory node ranges
+13.34s,4.96ms,13336.621000000003,3.65s,0.33ms,3644.5659999999993, [    0.000000]   node   0: [mem 0x0000000080200000-0x000000027fffffff]
+13.35s,4.75ms,13341.371000000003,3.65s,0.37ms,3644.9359999999992, [    0.000000] Initmem setup node 0 [mem 0x0000000080200000-0x000000027fffffff]
+13.35s,3.69ms,13345.061000000003,3.65s,0.23ms,3645.1659999999993, [    0.000000] On node 0 totalpages: 2096640
+13.83s,0.48s,13825.061000000003,3.8s,0.16s,3805.1659999999993, [    0.000000]   DMA32 zone: 7161 pages used for memmap
+13.83s,2.76ms,13827.821000000004,3.8s,0.23ms,3805.3959999999993, [    0.000000]   DMA32 zone: 0 pages reserved
+13.84s,4.31ms,13832.131000000003,3.81s,0.28ms,3805.6759999999995," [    0.000000]   DMA32 zone: 523776 pages, LIFO batch:63"
+14.3s,0.46s,14292.131000000003,3.94s,0.13s,3935.6759999999995, [    0.000000]   Normal zone: 21504 pages used for memmap
+14.3s,3.48ms,14295.611000000003,3.94s,0.28ms,3935.9559999999997," [    0.000000]   Normal zone: 1572864 pages, LIFO batch:63"
+16.03s,1.73s,16025.611000000003,4.45s,0.52s,4455.956, [    0.000000] software IO TLB: mapped [mem 0x00000000fbfff000-0x00000000fffff000] (64MB)
+16.03s,2.91ms,16028.521000000002,4.45s,0.24ms,4456.196, [    0.000000] SBI specification v0.2 detected
+16.04s,3.31ms,16031.831000000002,4.45s,0.26ms,4456.456, [    0.000000] SBI implementation ID=0x1 Version=0x9
+16.04s,2.94ms,16034.771000000002,4.45s,0.23ms,4456.686, [    0.000000] SBI v0.2 TIME extension detected
+16.04s,3.84ms,16038.611000000003,4.45s,0.23ms,4456.915999999999, [    0.000000] SBI v0.2 IPI extension detected
+16.05s,4.56ms,16043.171000000002,4.45s,0.24ms,4457.155999999999, [    0.000000] SBI v0.2 RFENCE extension detected
+16.05s,3.1ms,16046.271000000002,4.45s,0.23ms,4457.385999999999, [    0.000000] SBI v0.2 HSM extension detected
+16.05s,3.65ms,16049.921000000002,4.46s,0.39ms,4457.775999999999, [    0.000000] riscv: ISA extensions acdfim
+16.06s,3.86ms,16053.781000000003,4.46s,0.23ms,4458.0059999999985, [    0.000000] riscv: ELF capabilities acdfim
+16.07s,8.71ms,16062.491000000002,4.46s,0.87ms,4458.875999999998, [    0.000000] percpu: Embedded 17 pages/cpu s30888 r8192 d30552 u69632
+16.07s,4.86ms,16067.351000000002,4.46s,0.47ms,4459.345999999999, [    0.000000] pcpu-alloc: s30888 r8192 d30552 u69632 alloc=17*4096
+16.07s,3.2ms,16070.551000000003,4.46s,0.33ms,4459.675999999999, [    0.000000] pcpu-alloc: [0] 0 [0] 1
+16.08s,7.11ms,16077.661000000004,4.46s,0.89ms,4460.565999999999," [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 2067975"
+16.09s,5.14ms,16082.801000000003,4.46s,0.39ms,4460.955999999999," [    0.000000] Kernel command line: console=ttyS0,115200  debug rootwait  earlycon=sbi"
+16.13s,46.94ms,16129.741000000004,4.47s,11.96ms,4472.915999999999," [    0.000000] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)"
+16.16s,25.3ms,16155.041000000003,4.48s,6.04ms,4478.955999999999," [    0.000000] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)"
+16.16s,2.34ms,16157.381000000003,4.48s,0.19ms,4479.145999999999, [    0.000000] Sorting __ex_table...
+16.17s,11.24ms,16168.621000000003,4.48s,2.47ms,4481.615999999999," [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off"
+17.64s,1.47s,17638.621000000003,4.95s,0.47s,4951.615999999999," [    0.000000] Memory: 6735000K/8386560K available (6771K kernel code, 4266K rwdata, 4096K rodata, 230K init, 392K bss, 996200K reserved, 655360K cma-reserved)"
+17.65s,8.45ms,17647.071000000004,4.95s,1.3ms,4952.915999999999," [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1"
+17.66s,9.79ms,17656.861000000004,4.95s,1.19ms,4954.105999999999, [    0.000000] rcu: Hierarchical RCU implementation.
+17.66s,3.22ms,17660.081000000006,4.95s,0.26ms,4954.365999999999, [    0.000000] rcu: RCU debug extended QS entry/exit.
+17.66s,4.24ms,17664.321000000007,4.95s,0.26ms,4954.625999999999, [    0.000000] Tracing variant of Tasks RCU enabled.
+17.67s,6.73ms,17671.051000000007,4.95s,0.38ms,4955.005999999999, [    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+17.67s,4.53ms,17675.581000000006,4.95s,0.39ms,4955.396," [    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0"
+17.68s,7.94ms,17683.521000000004,4.95s,1.08ms,4956.476, [    0.000000] riscv-intc: 64 local interrupts mapped
+17.71s,29.32ms,17712.841000000004,4.95s,3.99ms,4960.465999999999, [    0.000000] plic: disable L2 cache irq 1 in plic
+17.72s,3.99ms,17716.831000000006,4.96s,0.3ms,4960.766, [    0.000000] plic: disable L2 cache irq 2 in plic
+17.72s,3.52ms,17720.351000000006,4.96s,0.3ms,4961.066, [    0.000000] plic: disable L2 cache irq 3 in plic
+17.72s,3.23ms,17723.581000000006,4.96s,0.27ms,4961.336, [    0.000000] plic: Can't get L2 cache irq(#3).
+17.74s,14.43ms,17738.011000000006,4.96s,0.84ms,4962.176, [    0.000000] plic: disable L2 cache irq 1 in plic
+17.74s,5.16ms,17743.171000000006,4.96s,0.3ms,4962.476000000001, [    0.000000] plic: disable L2 cache irq 2 in plic
+17.75s,4.49ms,17747.661000000007,4.96s,0.3ms,4962.776000000001, [    0.000000] plic: disable L2 cache irq 3 in plic
+17.75s,3.59ms,17751.251000000007,4.96s,0.27ms,4963.046000000001, [    0.000000] plic: Can't get L2 cache irq(#3).
+17.76s,5.35ms,17756.601000000006,4.96s,0.42ms,4963.466000000001, [    0.000000] plic: plic@c000000: mapped 127 interrupts with 2 handlers for 4 contexts.
+17.77s,12.29ms,17768.891000000007,4.96s,2.22ms,4965.6860000000015, [    0.000000] random: get_random_bytes called from start_kernel+0x31c/0x48e with crng_init=0
+17.77s,5ms,17773.891000000007,4.96s,0.33ms,4966.016000000001, [    0.000000] riscv_timer_init_dt: Registering clocksource cpuid [0] hartid [0]
+17.78s,10.29ms,17784.181000000008,4.96s,0.55ms,4966.566000000002," [    0.000000] clocksource: riscv_clocksource: mask: 0xffffffffffffffff max_cycles: 0x171024e6b, max_idle_ns: 440795202301 ns"
+17.79s,5.82ms,17790.001000000007,4.96s,0.42ms,4966.986000000002," [    0.000034] sched_clock: 64 bits at 6MHz, resolution 160ns, wraps every 4398046511040ns"
+17.8s,6.85ms,17796.851000000006,4.96s,0.94ms,4967.926000000001, [    0.001081] Console: colour dummy device 80x25
+17.8s,7.26ms,17804.111000000004,4.96s,0.63ms,4968.556000000001," [    0.001413] Calibrating delay loop (skipped), value calculated using timer frequency.. 12.50 BogoMIPS (lpj=62500)"
+17.81s,3.17ms,17807.281000000003,4.96s,0.25ms,4968.806000000001, [    0.001930] pid_max: default: 32768 minimum: 301
+17.82s,13.5ms,17820.781000000003,4.96s,1.4ms,4970.206000000001," [    0.003147] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)"
+17.83s,6.42ms,17827.201,4.97s,0.62ms,4970.826000000001," [    0.003725] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)"
+17.86s,37.03ms,17864.231,4.97s,6.55ms,4977.376000000001, [    0.010142] rcu: Hierarchical SRCU implementation.
+17.87s,8.1ms,17872.331,4.97s,0.96ms,4978.336000000001, [    0.011074] EFI services will not be available.
+17.88s,8.6ms,17880.930999999997,4.97s,1.16ms,4979.496000000001, [    0.012187] smp: Bringing up secondary CPUs ...
+19.54s,1.66s,19540.930999999997,6.05s,1.07s,6049.496000000001, [    1.043304] CPU1: failed to come online
+19.54s,8.02ms,19548.950999999997,6.05s,0.35ms,6049.846000000001," [    1.043633] smp: Brought up 1 node, 1 CPU"
+19.58s,39.51ms,19588.460999999996,6.05s,5.4ms,6055.246000000001, [    1.048848] devtmpfs: initialized
+19.68s,91.1ms,19679.560999999994,6.07s,19.46ms,6074.706000000001," [    1.067259] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns"
+19.68s,4.47ms,19684.030999999995,6.07s,0.38ms,6075.086000000001," [    1.067742] futex hash table entries: 512 (order: 3, 32768 bytes, linear)"
+19.87s,0.19s,19874.030999999995,6.13s,59ms,6134.086000000001, [    1.124483] NET: Registered protocol family 16
+20.05s,0.18s,20054.030999999995,6.17s,40.74ms,6174.826000000001, [    1.163474] OF: /soc/usb@104c0000: could not get #phy-cells for /soc/usb3-phy
+20.06s,6.94ms,20060.970999999994,6.17s,1.11ms,6175.936000000001, [    1.164612] OF: /soc/i2c@118c0000: could not find phandle
+20.06s,5.18ms,20066.150999999994,6.18s,0.66ms,6176.5960000000005, [    1.165250] OF: /soc/i2c@12450000: could not find phandle
+20.11s,48.28ms,20114.430999999993,6.19s,10.42ms,6187.0160000000005, [    1.175180] OF: /soc/usb@104c0000: could not get #phy-cells for /soc/usb3-phy
+20.12s,8.88ms,20123.310999999994,6.19s,1.4ms,6188.416, [    1.176594] OF: /soc/i2c@118c0000: could not find phandle
+20.13s,7.57ms,20130.880999999994,6.19s,0.99ms,6189.406, [    1.177543] OF: /soc/i2c@12450000: could not find phandle
+20.38s,0.26s,20390.880999999994,6.24s,53.76ms,6243.166," [    1.229095] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages"
+20.39s,4.33ms,20395.210999999996,6.24s,0.36ms,6243.526," [    1.229439] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages"
+20.45s,61.85ms,20457.060999999994,6.25s,11.19ms,6254.715999999999, [    1.240158] starfive_gpio 11910000.gpio: SiFive GPIO chip registered 64 GPIOs
+20.47s,15.95ms,20473.010999999995,6.26s,2.7ms,6257.415999999999, [    1.242895] SCSI subsystem initialized
+20.48s,8.9ms,20481.910999999996,6.26s,1.24ms,6258.655999999999, [    1.244016] usbcore: registered new interface driver usbfs
+20.48s,5.93ms,20487.840999999997,6.26s,0.63ms,6259.285999999999, [    1.244630] usbcore: registered new interface driver hub
+20.49s,5.28ms,20493.120999999996,6.26s,0.47ms,6259.755999999999, [    1.245084] usbcore: registered new device driver usb
+20.5s,11.71ms,20504.830999999995,6.26s,1.72ms,6261.476, [    1.246644] i2c_designware 118b0000.i2c: Using the static setting value: 49500
+20.5s,5.15ms,20509.980999999996,6.26s,0.4ms,6261.875999999999, [    1.247013] i2c_designware 118b0000.i2c: Unknown Synopsys component type: 0x00000000
+20.51s,8.9ms,20518.880999999998,6.26s,1.32ms,6263.195999999999, [    1.248378] OF: /soc/i2c@118c0000: could not find phandle
+20.52s,4.75ms,20523.630999999998,6.26s,0.38ms,6263.575999999999, [    1.248681] i2c_designware 118c0000.i2c: Using 'clocks' : 49500000 / 1000
+20.52s,5.96ms,20529.590999999997,6.26s,0.4ms,6263.975999999999, [    1.249032] i2c_designware 118c0000.i2c: Unknown Synopsys component type: 0x00000000
+20.53s,6.37ms,20535.960999999996,6.26s,0.84ms,6264.815999999999, [    1.249930] OF: /soc/i2c@12450000: could not find phandle
+20.53s,4.68ms,20540.640999999996,6.26s,0.38ms,6265.195999999999, [    1.250232] i2c_designware 12450000.i2c: Using 'clocks' : 50000000 / 1000
+20.54s,5.21ms,20545.850999999995,6.26s,0.4ms,6265.595999999999, [    1.250584] i2c_designware 12450000.i2c: Unknown Synopsys component type: 0x00000000
+20.56s,18.62ms,20564.470999999994,6.27s,3.44ms,6269.035999999998, [    1.254063] Bluetooth: Core ver 2.22
+20.56s,5ms,20569.470999999994,6.27s,0.48ms,6269.515999999998, [    1.254489] NET: Registered protocol family 31
+20.57s,5.12ms,20574.590999999993,6.27s,0.33ms,6269.845999999998, [    1.254727] Bluetooth: HCI device and connection manager initialized
+20.57s,3.39ms,20577.980999999992,6.27s,0.28ms,6270.1259999999975, [    1.255055] Bluetooth: HCI socket layer initialized
+20.58s,3.57ms,20581.550999999992,6.27s,0.29ms,6270.415999999997, [    1.255327] Bluetooth: L2CAP socket layer initialized
+20.58s,3.66ms,20585.210999999992,6.27s,0.32ms,6270.735999999997, [    1.255638] Bluetooth: SCO socket layer initialized
+20.59s,6.61ms,20591.820999999993,6.27s,0.76ms,6271.495999999997, [    1.256313] clocksource: Switched to clocksource riscv_clocksource
+20.74s,0.15s,20741.820999999993,6.3s,30.56ms,6302.055999999998, [    1.285723] NET: Registered protocol family 2
+20.76s,22.61ms,20764.430999999993,6.3s,3.98ms,6306.035999999997," [    1.289366] tcp_listen_portaddr_hash hash table entries: 4096 (order: 5, 163840 bytes, linear)"
+20.77s,9.76ms,20774.19099999999,6.31s,1.68ms,6307.715999999998," [    1.291008] TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)"
+20.8s,29.8ms,20803.99099999999,6.31s,7.75ms,6315.465999999998," [    1.298469] TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)"
+20.87s,69.55ms,20873.54099999999,6.33s,19.44ms,6334.905999999997, [    1.317161] TCP: Hash tables configured (established 65536 bind 65536)
+20.88s,6.36ms,20879.90099999999,6.33s,0.82ms,6335.725999999997," [    1.317934] UDP hash table entries: 4096 (order: 6, 393216 bytes, linear)"
+20.89s,14.2ms,20894.10099999999,6.34s,3.19ms,6338.9159999999965," [    1.320982] UDP-Lite hash table entries: 4096 (order: 6, 393216 bytes, linear)"
+20.91s,14.87ms,20908.97099999999,6.34s,3.49ms,6342.405999999996, [    1.324450] NET: Registered protocol family 1
+20.92s,16.27ms,20925.24099999999,6.34s,2.42ms,6344.825999999996, [    1.326709] RPC: Registered named UNIX socket transport module.
+20.93s,3.29ms,20928.53099999999,6.34s,0.26ms,6345.085999999997, [    1.327005] RPC: Registered udp transport module.
+20.93s,3.19ms,20931.72099999999,6.34s,0.26ms,6345.345999999997, [    1.327251] RPC: Registered tcp transport module.
+20.93s,4.32ms,20936.04099999999,6.34s,0.33ms,6345.675999999997, [    1.327499] RPC: Registered tcp NFSv4.1 backchannel transport module.
+20.96s,29.76ms,20965.80099999999,6.35s,6.56ms,6352.235999999997, [    1.333925] Unpacking initramfs...
+65.09s,44.13s,65095.80099999999,17.87s,11.52s,17872.235999999997, [   12.395305] Freeing initrd memory: 97280K
+65.11s,14.02ms,65109.82099999999,17.88s,2.17ms,17874.405999999995, [   12.397374] Initialise system trusted keyrings
+65.12s,10.12ms,65119.94099999999,17.88s,1.12ms,17875.525999999994, [   12.398370] workingset: timestamp_bits=62 max_order=21 bucket_order=0
+65.38s,0.26s,65379.94099999999,17.93s,55.52ms,17931.045999999995, [   12.451723] NFS: Registering the id_resolver key type
+65.38s,3.3ms,65383.240999999995,17.93s,0.29ms,17931.335999999996, [   12.452037] Key type id_resolver registered
+65.38s,3.05ms,65386.291,17.93s,0.23ms,17931.565999999995, [   12.452262] Key type id_legacy registered
+65.39s,8.24ms,65394.530999999995,17.93s,0.93ms,17932.495999999996, [   12.453043] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+65.4s,3.54ms,65398.070999999996,17.93s,0.33ms,17932.825999999997, [   12.453457] ntfs: driver 2.1.32 [Flags: R/W].
+65.41s,13.59ms,65411.66099999999,17.94s,2.51ms,17935.335999999996, [   12.455875] fuse: init (API version 7.32)
+66.59s,1.18s,66591.661,18.31s,0.38s,18315.335999999996, [   12.818643] NET: Registered protocol family 38
+66.6s,2.91ms,66594.571,18.31s,0.25ms,18315.585999999996, [   12.818896] Key type asymmetric registered
+66.6s,3.19ms,66597.761,18.31s,0.26ms,18315.845999999994, [   12.819119] Asymmetric key parser 'x509' registered
+66.6s,5.53ms,66603.291,18.32s,0.48ms,18316.325999999994, [   12.819478] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 251)
+66.61s,3.01ms,66606.30099999999,18.32s,0.25ms,18316.575999999994, [   12.819834] io scheduler mq-deadline registered
+66.61s,2.84ms,66609.14099999999,18.32s,0.23ms,18316.805999999993, [   12.820074] io scheduler kyber registered
+66.62s,11.23ms,66620.37099999998,18.32s,2.14ms,18318.945999999993, [   12.822177] start plist test
+66.82s,0.2s,66820.37099999998,18.39s,67.59ms,18386.535999999993, [   12.887069] end plist test
+66.87s,41.58ms,66861.95099999999,18.39s,8.32ms,18394.855999999992," [   12.894817] dw_axi_dmac_platform 100b0000.sgdma2p: DesignWare AXI DMA Controller, 4 channels"
+66.9s,35.07ms,66897.021,18.4s,5.91ms,18400.765999999992," [   12.900483] dw_axi_dmac_platform 10500000.sgdma1p: DesignWare AXI DMA Controller, 16 channels"
+66.91s,11.21ms,66908.231,18.4s,1.78ms,18402.54599999999, [   12.902356] L2CACHE: No. of Banks in the cache: 0
+66.91s,2.98ms,66911.211,18.4s,0.24ms,18402.785999999993, [   12.902600] L2CACHE: No. of ways per bank: 0
+66.92s,2.6ms,66913.811,18.4s,0.21ms,18402.995999999992, [   12.902825] L2CACHE: Sets per bank: 1
+66.92s,2.97ms,66916.781,18.4s,0.24ms,18403.235999999994, [   12.903027] L2CACHE: Bytes per cache block: 1
+66.93s,4.58ms,66921.361,18.4s,0.28ms,18403.515999999992, [   12.903259] L2CACHE: Index of the largest way enabled: 0
+67.87s,0.94s,67861.361,18.58s,0.18s,18583.515999999992," [   13.075933] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled"
+67.9s,31.96ms,67893.32100000001,18.59s,5.87ms,18589.38599999999, [   13.081656] printk: console [ttyS0] disabled
+67.97s,66.81ms,67960.13100000001,18.59s,3.79ms,18593.175999999992," [   13.085106] 12440000.serial: ttyS0 at MMIO 0x12440000 (irq = 6, base_baud = 6250000) is a 16550A"
+68.01s,41.21ms,68001.34100000001,18.59s,2.19ms,18595.36599999999, [   13.087548] printk: console [ttyS0] enabled
+68.01s,2.62ms,68003.96100000001,18.59s,0.21ms,18595.57599999999, [   13.087548] printk: console [ttyS0] enabled
+68.01s,1.14ms,68005.10100000001,18.59s,92µs,18595.66799999999, [   13.087826] printk: bootconsole [sbi0] disabled
+68.01s,2.77ms,68007.87100000001,18.59s,0.22ms,18595.88799999999, [   13.087826] printk: bootconsole [sbi0] disabled
+68.09s,77.1ms,68084.97100000002,18.6s,7.28ms,18603.16799999999," [   13.095013] 11880000.hs_serial: ttyS1 at MMIO 0x11880000 (irq = 8, base_baud = 4640625) is a 16550A"
+68.17s,76.92ms,68161.89100000002,18.61s,7.1ms,18610.26799999999," [   13.101813] 11870000.hs_serial: ttyS2 at MMIO 0x11870000 (irq = 10, base_baud = 4640625) is a 16550A"
+68.2s,35.89ms,68197.78100000002,18.62s,7.2ms,18617.46799999999, [   13.108724] vic-rng 118d0000.trng: Initialized
+68.39s,0.19s,68387.78100000002,18.66s,40.5ms,18657.96799999999, [   13.147663] loop: module loaded
+68.41s,21.3ms,68409.08100000002,18.66s,4.51ms,18662.47799999999, [   13.152011] libphy: Fixed MDIO Bus: probed
+68.45s,34.08ms,68443.16100000002,18.67s,7.19ms,18669.667999999987, [   13.158837] stmmaceth 10020000.gmac: IRQ eth_lpi not found
+68.45s,3.49ms,68446.65100000003,18.67s,0.6ms,18670.267999999985, [   13.159360] stmmaceth 10020000.gmac: force_sf_dma_mode is ignored if force_thresh_dma_mode is set.
+68.45s,1.79ms,68448.44100000002,18.67s,0.2ms,18670.467999999986, [   13.159672] stmmaceth 10020000.gmac: PTP uses main clock
+68.46s,1.34ms,68449.78100000002,18.67s,0.2ms,18670.667999999987, [   13.159817] stmmaceth 10020000.gmac: no reset control found
+68.46s,3.94ms,68453.72100000002,18.67s,0.6ms,18671.267999999985, [   13.160417] stmmaceth 10020000.gmac: Version ID not available
+68.46s,1.2ms,68454.92100000002,18.67s,0.2ms,18671.467999999986, [   13.160564] stmmaceth 10020000.gmac: DWMAC1000
+68.46s,1.49ms,68456.41100000002,18.67s,0.1ms,18671.567999999985, [   13.160694] stmmaceth 10020000.gmac: DMA HW capability register supported
+68.46s,1.28ms,68457.69100000002,18.67s,0.2ms,18671.767999999985, [   13.160849] stmmaceth 10020000.gmac: Normal descriptors
+68.46s,1.13ms,68458.82100000003,18.67s,0.1ms,18671.867999999984, [   13.160983] stmmaceth 10020000.gmac: Ring mode enabled
+68.47s,1.53ms,68460.35100000002,18.67s,0.2ms,18672.067999999985, [   13.161124] stmmaceth 10020000.gmac: device MAC address 66:34:b0:6c:de:ad
+71.22s,2.76s,71220.35100000002,19.02s,0.34s,19012.067999999985, [   13.491520] libphy: stmmac: probed
+71.23s,1.93ms,71222.28100000002,19.02s,0.2ms,19012.267999999985," [   13.491649] mdio_bus stmmac-0:00: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:00, irq=POLL)"
+71.23s,1.91ms,71224.19100000002,19.02s,0.2ms,19012.467999999986," [   13.491854] mdio_bus stmmac-0:01: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:01, irq=POLL)"
+71.23s,1.95ms,71226.14100000002,19.02s,0.2ms,19012.667999999987," [   13.492058] mdio_bus stmmac-0:02: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:02, irq=POLL)"
+71.23s,1.87ms,71228.01100000001,19.02s,0.2ms,19012.867999999988," [   13.492263] mdio_bus stmmac-0:03: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:03, irq=POLL)"
+71.23s,1.9ms,71229.91100000001,19.02s,0.3ms,19013.167999999987," [   13.492468] mdio_bus stmmac-0:04: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:04, irq=POLL)"
+71.24s,1.88ms,71231.79100000001,19.02s,0.2ms,19013.367999999988," [   13.492672] mdio_bus stmmac-0:05: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:05, irq=POLL)"
+71.24s,1.89ms,71233.68100000001,19.02s,0.2ms,19013.56799999999," [   13.492877] mdio_bus stmmac-0:06: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:06, irq=POLL)"
+71.24s,2.35ms,71236.03100000002,19.02s,0.2ms,19013.76799999999," [   13.493083] Micrel KSZ9031 Gigabit PHY stmmac-0:07: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=stmmac-0:07, irq=POLL)"
+71.24s,1.97ms,71238.00100000002,19.02s,0.3ms,19014.06799999999," [   13.493327] mdio_bus stmmac-0:08: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:08, irq=POLL)"
+71.24s,1.89ms,71239.89100000002,19.02s,0.2ms,19014.26799999999," [   13.493532] mdio_bus stmmac-0:09: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:09, irq=POLL)"
+71.25s,1.92ms,71241.81100000002,19.02s,0.2ms,19014.46799999999," [   13.493736] mdio_bus stmmac-0:0a: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0a, irq=POLL)"
+71.25s,1.9ms,71243.71100000001,19.02s,0.2ms,19014.66799999999," [   13.493941] mdio_bus stmmac-0:0b: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0b, irq=POLL)"
+71.25s,2.43ms,71246.141,19.02s,0.2ms,19014.86799999999," [   13.494146] mdio_bus stmmac-0:0c: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0c, irq=POLL)"
+71.25s,1.89ms,71248.031,19.02s,0.2ms,19015.067999999992," [   13.494351] mdio_bus stmmac-0:0d: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0d, irq=POLL)"
+71.25s,1.87ms,71249.901,19.02s,0.2ms,19015.267999999993," [   13.494555] mdio_bus stmmac-0:0e: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0e, irq=POLL)"
+71.26s,1.91ms,71251.811,19.02s,0.2ms,19015.467999999993," [   13.494760] mdio_bus stmmac-0:0f: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0f, irq=POLL)"
+71.26s,2ms,71253.811,19.02s,0.3ms,19015.767999999993," [   13.494964] mdio_bus stmmac-0:10: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:10, irq=POLL)"
+71.26s,1.97ms,71255.781,19.02s,0.2ms,19015.967999999993," [   13.495168] mdio_bus stmmac-0:11: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:11, irq=POLL)"
+71.26s,3.14ms,71258.921,19.02s,0.2ms,19016.167999999994," [   13.495374] mdio_bus stmmac-0:12: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:12, irq=POLL)"
+71.26s,2.22ms,71261.141,19.02s,0.2ms,19016.367999999995," [   13.495578] mdio_bus stmmac-0:13: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:13, irq=POLL)"
+71.27s,2.28ms,71263.421,19.02s,0.2ms,19016.567999999996," [   13.495783] mdio_bus stmmac-0:14: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:14, irq=POLL)"
+71.27s,2.04ms,71265.461,19.02s,0.2ms,19016.767999999996," [   13.495987] mdio_bus stmmac-0:15: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:15, irq=POLL)"
+71.27s,2.97ms,71268.431,19.02s,0.3ms,19017.067999999996," [   13.496297] mdio_bus stmmac-0:16: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:16, irq=POLL)"
+71.27s,1.94ms,71270.371,19.02s,0.3ms,19017.367999999995," [   13.496503] mdio_bus stmmac-0:17: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:17, irq=POLL)"
+71.28s,1.84ms,71272.211,19.02s,0.2ms,19017.567999999996," [   13.496707] mdio_bus stmmac-0:18: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:18, irq=POLL)"
+71.28s,1.86ms,71274.071,19.02s,0.2ms,19017.767999999996," [   13.496912] mdio_bus stmmac-0:19: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:19, irq=POLL)"
+71.28s,1.86ms,71275.931,19.02s,0.2ms,19017.967999999997," [   13.497116] mdio_bus stmmac-0:1a: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1a, irq=POLL)"
+71.28s,1.84ms,71277.771,19.02s,0.2ms,19018.167999999998," [   13.497320] mdio_bus stmmac-0:1b: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1b, irq=POLL)"
+71.28s,1.83ms,71279.601,19.02s,0.2ms,19018.368," [   13.497525] mdio_bus stmmac-0:1c: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1c, irq=POLL)"
+71.29s,1.83ms,71281.431,19.02s,0.2ms,19018.568," [   13.497730] mdio_bus stmmac-0:1d: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1d, irq=POLL)"
+71.29s,1.9ms,71283.33099999999,19.02s,0.3ms,19018.868," [   13.497935] mdio_bus stmmac-0:1e: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1e, irq=POLL)"
+71.29s,1.8ms,71285.131,19.02s,0.2ms,19019.068," [   13.498139] mdio_bus stmmac-0:1f: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1f, irq=POLL)"
+77.14s,5.85s,77135.131,19.13s,0.11s,19129.068, [   13.605408] cdns-usb3 104c0000.usb: timeout waiting for xhci_ready
+77.16s,14.84ms,77149.97099999999,19.14s,3.1ms,19132.167999999998, [   13.608430] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+77.16s,1.98ms,77151.95099999999,19.14s,0.3ms,19132.467999999997," [   13.608640] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1"
+78.12s,0.96s,78111.95099999999,19.15s,16.8ms,19149.267999999996," [   13.624834] xhci-hcd xhci-hcd.0.auto: Host halt failed, -110"
+78.12s,1.17ms,78113.12099999998,19.15s,0.1ms,19149.367999999995, [   13.624976] xhci-hcd xhci-hcd.0.auto: can't setup: -110
+78.12s,1.33ms,78114.45099999999,19.15s,0.2ms,19149.567999999996, [   13.625120] xhci-hcd xhci-hcd.0.auto: USB bus 1 deregistered
+78.12s,3.57ms,78118.021,19.15s,0.5ms,19150.067999999996, [   13.625613] xhci-hcd: probe of xhci-hcd.0.auto failed with error -110
+78.13s,5.62ms,78123.64099999999,19.16s,0.9ms,19150.967999999997, [   13.626467] usbcore: registered new interface driver uas
+78.13s,2.43ms,78126.07099999998,19.16s,0.4ms,19151.368, [   13.626817] usbcore: registered new interface driver usb-storage
+78.13s,3.04ms,78129.11099999998,19.16s,0.51ms,19151.877999999997, [   13.627395] i2c /dev entries driver
+78.14s,5.6ms,78134.71099999998,19.16s,1.19ms,19153.067999999996, [   13.628455] Bluetooth: HCI UART driver ver 2.3
+78.14s,1.15ms,78135.86099999998,19.16s,0.1ms,19153.167999999994, [   13.628571] Bluetooth: HCI UART protocol H4 registered
+78.15s,7.11ms,78142.97099999998,19.16s,1.3ms,19154.467999999993, [   13.629840] sdhci: Secure Digital Host Controller Interface driver
+78.15s,0.98ms,78143.95099999997,19.16s,0.1ms,19154.567999999992, [   13.629967] sdhci: Copyright(c) Pierre Ossman
+78.15s,1.89ms,78145.84099999997,19.16s,0.3ms,19154.86799999999, [   13.630201] Synopsys Designware Multimedia Card Interface Driver
+78.15s,4.27ms,78150.11099999998,19.16s,0.8ms,19155.66799999999, [   13.631030] sdhci-pltfm: SDHCI platform and OF driver helper
+78.16s,6.98ms,78157.09099999997,19.16s,1.4ms,19157.067999999992, [   13.632317] usbcore: registered new interface driver usbhid
+78.16s,0.88ms,78157.97099999998,19.16s,0.1ms,19157.16799999999, [   13.632438] usbhid: USB HID core driver
+78.2s,33.35ms,78191.32099999998,19.17s,9.2ms,19166.36799999999, [   13.641298] NET: Registered protocol family 17
+78.2s,4.66ms,78195.98099999999,19.17s,0.8ms,19167.16799999999, [   13.642050] Bluetooth: RFCOMM TTY layer initialized
+78.2s,1.24ms,78197.22099999999,19.17s,0.2ms,19167.36799999999, [   13.642184] Bluetooth: RFCOMM socket layer initialized
+78.2s,1.12ms,78198.34099999999,19.17s,0.1ms,19167.46799999999, [   13.642337] Bluetooth: RFCOMM ver 1.11
+78.2s,1.4ms,78199.74099999998,19.17s,0.2ms,19167.66799999999, [   13.642479] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+78.2s,1.4ms,78201.14099999997,19.17s,0.1ms,19167.76799999999, [   13.642601] Bluetooth: BNEP filters: protocol multicast
+78.21s,1.43ms,78202.57099999997,19.17s,0.1ms,19167.867999999988, [   13.642740] Bluetooth: BNEP socket layer initialized
+78.21s,1.46ms,78204.03099999997,19.17s,0.2ms,19168.06799999999, [   13.642862] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+78.21s,1.12ms,78205.15099999997,19.17s,0.1ms,19168.167999999987, [   13.643008] Bluetooth: HIDP socket layer initialized
+78.21s,5.18ms,78210.33099999996,19.17s,1.2ms,19169.367999999988, [   13.644158] 9pnet: Installing 9P2000 support
+78.22s,1.92ms,78212.25099999996,19.17s,0.3ms,19169.667999999987, [   13.644448] Key type dns_resolver registered
+78.22s,2.72ms,78214.97099999996,19.17s,0.5ms,19170.167999999987, [   13.644917] Loading compiled-in X.509 certificates
+78.26s,38.48ms,78253.45099999996,19.18s,7.8ms,19177.967999999986," [   13.652334] [dhd] dhd_module_init: in Dongle Host Driver, version 100.10.545.13 (r826445-20200914-2)"
+78.26s,1.22ms,78254.67099999996,19.18s,0.1ms,19178.067999999985, [   13.652505] [dhd] ======== dhd_wlan_init_plat_data ========
+78.26s,1.15ms,78255.82099999995,19.18s,0.11ms,19178.177999999985, [   13.652639] [dhd] dhd_wlan_init_gpio: WL_REG_ON=37
+78.26s,1.06ms,78256.88099999995,19.18s,0.19ms,19178.367999999984, [   13.652753] [dhd] dhd_wifi_platform_load: Enter
+78.26s,1.12ms,78258.00099999995,19.18s,0.1ms,19178.467999999983, [   13.652864] [dhd] Power-up adapter 'DHD generic adapter'
+78.26s,1.83ms,78259.83099999995,19.18s,0.2ms,19178.667999999983," [   13.653104] [dhd] wifi_platform_set_power = 1, delay: 200 msec"
+78.26s,1.2ms,78261.03099999994,19.18s,0.2ms,19178.867999999984, [   13.653232] [dhd] ======== PULL WL_REG_ON(37) HIGH! ========
+82.45s,4.18s,82441.03099999994,19.51s,0.33s,19508.867999999984, [   13.966158] [dhd] wifi_platform_bus_enumerate device present 1
+82.45s,2ms,82443.03099999994,19.51s,0.1ms,19508.967999999983, [   13.966284] [dhd] ======== Card detection to detect SDIO card! ========
+82.45s,1.7ms,82444.73099999994,19.51s,0.1ms,19509.06799999998, [   13.966421] sdio: host isn't  initialization successfully.
+86.33s,3.88s,86324.73099999994,21.63s,2.12s,21629.06799999998," [   16.006156] [dhd] failed to power up DHD generic adapter, 0 retry left"
+86.36s,33.11ms,86357.84099999994,21.65s,16.9ms,21645.967999999983," [   16.022457] [dhd] wifi_platform_set_power = 0, delay: 0 msec"
+86.37s,1.83ms,86359.67099999994,21.65s,0.2ms,21646.167999999983, [   16.022582] [dhd] ======== PULL WL_REG_ON(37) LOW! ========
+86.37s,2.28ms,86361.95099999994,21.65s,0.1ms,21646.267999999982, [   16.022716] [dhd] wifi_platform_bus_enumerate device present 0
+86.37s,2.94ms,86364.89099999995,21.65s,0.1ms,21646.36799999998, [   16.022841] [dhd] ======== Card detection to remove SDIO card! ========
+86.37s,2.33ms,86367.22099999995,21.65s,0.2ms,21646.56799999998, [   16.022979] sdio: host isn't  initialization successfully.
+86.38s,1.97ms,86369.19099999995,21.65s,0.1ms,21646.66799999998," [   16.023105] [dhd] failed to power up DHD generic adapter, max retry reached**"
+86.38s,1.36ms,86370.55099999995,21.65s,0.1ms,21646.76799999998, [   16.023248] [dhd] unregister wifi platform drivers
+86.38s,2.72ms,86373.27099999995,21.65s,0.2ms,21646.96799999998, [   16.023367] [dhd] wifi_platform_bus_enumerate device present 0
+86.38s,1.6ms,86374.87099999996,21.65s,0.1ms,21647.067999999977, [   16.023493] [dhd] ======== Card detection to remove SDIO card! ========
+86.38s,1.5ms,86376.37099999996,21.65s,0.1ms,21647.167999999976, [   16.023631] sdio: host isn't  initialization successfully.
+86.38s,2.4ms,86378.77099999995,21.65s,0.2ms,21647.367999999977, [   16.023754] [dhd] ======== dhd_wlan_deinit_plat_data ========
+86.39s,1.6ms,86380.37099999996,21.65s,0.1ms,21647.467999999975, [   16.023886] [dhd] dhd_wlan_deinit_gpio: gpio_free(WL_REG_ON 37)
+86.39s,1.74ms,86382.11099999996,21.65s,0.2ms,21647.667999999976," [   16.024029] [dhd] dhd_module_init: Failed to load the driver, try cnt 0"
+86.39s,3.73ms,86385.84099999996,21.65s,0.4ms,21648.067999999977, [   16.024434] [dhd] dhd_module_init: Failed to load driver max retry reached**
+86.39s,1.42ms,86387.26099999995,21.65s,0.1ms,21648.167999999976, [   16.024577] [dhd] dhd_module_init: Exit err=-19
+86.4s,6.51ms,86393.77099999995,21.66s,1.52ms,21649.687999999976, [   16.025931] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+86.61s,0.21s,86603.77099999995,21.69s,31.98ms,21681.667999999976, [   16.056724] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+86.63s,12.93ms,86616.70099999994,21.69s,1.9ms,21683.567999999977, [   16.058522] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+86.63s,2.04ms,86618.74099999994,21.69s,0.2ms,21683.76799999998, [   16.058691] cfg80211: failed to load regulatory.db
+86.68s,49.97ms,86668.71099999994,21.69s,3.2ms,21686.96799999998, [   16.061784] Freeing unused kernel memory: 228K
+86.73s,53.76ms,86722.47099999993,21.72s,27.9ms,21714.86799999998, [   16.088553] Run /init as init process
+86.73s,0.78ms,86723.25099999993,21.72s,27µs,21714.89499999998, [   16.088647]   with arguments:
+86.73s,0.71ms,86723.96099999994,21.72s,91µs,21714.98599999998, [   16.088735]     /init
+86.73s,0.77ms,86724.73099999994,21.72s,82µs,21715.067999999977, [   16.088811]   with environment:
+86.73s,0.96ms,86725.69099999995,21.72s,0.1ms,21715.167999999976, [   16.088901]     HOME=/
+86.74s,1.14ms,86726.83099999995,21.72s,0.1ms,21715.267999999975, [   16.088981]     TERM=linux
+87.08s,0.35s,87076.83099999995,21.76s,42.02ms,21757.287999999975, abcd
+88.4s,1.32s,88396.83099999995,21.93s,0.17s,21927.287999999975, Starting syslogd: OK
+88.72s,0.31s,88706.83099999995,21.97s,40.7ms,21967.987999999976, Starting klogd: OK
+90.01s,1.29s,89996.83099999995,22.14s,0.17s,22137.987999999976, Running sysctl: OK
+90.3s,0.29s,90286.83099999995,22.18s,39.26ms,22177.247999999974, Starting mdev... OK
+0.12ks,28.3s,118586.83099999995,25.82s,3.65s,25827.247999999974, modprobe: can't change directory to '/lib/modules': No such file or directory
+0.12ks,0.52s,119106.83099999995,25.89s,67.12ms,25894.367999999973, Saving random seed: [   20.091952] random: dd: uninitialized urandom read (512 bytes read)
+0.12ks,20.65ms,119127.48099999994,25.89s,3.18ms,25897.547999999973, OK
+0.12ks,0.54s,119667.48099999994,25.96s,69.12ms,25966.667999999972, Starting system message bus: [   20.161287] random: dbus-uuidgen: uninitialized urandom read (12 bytes read)
+0.12ks,3.07ms,119670.55099999995,25.96s,0.4ms,25967.067999999974, [   20.161660] random: dbus-uuidgen: uninitialized urandom read (8 bytes read)
+0.12ks,0.25s,119920.55099999995,26s,36.31ms,26003.377999999975, done
+0.12ks,1.8s,121720.55099999995,26.23s,0.23s,26233.377999999975," Starting network: [   20.420445] stmmaceth 10020000.gmac eth0: validation of rgmii-txid with support 0000000,00000000,00006280 and advertisement 0000000,00000000,00006280 failed: -22"
+0.12ks,2.76ms,121723.31099999994,26.23s,0.4ms,26233.777999999977, [   20.420878] stmmaceth 10020000.gmac eth0: stmmac_open: Cannot attach to PHY (error: -22)
+0.12ks,11.85ms,121735.16099999995,26.24s,1.67ms,26235.447999999975, ip: SIOCSIFFLAGS: Invalid argument
+0.12ks,36.56ms,121771.72099999995,26.24s,5.73ms,26241.177999999974, FAIL
+0.12ks,0.78s,122551.72099999995,26.34s,0.1s,26341.177999999974, Starting dropbear sshd: OK
+0.12ks,1.51s,124061.72099999995,26.57s,0.23s,26571.177999999974, Starting DHCP server: FAIL
+0.12ks,0.33s,124391.72099999995,26.69s,0.12s,26691.177999999974,
+0.12ks,10.19ms,124401.91099999995,26.69s,0.29ms,26691.467999999975, Welcome to Buildroot

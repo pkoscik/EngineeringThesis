@@ -1,0 +1,177 @@
+htime,haddend,hcum,vtime,vaddend,vcum,mess
+0.66s,0.66s,660.0,0.1ms,0.1ms,0.1,
+0.66s,0.51ms,660.51,0.1ms,0s,0.1, OpenSBI v0.9
+0.66s,0.33ms,660.84,0.1ms,0s,0.1,    ____                    _____ ____ _____
+0.66s,0.58ms,661.4200000000001,0.2ms,0.1ms,0.2,   / __ \                  / ____|  _ \_   _|
+0.66s,0.22ms,661.6400000000001,0.2ms,0s,0.2,  | |  | |_ __   ___ _ __ | (___ | |_) || |
+0.67s,0.68ms,662.32,0.3ms,0.1ms,0.30000000000000004,  | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+0.67s,0.22ms,662.5400000000001,0.3ms,0s,0.30000000000000004,  | |__| | |_) |  __/ | | |____) | |_) || |_
+0.67s,0.54ms,663.08,0.4ms,0.1ms,0.4,   \____/| .__/ \___|_| |_|_____/|____/_____|
+0.67s,0.22ms,663.3000000000001,0.4ms,0s,0.4,         | |
+0.67s,92µs,663.392,0.4ms,0s,0.4,         |_|
+0.67s,86µs,663.4780000000001,0.4ms,0s,0.4,
+0.68s,8.33ms,671.8080000000001,0.5ms,0.1ms,0.5, Platform Name             : StarFive VIC7100
+0.68s,0.63ms,672.4380000000001,0.5ms,0s,0.5," Platform Features         : timer,mfdeleg"
+0.68s,0.54ms,672.9780000000001,0.6ms,0.1ms,0.6, Platform HART Count       : 2
+0.68s,0.35ms,673.3280000000001,0.6ms,0s,0.6, Firmware Base             : 0x80000000
+0.68s,0.5ms,673.8280000000001,0.7ms,0.1ms,0.7, Firmware Size             : 92 KB
+0.68s,0.2ms,674.0280000000001,0.7ms,0s,0.7, Runtime SBI Version       : 0.2
+0.68s,94µs,674.1220000000002,0.7ms,0s,0.7,
+0.68s,0.58ms,674.7020000000002,0.7ms,0s,0.7, Domain0 Name              : root
+0.68s,0.57ms,675.2720000000003,0.8ms,0.1ms,0.7999999999999999, Domain0 Boot HART         : 1
+0.68s,0.31ms,675.5820000000002,0.8ms,0s,0.7999999999999999," Domain0 HARTs             : 0*,1*"
+0.68s,0.91ms,676.4920000000002,0.9ms,0.1ms,0.8999999999999999, Domain0 Region00          : 0x0000000080000000-0x000000008001ffff ()
+0.68s,0.74ms,677.2320000000002,1ms,0.1ms,0.9999999999999999," Domain0 Region01          : 0x0000000000000000-0xffffffffffffffff (R,W,X)"
+0.68s,0.22ms,677.4520000000002,1ms,0s,0.9999999999999999, Domain0 Next Address      : 0x0000000080020000
+0.68s,0.47ms,677.9220000000003,1.1ms,0.1ms,1.0999999999999999, Domain0 Next Arg1         : 0x0000000088000000
+0.68s,0.18ms,678.1020000000002,1.1ms,0s,1.0999999999999999, Domain0 Next Mode         : S-mode
+0.68s,0.46ms,678.5620000000002,1.2ms,0.1ms,1.2, Domain0 SysReset          : yes
+0.68s,0.12ms,678.6820000000002,1.2ms,0s,1.2,
+0.69s,8.87ms,687.5520000000002,1.2ms,0s,1.2, Boot HART ID              : 1
+0.69s,0.54ms,688.0920000000002,1.3ms,0.1ms,1.3, Boot HART Domain          : root
+0.69s,0.36ms,688.4520000000002,1.3ms,0s,1.3, Boot HART ISA             : rv64imafdcs
+0.69s,0.69ms,689.1420000000003,1.4ms,0.1ms,1.4000000000000001," Boot HART Features        : scounteren,mcounteren,time"
+0.69s,0.17ms,689.3120000000002,1.4ms,0s,1.4000000000000001, Boot HART PMP Count       : 16
+0.69s,0.17ms,689.4820000000002,1.4ms,0s,1.4000000000000001, Boot HART PMP Granularity : 4
+0.69s,0.47ms,689.9520000000002,1.5ms,0.1ms,1.5000000000000002, Boot HART PMP Address Bits: 54
+0.69s,0.2ms,690.1520000000003,1.5ms,0s,1.5000000000000002, Boot HART MHPM Count      : 0
+0.69s,0.16ms,690.3120000000002,1.5ms,0s,1.5000000000000002, Boot HART MHPM Count      : 0
+0.69s,0.59ms,690.9020000000003,1.6ms,0.1ms,1.6000000000000003, Boot HART MIDELEG         : 0x0000000000000222
+0.69s,0.24ms,691.1420000000003,1.6ms,0s,1.6000000000000003, Boot HART MEDELEG         : 0x000000000000b109
+0.81s,0.11s,801.1420000000003,32.6ms,31ms,32.6,
+0.81s,75µs,801.2170000000003,32.6ms,0s,32.6,
+0.81s,0.35ms,801.5670000000003,32.6ms,0s,32.6, U-Boot 2021.01-g7dac1a6e-dirty (Apr 26 2021 - 09:57:51 +0000)
+0.81s,47µs,801.6140000000004,32.6ms,0s,32.6,
+0.81s,1.11ms,802.7240000000004,32.8ms,0.2ms,32.800000000000004," ofnode_read_prop: riscv,isa: rv64imafdc"
+0.81s,0.19ms,802.9140000000004,32.8ms,0s,32.800000000000004, CPU:   rv64imafdc
+0.81s,0.44ms,803.3540000000005,32.9ms,0.1ms,32.900000000000006," Model: sifive,freedom-u74-arty"
+0.83s,24.96ms,828.3140000000005,39.6ms,6.7ms,39.60000000000001, DRAM:  8 GiB
+0.84s,3.65ms,831.9640000000005,40.3ms,0.7ms,40.30000000000001, ofnode_read_prop: tick-timer: <not found>
+1.15s,0.31s,1141.9640000000004,0.15s,0.11s,150.3, ofnode_read_u32_array: ranges: ofnode_read_u32_array: ranges: ofnode_read_u32_index: timebase-frequency: (not found)
+1.15s,1.11ms,1143.0740000000003,0.15s,0.1ms,150.4, ofnode_read_u32_index: timebase-frequency: 0x5f5e10 (6250000)
+1.15s,3.51ms,1146.5840000000003,0.15s,1.7ms,152.1, ofnode_read_u32_index: timebase-frequency: (not found)
+1.15s,0.24ms,1146.8240000000003,0.15s,0s,152.1, ofnode_read_u32_index: timebase-frequency: 0x5f5e10 (6250000)
+1.16s,4.26ms,1151.0840000000003,0.16s,1.6ms,153.7, MMC:   VIC DWMMC0: 0
+1.21s,52.13ms,1203.2140000000004,0.18s,23.7ms,177.39999999999998, In:    serial
+1.21s,0.14ms,1203.3540000000005,0.18s,0s,177.39999999999998, Out:   serial
+1.21s,0.14ms,1203.4940000000006,0.18s,0s,177.39999999999998, Err:   serial
+1.21s,3.39ms,1206.8840000000007,0.18s,1.4ms,178.79999999999998," Model: sifive,freedom-u74-arty"
+1.22s,7.32ms,1214.2040000000006,0.18s,1.8ms,180.6, Net:   ofnode_read_prop: tick-timer: <not found>
+1.22s,4.57ms,1218.7740000000006,0.18s,0.7ms,181.29999999999998, dwmac.10020000
+1.26s,35.89ms,1254.6640000000007,0.2s,16.8ms,198.1, Hit any key to stop autoboot:  0
+1.27s,5.77ms,1260.4340000000007,0.2s,0.7ms,198.79999999999998, ## Loading kernel from FIT Image at a0000000 ...
+1.27s,1.42ms,1261.8540000000007,0.2s,0.4ms,199.2,    Using 'config-1' configuration
+1.27s,0.6ms,1262.4540000000006,0.2s,0.1ms,199.29999999999998,    Trying 'vmlinux' kernel subimage
+1.27s,0.24ms,1262.6940000000006,0.2s,0s,199.29999999999998,      Description:  vmlinux
+1.27s,0.65ms,1263.3440000000007,0.2s,0.1ms,199.39999999999998,      Type:         Kernel Image
+1.27s,0.48ms,1263.8240000000008,0.2s,0.1ms,199.49999999999997,      Compression:  uncompressed
+1.27s,0.82ms,1264.6440000000007,0.2s,0.2ms,199.69999999999996,      Data Start:   0xa00000c8
+1.27s,0.63ms,1265.2740000000008,0.2s,0.1ms,199.79999999999995,      Data Size:    17660416 Bytes = 16.8 MiB
+1.27s,0.25ms,1265.5240000000008,0.2s,0s,199.79999999999995,      Architecture: RISC-V
+1.27s,0.42ms,1265.9440000000009,0.2s,0.1ms,199.89999999999995,      OS:           Linux
+1.27s,0.53ms,1266.4740000000008,0.2s,0.1ms,199.99999999999994,      Load Address: 0x80200000
+1.27s,0.47ms,1266.9440000000009,0.2s,0.1ms,200.09999999999994,      Entry Point:  0x80200000
+1.27s,1.03ms,1267.9740000000008,0.2s,0.3ms,200.39999999999995,    Verifying Hash Integrity ... OK
+1.28s,5.17ms,1273.144000000001,0.2s,1.8ms,202.19999999999996, ## Loading fdt from FIT Image at a0000000 ...
+1.28s,0.9ms,1274.044000000001,0.2s,0.3ms,202.49999999999997,    Using 'config-1' configuration
+1.28s,0.63ms,1274.6740000000011,0.2s,0.2ms,202.69999999999996,    Trying 'fdt' fdt subimage
+1.28s,0.4ms,1275.0740000000012,0.2s,0.1ms,202.79999999999995,      Description:  unavailable
+1.28s,0.17ms,1275.2440000000013,0.2s,0s,202.79999999999995,      Type:         Flat Device Tree
+1.28s,0.34ms,1275.5840000000012,0.2s,0.1ms,202.89999999999995,      Compression:  uncompressed
+1.28s,0.61ms,1276.194000000001,0.2s,0.2ms,203.09999999999994,      Data Start:   0xa4f297f8
+1.28s,0.2ms,1276.3940000000011,0.2s,0s,203.09999999999994,      Data Size:    16655 Bytes = 16.3 KiB
+1.28s,0.35ms,1276.744000000001,0.2s,0.1ms,203.19999999999993,      Architecture: RISC-V
+1.28s,0.23ms,1276.974000000001,0.2s,0s,203.19999999999993,      Load Address: 0x86000000
+1.28s,0.68ms,1277.6540000000011,0.2s,0.2ms,203.39999999999992,    Verifying Hash Integrity ... OK
+1.28s,0.97ms,1278.6240000000012,0.21s,0.3ms,203.69999999999993,    Loading fdt from 0xa4f297f8 to 0x86000000
+1.29s,8.94ms,1287.5640000000012,0.21s,0.5ms,204.19999999999993,    Booting using the fdt blob at 0x86000000
+1.3s,2.54ms,1290.1040000000012,0.21s,0.7ms,204.89999999999992, ## Loading loadables from FIT Image at a0000000 ...
+1.3s,0.71ms,1290.8140000000012,0.21s,0.2ms,205.0999999999999,    Trying 'ramdisk' loadables subimage
+1.3s,0.17ms,1290.9840000000013,0.21s,0s,205.0999999999999,      Description:  buildroot initramfs
+1.3s,0.49ms,1291.4740000000013,0.21s,0.1ms,205.1999999999999,      Type:         RAMDisk Image
+1.3s,0.43ms,1291.9040000000014,0.21s,0.1ms,205.2999999999999,      Compression:  uncompressed
+1.3s,0.68ms,1292.5840000000014,0.21s,0.2ms,205.4999999999999,      Data Start:   0xa10d7b7c
+1.3s,0.18ms,1292.7640000000015,0.21s,0s,205.4999999999999,      Data Size:    65346560 Bytes = 62.3 MiB
+1.3s,0.4ms,1293.1640000000016,0.21s,0.1ms,205.59999999999988,      Architecture: RISC-V
+1.3s,0.42ms,1293.5840000000017,0.21s,0.1ms,205.69999999999987,      OS:           Linux
+1.3s,0.37ms,1293.9540000000015,0.21s,0.1ms,205.79999999999987,      Load Address: 0x86100000
+1.3s,0.41ms,1294.3640000000016,0.21s,0.1ms,205.89999999999986,      Entry Point:  unavailable
+1.3s,0.89ms,1295.2540000000017,0.21s,0.3ms,206.19999999999987,    Verifying Hash Integrity ... OK
+1.3s,1.36ms,1296.6140000000016,0.21s,0.5ms,206.69999999999987,    Loading loadables from 0xa10d7b7c to 0x86100000
+7.92s,6.61s,7906.614000000001,3.48s,3.27s,3476.7,    Loading Kernel Image
+9.22s,1.3s,9206.614000000001,3.6s,0.12s,3596.7, ## Flattened Device Tree blob at 86000000
+9.22s,0.26ms,9206.874000000002,3.6s,0s,3596.7,    Booting using the fdt blob at 0x86000000
+9.25s,28.09ms,9234.964000000002,3.61s,8.3ms,3605.0,"    Using Device Tree in place at 0000000086000000, end 000000008600710e"
+9.27s,22.42ms,9257.384000000002,3.62s,10.3ms,3615.3,
+9.27s,0.87ms,9258.254000000003,3.62s,0s,3615.3, Starting kernel ...
+9.27s,43µs,9258.297000000002,3.62s,0s,3615.3,
+9.32s,53.07ms,9311.367000000002,3.63s,15.6ms,3630.9," [    0.000000] Linux version 5.10.6-g93604a0a3ecc (root@runner-7005a2b9-project-3475-concurrent-0) (riscv64-buildroot-linux-gnu-gcc.br_real (Buildroot -g2e13b6d) 10.2.0, GNU ld (GNU Binutils) 2.34) #1 SMP Mon Apr 26 09:57:54 UTC 2021"
+9.32s,1.79ms,9313.157000000003,3.63s,0.3ms,3631.2000000000003, [    0.000000] OF: fdt: Ignoring memory range 0x80000000 - 0x80200000
+9.32s,1.32ms,9314.477000000003,3.63s,0.2ms,3631.4, [    0.000000] earlycon: sbi0 at I/O port 0x0 (options '')
+9.33s,1.48ms,9315.957000000002,3.64s,0.3ms,3631.7000000000003, [    0.000000] printk: bootconsole [sbi0] enabled
+9.33s,3.47ms,9319.427000000001,3.64s,0.9ms,3632.6000000000004, [    0.000000] efi: UEFI not found.
+9.33s,3.26ms,9322.687000000002,3.64s,0.3ms,3632.9000000000005, [    0.000000] Initial ramdisk at: 0x(____ptrval____) (99614720 bytes)
+9.35s,12.65ms,9335.337000000001,3.64s,3.3ms,3636.2000000000007," [    0.000000] Reserved memory: created CMA memory pool at 0x00000000a0000000, size 640 MiB"
+9.35s,2.3ms,9337.637,3.64s,0.4ms,3636.600000000001," [    0.000000] OF: reserved mem: initialized node linux,cma, compatible id shared-dma-pool"
+9.4s,51.21ms,9388.847,3.65s,6.4ms,3643.000000000001, [    0.000000] Zone ranges:
+9.4s,2.94ms,9391.787,3.65s,0.4ms,3643.400000000001, [    0.000000]   DMA32    [mem 0x0000000080200000-0x00000000ffffffff]
+9.4s,1.8ms,9393.587,3.65s,0.3ms,3643.700000000001, [    0.000000]   Normal   [mem 0x0000000100000000-0x000000027fffffff]
+9.4s,1.29ms,9394.877,3.65s,0.2ms,3643.900000000001, [    0.000000] Movable zone start for each node
+9.41s,1.15ms,9396.027,3.65s,0.2ms,3644.100000000001, [    0.000000] Early memory node ranges
+9.41s,2.12ms,9398.147,3.65s,0.4ms,3644.500000000001, [    0.000000]   node   0: [mem 0x0000000080200000-0x000000027fffffff]
+9.41s,2.08ms,9400.227,3.65s,0.3ms,3644.800000000001, [    0.000000] Initmem setup node 0 [mem 0x0000000080200000-0x000000027fffffff]
+9.41s,2.05ms,9402.277,3.65s,0.3ms,3645.1000000000013, [    0.000000] On node 0 totalpages: 2096640
+9.87s,0.46s,9862.277,3.8s,0.16s,3805.1000000000013, [    0.000000]   DMA32 zone: 7161 pages used for memmap
+9.87s,1.48ms,9863.757,3.81s,0.3ms,3805.4000000000015, [    0.000000]   DMA32 zone: 0 pages reserved
+9.88s,1.38ms,9865.136999999999,3.81s,0.2ms,3805.6000000000013," [    0.000000]   DMA32 zone: 523776 pages, LIFO batch:63"
+10.14s,0.26s,10125.136999999999,3.94s,0.13s,3935.6000000000013, [    0.000000]   Normal zone: 21504 pages used for memmap
+10.14s,1.53ms,10126.667,3.94s,0.3ms,3935.9000000000015," [    0.000000]   Normal zone: 1572864 pages, LIFO batch:63"
+11.23s,1.09s,11216.667,4.45s,0.52s,4455.9000000000015, [    0.000000] software IO TLB: mapped [mem 0x00000000fbfff000-0x00000000fffff000] (64MB)
+11.23s,1.77ms,11218.437,4.45s,0.3ms,4456.200000000002, [    0.000000] SBI specification v0.2 detected
+11.23s,1.37ms,11219.807,4.45s,0.2ms,4456.4000000000015, [    0.000000] SBI implementation ID=0x1 Version=0x9
+11.23s,1.5ms,11221.307,4.45s,0.3ms,4456.700000000002, [    0.000000] SBI v0.2 TIME extension detected
+11.23s,1.22ms,11222.527,4.45s,0.2ms,4456.9000000000015, [    0.000000] SBI v0.2 IPI extension detected
+11.23s,1.23ms,11223.757,4.45s,0.2ms,4457.100000000001, [    0.000000] SBI v0.2 RFENCE extension detected
+11.23s,1.49ms,11225.247,4.45s,0.3ms,4457.4000000000015, [    0.000000] SBI v0.2 HSM extension detected
+11.24s,3.11ms,11228.357,4.46s,0.4ms,4457.800000000001, [    0.000000] riscv: ISA extensions acdfim
+11.24s,1.15ms,11229.507,4.46s,0.2ms,4458.000000000001, [    0.000000] riscv: ELF capabilities acdfim
+11.25s,12.52ms,11242.027,4.46s,0.9ms,4458.900000000001, [    0.000000] percpu: Embedded 17 pages/cpu s30888 r8192 d30552 u69632
+11.25s,2.93ms,11244.957,4.46s,0.4ms,4459.3, [    0.000000] pcpu-alloc: s30888 r8192 d30552 u69632 alloc=17*4096
+11.26s,2.06ms,11247.017,4.46s,0.4ms,4459.7, [    0.000000] pcpu-alloc: [0] 0 [0] 1
+11.26s,6.64ms,11253.657,4.46s,0.9ms,4460.599999999999," [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 2067975"
+11.27s,2.33ms,11255.987,4.46s,0.3ms,4460.9," [    0.000000] Kernel command line: console=ttyS0,115200  debug rootwait  earlycon=sbi"
+11.3s,38.08ms,11294.067,4.47s,12ms,4472.9," [    0.000000] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)"
+11.32s,17.77ms,11311.837,4.48s,6ms,4478.9," [    0.000000] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)"
+11.32s,1.29ms,11313.127,4.48s,0.2ms,4479.099999999999, [    0.000000] Sorting __ex_table...
+11.33s,6.83ms,11319.957,4.48s,2.5ms,4481.599999999999," [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off"
+12.18s,0.85s,12169.957,4.95s,0.47s,4951.599999999999," [    0.000000] Memory: 6735000K/8386560K available (6771K kernel code, 4266K rwdata, 4096K rodata, 230K init, 392K bss, 996200K reserved, 655360K cma-reserved)"
+12.2s,18.35ms,12188.307,4.95s,1.3ms,4952.9," [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1"
+12.21s,13.63ms,12201.937,4.95s,1.2ms,4954.099999999999, [    0.000000] rcu: Hierarchical RCU implementation.
+12.21s,1.86ms,12203.797,4.95s,0.3ms,4954.4, [    0.000000] rcu: RCU debug extended QS entry/exit.
+12.21s,1.52ms,12205.317000000001,4.95s,0.2ms,4954.599999999999, [    0.000000] Tracing variant of Tasks RCU enabled.
+12.22s,2.42ms,12207.737000000001,4.95s,0.4ms,4954.999999999999, [    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+12.22s,3.18ms,12210.917000000001,4.95s,0.4ms,4955.399999999999," [    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0"
+12.23s,7.07ms,12217.987000000001,4.95s,1.1ms,4956.499999999999, [    0.000000] riscv-intc: 64 local interrupts mapped
+12.25s,24.04ms,12242.027000000002,4.95s,3.9ms,4960.399999999999, [    0.000000] plic: disable L2 cache irq 1 in plic
+12.25s,1.62ms,12243.647000000003,4.96s,0.2ms,4960.5999999999985, [    0.000000] plic: disable L2 cache irq 2 in plic
+12.25s,1.77ms,12245.417000000003,4.96s,0.3ms,4960.899999999999, [    0.000000] plic: disable L2 cache irq 3 in plic
+12.26s,2.53ms,12247.947000000004,4.96s,0.3ms,4961.199999999999, [    0.000000] plic: Can't get L2 cache irq(#3).
+12.27s,13.21ms,12261.157000000003,4.96s,1ms,4962.199999999999, [    0.000000] plic: disable L2 cache irq 1 in plic
+12.27s,1.75ms,12262.907000000003,4.96s,0.3ms,4962.499999999999, [    0.000000] plic: disable L2 cache irq 2 in plic
+12.27s,1.74ms,12264.647000000003,4.96s,0.3ms,4962.799999999999, [    0.000000] plic: disable L2 cache irq 3 in plic
+12.28s,1.43ms,12266.077000000003,4.96s,0.2ms,4962.999999999999, [    0.000000] plic: Can't get L2 cache irq(#3).
+12.28s,3.27ms,12269.347000000003,4.96s,0.4ms,4963.399999999999, [    0.000000] plic: plic@c000000: mapped 127 interrupts with 2 handlers for 4 contexts.
+12.3s,16.69ms,12286.037000000004,4.96s,2.3ms,4965.699999999999, [    0.000000] random: get_random_bytes called from start_kernel+0x31c/0x48e with crng_init=0
+12.3s,2.02ms,12288.057000000004,4.96s,0.3ms,4965.999999999999, [    0.000000] riscv_timer_init_dt: Registering clocksource cpuid [0] hartid [1]
+12.3s,3.8ms,12291.857000000004,4.96s,0.6ms,4966.599999999999," [    0.000000] clocksource: riscv_clocksource: mask: 0xffffffffffffffff max_cycles: 0x171024e6b, max_idle_ns: 440795202301 ns"
+12.3s,3.06ms,12294.917000000003,4.96s,0.4ms,4966.999999999999," [    0.000000] sched_clock: 64 bits at 6MHz, resolution 160ns, wraps every 4398046511040ns"
+12.32s,13.79ms,12308.707000000004,4.96s,0.9ms,4967.899999999999, [    0.001056] Console: colour dummy device 80x25
+12.33s,9.83ms,12318.537000000004,4.96s,0.6ms,4968.499999999999," [    0.001344] Calibrating delay loop (skipped), value calculated using timer frequency.. 12.50 BogoMIPS (lpj=62500)"
+12.33s,1.82ms,12320.357000000004,4.96s,0.3ms,4968.799999999999, [    0.001920] pid_max: default: 32768 minimum: 301
+12.34s,12.42ms,12332.777000000004,4.96s,1.4ms,4970.199999999999," [    0.003072] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)"
+12.34s,3.03ms,12335.807000000004,4.97s,0.6ms,4970.799999999999," [    0.003648] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)"
+12.41s,65.21ms,12401.017000000003,4.97s,6.5ms,4977.299999999999, [    0.010080] rcu: Hierarchical SRCU implementation.
+12.42s,10.96ms,12411.977000000003,4.97s,0.9ms,4978.199999999999, [    0.010944] EFI services will not be available.
+12.43s,8.54ms,12420.517000000003,4.97s,1.2ms,4979.399999999999, [    0.012096] smp: Bringing up secondary CPUs ...
+12.47s,39.94ms,12460.457000000004,4.98s,2.4ms,4981.799999999998," [    0.014400] smp: Brought up 1 node, 2 CPUs"
+12.52s,54.39ms,12514.847000000003,4.98s,6ms,4987.799999999998, [    0.020160] devtmpfs: initialized

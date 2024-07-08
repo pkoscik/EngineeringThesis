@@ -1,0 +1,1062 @@
+11:35:29.3407 [INFO] BeagleV: Machine started.
+11:35:29.3761 [WARNING] U74_1: Reading from CSR #960 that is not implemented.
+11:35:29.3835 [WARNING] sysbus: [U74_1: 0x800025F2] (tag: 'SDIO') ReadDoubleWord from non existing peripheral at 0x1000002C, returning 0x0.
+11:35:29.3873 [INFO] uart3: [host: 0.66s (+0.66s)|virt: 0.1ms (+0.1ms)] 
+11:35:29.3879 [INFO] uart3: [host: 0.66s (+0.53ms)|virt:    0.1ms (+0s)] OpenSBI v0.9
+11:35:29.3881 [INFO] uart3: [host: 0.66s (+0.34ms)|virt:    0.1ms (+0s)]    ____                    _____ ____ _____
+11:35:29.3885 [INFO] uart3: [host: 0.66s (+0.34ms)|virt:  0.2ms (+96µs)]   / __ \                  / ____|  _ \_   _|
+11:35:29.3887 [INFO] uart3: [host: 0.66s (+0.18ms)|virt:    0.2ms (+0s)]  | |  | |_ __   ___ _ __ | (___ | |_) || |
+11:35:29.3890 [INFO] uart3: [host: 0.66s (+0.32ms)|virt: 0.3ms (+0.1ms)]  | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+11:35:29.3892 [INFO] uart3: [host: 0.66s (+0.21ms)|virt:    0.3ms (+0s)]  | |__| | |_) |  __/ | | |____) | |_) || |_
+11:35:29.3895 [INFO] uart3: [host: 0.66s (+0.31ms)|virt: 0.4ms (+0.1ms)]   \____/| .__/ \___|_| |_|_____/|____/_____|
+11:35:29.3896 [INFO] uart3: [host:  0.66s (+0.1ms)|virt:    0.4ms (+0s)]         | |
+11:35:29.3897 [INFO] uart3: [host: 0.66s (+0.13ms)|virt:    0.4ms (+0s)]         |_|
+11:35:29.3898 [INFO] uart3: [host:   0.66s (+30µs)|virt:    0.4ms (+0s)] 
+11:35:29.3947 [WARNING] plic: Unhandled write to offset 0x200000, value 0x7.
+11:35:29.3976 [INFO] uart3: [host: 0.67s (+7.82ms)|virt: 0.5ms (+0.1ms)] Platform Name             : StarFive VIC7100
+11:35:29.3981 [INFO] uart3: [host: 0.67s (+0.54ms)|virt:    0.5ms (+0s)] Platform Features         : timer,mfdeleg
+11:35:29.3985 [INFO] uart3: [host: 0.67s (+0.34ms)|virt: 0.6ms (+0.1ms)] Platform HART Count       : 2
+11:35:29.3987 [INFO] uart3: [host: 0.67s (+0.28ms)|virt:    0.6ms (+0s)] Firmware Base             : 0x80000000
+11:35:29.3990 [INFO] uart3: [host: 0.67s (+0.23ms)|virt: 0.7ms (+0.1ms)] Firmware Size             : 92 KB
+11:35:29.3991 [INFO] uart3: [host: 0.67s (+0.18ms)|virt:    0.7ms (+0s)] Runtime SBI Version       : 0.2
+11:35:29.3992 [INFO] uart3: [host:   0.67s (+70µs)|virt:    0.7ms (+0s)] 
+11:35:29.3996 [INFO] uart3: [host:  0.67s (+0.4ms)|virt:    0.7ms (+0s)] Domain0 Name              : root
+11:35:29.3999 [INFO] uart3: [host: 0.67s (+0.32ms)|virt: 0.8ms (+0.1ms)] Domain0 Boot HART         : 0
+11:35:29.4003 [INFO] uart3: [host: 0.67s (+0.36ms)|virt:    0.8ms (+0s)] Domain0 HARTs             : 0*,1*
+11:35:29.4009 [INFO] uart3: [host: 0.67s (+0.58ms)|virt: 0.9ms (+0.1ms)] Domain0 Region00          : 0x0000000080000000-0x000000008001ffff ()
+11:35:29.4014 [INFO] uart3: [host:  0.67s (+0.5ms)|virt:   1ms (+0.1ms)] Domain0 Region01          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+11:35:29.4016 [INFO] uart3: [host:  0.67s (+0.2ms)|virt:      1ms (+0s)] Domain0 Next Address      : 0x0000000080020000
+11:35:29.4019 [INFO] uart3: [host:  0.67s (+0.3ms)|virt: 1.1ms (+0.1ms)] Domain0 Next Arg1         : 0x0000000088000000
+11:35:29.4021 [INFO] uart3: [host: 0.67s (+0.18ms)|virt:    1.1ms (+0s)] Domain0 Next Mode         : S-mode
+11:35:29.4024 [INFO] uart3: [host:  0.67s (+0.3ms)|virt: 1.2ms (+0.1ms)] Domain0 SysReset          : yes
+11:35:29.4025 [INFO] uart3: [host:  0.67s (+0.1ms)|virt:    1.2ms (+0s)] 
+11:35:29.4115 [INFO] uart3: [host: 0.68s (+9.04ms)|virt:    1.2ms (+0s)] Boot HART ID              : 0
+11:35:29.4118 [INFO] uart3: [host: 0.68s (+0.29ms)|virt: 1.3ms (+0.1ms)] Boot HART Domain          : root
+11:35:29.4122 [INFO] uart3: [host: 0.68s (+0.36ms)|virt:    1.3ms (+0s)] Boot HART ISA             : rv64imafdcs
+11:35:29.4127 [INFO] uart3: [host: 0.68s (+0.51ms)|virt: 1.4ms (+0.1ms)] Boot HART Features        : scounteren,mcounteren,time
+11:35:29.4129 [INFO] uart3: [host: 0.68s (+0.18ms)|virt:    1.4ms (+0s)] Boot HART PMP Count       : 16
+11:35:29.4130 [INFO] uart3: [host: 0.68s (+0.19ms)|virt:    1.4ms (+0s)] Boot HART PMP Granularity : 4
+11:35:29.4133 [INFO] uart3: [host: 0.68s (+0.27ms)|virt: 1.5ms (+0.1ms)] Boot HART PMP Address Bits: 54
+11:35:29.4135 [INFO] uart3: [host: 0.68s (+0.17ms)|virt:    1.5ms (+0s)] Boot HART MHPM Count      : 0
+11:35:29.4136 [INFO] uart3: [host: 0.68s (+0.15ms)|virt:    1.5ms (+0s)] Boot HART MHPM Count      : 0
+11:35:29.4140 [INFO] uart3: [host: 0.68s (+0.33ms)|virt: 1.6ms (+0.1ms)] Boot HART MIDELEG         : 0x0000000000000222
+11:35:29.4142 [INFO] uart3: [host: 0.68s (+0.19ms)|virt:    1.6ms (+0s)] Boot HART MEDELEG         : 0x000000000000b109
+11:35:29.4475 [WARNING] sysbus: [U74_1: 0x80046502] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800248, returning 0x0.
+11:35:29.4479 [WARNING] sysbus: [U74_1: 0x8004651A] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800248, value 0x80000000.
+11:35:29.4479 [WARNING] sysbus: [U74_1: 0x8004651E] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180024C, returning 0x0.
+11:35:29.4479 [WARNING] sysbus: [U74_1: 0x80046530] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180024C, value 0x80000000.
+11:35:29.4863 [WARNING] sysbus: [U74_1: 0x8004656C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910358, returning 0x0.
+11:35:29.4863 [WARNING] sysbus: [U74_1: 0x80046582] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910358, value 0x7.
+11:35:29.4864 [WARNING] sysbus: [U74_1: 0x80046586] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191007C, returning 0x0.
+11:35:29.4864 [WARNING] sysbus: [U74_1: 0x8004659A] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191007C, value 0x1.
+11:35:29.4864 [WARNING] sysbus: [U74_1: 0x8004659C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910080, returning 0x0.
+11:35:29.4865 [WARNING] sysbus: [U74_1: 0x800465AC] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910080, value 0x7F.
+11:35:29.4865 [WARNING] sysbus: [U74_1: 0x800465B0] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910084, returning 0x0.
+11:35:29.4865 [WARNING] sysbus: [U74_1: 0x800465BE] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910084, value 0x0.
+11:35:29.4866 [WARNING] sysbus: [U74_1: 0x800465C2] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800250, returning 0x0.
+11:35:29.4866 [WARNING] sysbus: [U74_1: 0x800465D2] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800250, value 0x80000000.
+11:35:29.4866 [WARNING] sysbus: [U74_1: 0x800465D6] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800254, returning 0x0.
+11:35:29.4867 [WARNING] sysbus: [U74_1: 0x800465EA] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800254, value 0x80000000.
+11:35:29.4869 [WARNING] sysbus: [U74_1: 0x80046620] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100A0, returning 0x0.
+11:35:29.4869 [WARNING] sysbus: [U74_1: 0x8004662E] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119100A0, value 0x80.
+11:35:29.4869 [WARNING] sysbus: [U74_1: 0x80046632] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191035C, returning 0x0.
+11:35:29.4869 [WARNING] sysbus: [U74_1: 0x80046640] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191035C, value 0xB.
+11:35:29.4870 [WARNING] sysbus: [U74_1: 0x80046644] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191009C, returning 0x0.
+11:35:29.4870 [WARNING] sysbus: [U74_1: 0x80046652] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191009C, value 0x1.
+11:35:29.4870 [WARNING] sysbus: [U74_1: 0x80046656] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100A4, returning 0x0.
+11:35:29.4871 [WARNING] sysbus: [U74_1: 0x80046660] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119100A4, value 0x0.
+11:35:29.4876 [INFO] uart3: [host: 0.76s (+73.42ms)|virt: 32.6ms (+31ms)] 
+11:35:29.4877 [INFO] uart3: [host:    0.76s (+73µs)|virt:   32.6ms (+0s)] 
+11:35:29.4878 [INFO] uart3: [host:  0.76s (+0.18ms)|virt:   32.6ms (+0s)] U-Boot 2021.01-g7dac1a6e-dirty (Apr 26 2021 - 09:57:51 +0000)
+11:35:29.4879 [INFO] uart3: [host:    0.76s (+35µs)|virt:   32.6ms (+0s)] 
+11:35:29.4885 [INFO] uart3: [host:  0.76s (+0.65ms)|virt: 32.8ms (+0.2ms)] ofnode_read_prop: riscv,isa: rv64imafdc
+11:35:29.4886 [INFO] uart3: [host:   0.76s (+0.1ms)|virt:    32.8ms (+0s)] CPU:   rv64imafdc
+11:35:29.4889 [INFO] uart3: [host:  0.76s (+0.26ms)|virt: 32.9ms (+0.1ms)] Model: sifive,freedom-u74-arty
+11:35:29.5024 [INFO] uart3: [host: 0.77s (+13.48ms)|virt: 39.6ms (+6.7ms)] DRAM:  8 GiB
+11:35:29.5026 [WARNING] sysbus: [U74_1: 0x800219A0] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x118581A0, returning 0x0.
+11:35:29.5027 [WARNING] sysbus: [U74_1: 0x800219D8] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000AC, returning 0x0.
+11:35:29.5027 [WARNING] sysbus: [U74_1: 0x800219F2] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000AC, value 0x80000000.
+11:35:29.5027 [WARNING] sysbus: [U74_1: 0x800219F6] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000B0, returning 0x0.
+11:35:29.5028 [WARNING] sysbus: [U74_1: 0x80021A08] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000B0, value 0x80000000.
+11:35:29.5028 [WARNING] sysbus: [U74_1: 0x80021A0C] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000B4, returning 0x0.
+11:35:29.5028 [WARNING] sysbus: [U74_1: 0x80021A1E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000B4, value 0x80000000.
+11:35:29.5029 [WARNING] sysbus: [U74_1: 0x80021A22] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000B8, returning 0x0.
+11:35:29.5029 [WARNING] sysbus: [U74_1: 0x80021A32] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000B8, value 0x80000000.
+11:35:29.5029 [WARNING] sysbus: [U74_1: 0x80021A36] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000BC, returning 0x0.
+11:35:29.5029 [WARNING] sysbus: [U74_1: 0x80021A44] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000BC, value 0x80000000.
+11:35:29.5032 [WARNING] sysbus: [U74_1: 0x80021AD8] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11850050, returning 0x0.
+11:35:29.5033 [WARNING] sysbus: [U74_1: 0x80021AE8] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11850050, value 0x1.
+11:35:29.5033 [WARNING] sysbus: [U74_1: 0x80021AEA] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000C0, returning 0x0.
+11:35:29.5033 [WARNING] sysbus: [U74_1: 0x80021B02] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000C0, value 0x80000000.
+11:35:29.5034 [WARNING] sysbus: [U74_1: 0x80021B06] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000DC, returning 0x0.
+11:35:29.5034 [WARNING] sysbus: [U74_1: 0x80021B1A] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000DC, value 0x80000000.
+11:35:29.5034 [WARNING] sysbus: [U74_1: 0x80021B1E] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000B0, returning 0x0.
+11:35:29.5034 [WARNING] sysbus: [U74_1: 0x80021B2E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000B0, value 0x80000000.
+11:35:29.5044 [INFO] uart3: [host:  0.77s (+2.09ms)|virt: 40.3ms (+0.7ms)] ofnode_read_prop: tick-timer: <not found>
+11:35:29.5282 [WARNING] sysbus: [U74_1: 0x80021B36] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000CC, returning 0x0.
+11:35:29.5283 [WARNING] sysbus: [U74_1: 0x80021B4A] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000CC, value 0x80000000.
+11:35:29.5283 [WARNING] sysbus: [U74_1: 0x80021B4E] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000D0, returning 0x0.
+11:35:29.5283 [WARNING] sysbus: [U74_1: 0x80021B62] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000D0, value 0x80000000.
+11:35:29.5284 [WARNING] sysbus: [U74_1: 0x80021B66] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000D8, returning 0x0.
+11:35:29.5284 [WARNING] sysbus: [U74_1: 0x80021B7C] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000D8, value 0x80000000.
+11:35:29.5580 [WARNING] sysbus: [U74_1: 0x80021C3A] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000C0, returning 0x0.
+11:35:29.5580 [WARNING] sysbus: [U74_1: 0x80021C54] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000C0, value 0x80000000.
+11:35:29.5580 [WARNING] sysbus: [U74_1: 0x80021C58] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000C4, returning 0x0.
+11:35:29.5581 [WARNING] sysbus: [U74_1: 0x80021C6A] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000C4, value 0x80000000.
+11:35:29.5581 [WARNING] sysbus: [U74_1: 0x80021C6E] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000C8, returning 0x0.
+11:35:29.5581 [WARNING] sysbus: [U74_1: 0x80021C80] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000C8, value 0x80000000.
+11:35:29.5583 [WARNING] sysbus: [U74_1: 0x80021CE0] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11850040, returning 0x0.
+11:35:29.5583 [WARNING] sysbus: [U74_1: 0x80021CF0] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11850040, value 0x8.
+11:35:29.5584 [WARNING] sysbus: [U74_1: 0x80021CF2] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180008C, returning 0x0.
+11:35:29.5584 [WARNING] sysbus: [U74_1: 0x80021D08] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180008C, value 0x80000000.
+11:35:29.5584 [WARNING] sysbus: [U74_1: 0x80021D0C] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800090, returning 0x0.
+11:35:29.5585 [WARNING] sysbus: [U74_1: 0x80021D1E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800090, value 0x80000000.
+11:35:29.5585 [WARNING] sysbus: [U74_1: 0x80021D22] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800094, returning 0x0.
+11:35:29.5585 [WARNING] sysbus: [U74_1: 0x80021D30] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800094, value 0x80000000.
+11:35:29.5586 [WARNING] sysbus: [U74_1: 0x80021D34] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180012C, returning 0x0.
+11:35:29.5586 [WARNING] sysbus: [U74_1: 0x80021D42] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180012C, value 0x80000000.
+11:35:29.5586 [WARNING] sysbus: [U74_1: 0x80021D46] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800130, returning 0x0.
+11:35:29.5586 [WARNING] sysbus: [U74_1: 0x80021D54] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800130, value 0x80000000.
+11:35:29.5589 [WARNING] sysbus: [U74_1: 0x80021DD2] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000E4, returning 0x0.
+11:35:29.5589 [WARNING] sysbus: [U74_1: 0x80021DEE] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000E4, value 0x80000000.
+11:35:29.5590 [WARNING] sysbus: [U74_1: 0x80021DF2] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000E8, returning 0x0.
+11:35:29.5590 [WARNING] sysbus: [U74_1: 0x80021E06] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000E8, value 0x80000000.
+11:35:29.5590 [WARNING] sysbus: [U74_1: 0x80021E0A] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000EC, returning 0x0.
+11:35:29.5590 [WARNING] sysbus: [U74_1: 0x80021E1E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000EC, value 0x80000000.
+11:35:29.5591 [WARNING] sysbus: [U74_1: 0x80021E22] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000F0, returning 0x0.
+11:35:29.5591 [WARNING] sysbus: [U74_1: 0x80021E32] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000F0, value 0x80000000.
+11:35:29.5591 [WARNING] sysbus: [U74_1: 0x80021E36] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000F4, returning 0x0.
+11:35:29.5591 [WARNING] sysbus: [U74_1: 0x80021E46] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000F4, value 0x80000000.
+11:35:29.5594 [WARNING] sysbus: [U74_1: 0x80021EE6] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001E0, returning 0x0.
+11:35:29.5594 [WARNING] sysbus: [U74_1: 0x80021EFE] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001E0, value 0x80000000.
+11:35:29.5594 [WARNING] sysbus: [U74_1: 0x80021F02] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001E8, returning 0x0.
+11:35:29.5595 [WARNING] sysbus: [U74_1: 0x80021F0E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001E8, value 0x80000000.
+11:35:29.5595 [WARNING] sysbus: [U74_1: 0x80021F12] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001EC, returning 0x0.
+11:35:29.5595 [WARNING] sysbus: [U74_1: 0x80021F22] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001EC, value 0x80000000.
+11:35:29.5597 [WARNING] sysbus: [U74_1: 0x80021F6C] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858164, returning 0x0.
+11:35:29.5597 [WARNING] sysbus: [U74_1: 0x80021F7C] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858164, value 0xC30080.
+11:35:29.5597 [WARNING] sysbus: [U74_1: 0x80021F84] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858168, returning 0x0.
+11:35:29.5597 [WARNING] sysbus: [U74_1: 0x80021F8A] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858168, value 0x30080.
+11:35:29.5598 [WARNING] sysbus: [U74_1: 0x80021F8E] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x1185816C, returning 0x0.
+11:35:29.5598 [WARNING] sysbus: [U74_1: 0x80021F92] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x1185816C, value 0x30003.
+11:35:29.5598 [WARNING] sysbus: [U74_1: 0x80021F96] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858170, returning 0x0.
+11:35:29.5599 [WARNING] sysbus: [U74_1: 0x80021F9A] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858170, value 0x30003.
+11:35:29.5599 [WARNING] sysbus: [U74_1: 0x80021F9E] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858174, returning 0x0.
+11:35:29.5599 [WARNING] sysbus: [U74_1: 0x80021FA2] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858174, value 0x30003.
+11:35:29.5599 [WARNING] sysbus: [U74_1: 0x80021FA6] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858178, returning 0x0.
+11:35:29.5600 [WARNING] sysbus: [U74_1: 0x80021FAA] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858178, value 0x30003.
+11:35:29.5600 [WARNING] sysbus: [U74_1: 0x80021FAE] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x1185817C, returning 0x0.
+11:35:29.5600 [WARNING] sysbus: [U74_1: 0x80021FBC] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x1185817C, value 0xC800003.
+11:35:29.5601 [WARNING] sysbus: [U74_1: 0x80021FC0] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858180, returning 0x0.
+11:35:29.5601 [WARNING] sysbus: [U74_1: 0x80021FCC] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858180, value 0x8000C0.
+11:35:29.5601 [WARNING] sysbus: [U74_1: 0x80021FD4] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858184, returning 0x0.
+11:35:29.5601 [WARNING] sysbus: [U74_1: 0x80021FD8] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858184, value 0xC000C0.
+11:35:29.5602 [WARNING] sysbus: [U74_1: 0x80021FDC] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858188, returning 0x0.
+11:35:29.5602 [WARNING] sysbus: [U74_1: 0x80021FE0] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858188, value 0xC000C0.
+11:35:29.5602 [WARNING] sysbus: [U74_1: 0x80021FE4] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x1185818C, returning 0x0.
+11:35:29.5603 [WARNING] sysbus: [U74_1: 0x80021FE8] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x1185818C, value 0xC000C0.
+11:35:29.5603 [WARNING] sysbus: [U74_1: 0x80021FEC] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858190, returning 0x0.
+11:35:29.5603 [WARNING] sysbus: [U74_1: 0x80021FF0] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858190, value 0xC000C0.
+11:35:29.5603 [WARNING] sysbus: [U74_1: 0x80021FF4] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858194, returning 0x0.
+11:35:29.5604 [WARNING] sysbus: [U74_1: 0x80021FF8] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858194, value 0xC000C0.
+11:35:29.5604 [WARNING] sysbus: [U74_1: 0x80021FFC] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11858198, returning 0x0.
+11:35:29.5604 [WARNING] sysbus: [U74_1: 0x80022004] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11858198, value 0xC000C0.
+11:35:29.5605 [WARNING] sysbus: [U74_1: 0x80022008] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101BC, returning 0x0.
+11:35:29.5605 [WARNING] sysbus: [U74_1: 0x80022016] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101BC, value 0x0.
+11:35:29.5605 [WARNING] sysbus: [U74_1: 0x8002201A] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101B8, returning 0x0.
+11:35:29.5606 [WARNING] sysbus: [U74_1: 0x80022028] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101B8, value 0x1.
+11:35:29.5717 [WARNING] sysbus: [U74_1: 0x80022030] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101B8, returning 0x0.
+11:35:29.5717 [WARNING] sysbus: [U74_1: 0x8002203E] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101B8, value 0x0.
+11:35:29.5830 [WARNING] sysbus: [U74_1: 0x80022046] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101B8, returning 0x0.
+11:35:29.5830 [WARNING] sysbus: [U74_1: 0x8002205C] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101B8, value 0x1.
+11:35:29.5831 [WARNING] sysbus: [U74_1: 0x80022060] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x11850070, returning 0x0.
+11:35:29.5831 [WARNING] sysbus: [U74_1: 0x8002206E] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x11850070, value 0x1.
+11:35:29.5831 [WARNING] sysbus: [U74_1: 0x80022070] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001EC, returning 0x0.
+11:35:29.5832 [WARNING] sysbus: [U74_1: 0x8002207E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001EC, value 0x4.
+11:35:29.5832 [WARNING] sysbus: [U74_1: 0x80022082] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x118500C8, returning 0x0.
+11:35:29.5832 [WARNING] sysbus: [U74_1: 0x80022088] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x118500C8, value 0x4.
+11:35:29.5833 [WARNING] sysbus: [U74_1: 0x8002208C] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800124, returning 0x0.
+11:35:29.5833 [WARNING] sysbus: [U74_1: 0x800220A2] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800124, value 0x0.
+11:35:29.5833 [WARNING] sysbus: [U74_1: 0x800220A6] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180011C, returning 0x0.
+11:35:29.5833 [WARNING] sysbus: [U74_1: 0x800220B6] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180011C, value 0x80000000.
+11:35:29.5834 [WARNING] sysbus: [U74_1: 0x800220BA] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800128, returning 0x0.
+11:35:29.5834 [WARNING] sysbus: [U74_1: 0x800220C6] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800128, value 0x80000000.
+11:35:29.5834 [WARNING] sysbus: [U74_1: 0x800220CA] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180012C, returning 0x0.
+11:35:29.5835 [WARNING] sysbus: [U74_1: 0x800220D6] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180012C, value 0x80000000.
+11:35:29.5837 [WARNING] sysbus: [U74_1: 0x80022164] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800098, returning 0x0.
+11:35:29.5838 [WARNING] sysbus: [U74_1: 0x8002217E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800098, value 0x80000000.
+11:35:29.5838 [WARNING] sysbus: [U74_1: 0x80022182] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118000A0, returning 0x0.
+11:35:29.5838 [WARNING] sysbus: [U74_1: 0x80022198] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118000A0, value 0x80000000.
+11:35:29.5838 [WARNING] sysbus: [U74_1: 0x8002219C] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800020, returning 0x0.
+11:35:29.5839 [WARNING] sysbus: [U74_1: 0x800221AC] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800020, value 0x80000000.
+11:35:29.5839 [WARNING] sysbus: [U74_1: 0x800221AE] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800184, returning 0x0.
+11:35:29.5839 [WARNING] sysbus: [U74_1: 0x800221BC] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800184, value 0x80000000.
+11:35:29.5840 [WARNING] sysbus: [U74_1: 0x800221C0] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800180, returning 0x0.
+11:35:29.5840 [WARNING] sysbus: [U74_1: 0x800221CE] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800180, value 0x80000000.
+11:35:29.5840 [WARNING] sysbus: [U74_1: 0x800221D2] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800184, returning 0x0.
+11:35:29.5840 [WARNING] sysbus: [U74_1: 0x800221E0] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800184, value 0x80000000.
+11:35:29.5841 [WARNING] sysbus: [U74_1: 0x800221E4] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x1048005C, returning 0x0.
+11:35:29.5841 [WARNING] sysbus: [U74_1: 0x800221F0] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x1048005C, value 0x80000000.
+11:35:29.5879 [WARNING] sysbus: [U74_1: 0x80022220] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480000, returning 0x0.
+11:35:29.5879 [WARNING] sysbus: [U74_1: 0x80022236] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480000, value 0x80000000.
+11:35:29.5879 [WARNING] sysbus: [U74_1: 0x80022238] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480008, returning 0x0.
+11:35:29.5880 [WARNING] sysbus: [U74_1: 0x80022246] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480008, value 0x80000000.
+11:35:29.5881 [WARNING] sysbus: [U74_1: 0x8002226C] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480018, returning 0x0.
+11:35:29.5881 [WARNING] sysbus: [U74_1: 0x80022282] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480018, value 0x80000000.
+11:35:29.5882 [WARNING] sysbus: [U74_1: 0x80022284] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x1048001C, returning 0x0.
+11:35:29.5882 [WARNING] sysbus: [U74_1: 0x80022292] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x1048001C, value 0x80000000.
+11:35:29.5883 [WARNING] sysbus: [U74_1: 0x800222A6] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480020, returning 0x0.
+11:35:29.5883 [WARNING] sysbus: [U74_1: 0x800222B2] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480020, value 0x80000000.
+11:35:29.5884 [WARNING] sysbus: [U74_1: 0x800222DC] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480024, returning 0x0.
+11:35:29.5884 [WARNING] sysbus: [U74_1: 0x800222F2] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480024, value 0x80000000.
+11:35:29.5885 [WARNING] sysbus: [U74_1: 0x800222F4] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480028, returning 0x0.
+11:35:29.5885 [WARNING] sysbus: [U74_1: 0x80022302] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480028, value 0x80000000.
+11:35:29.5886 [WARNING] sysbus: [U74_1: 0x8002231A] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x1048002C, returning 0x0.
+11:35:29.5886 [WARNING] sysbus: [U74_1: 0x80022326] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x1048002C, value 0x80000000.
+11:35:29.5887 [WARNING] sysbus: [U74_1: 0x8002233E] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480030, returning 0x0.
+11:35:29.5887 [WARNING] sysbus: [U74_1: 0x80022354] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480030, value 0x80000000.
+11:35:29.5887 [WARNING] sysbus: [U74_1: 0x80022356] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480034, returning 0x0.
+11:35:29.5888 [WARNING] sysbus: [U74_1: 0x80022364] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480034, value 0x80000000.
+11:35:29.5889 [WARNING] sysbus: [U74_1: 0x80022392] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480004, returning 0x0.
+11:35:29.5889 [WARNING] sysbus: [U74_1: 0x800223A8] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480004, value 0x80000000.
+11:35:29.5890 [WARNING] sysbus: [U74_1: 0x800223AA] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480044, returning 0x0.
+11:35:29.5890 [WARNING] sysbus: [U74_1: 0x800223B8] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480044, value 0x80000000.
+11:35:29.5891 [WARNING] sysbus: [U74_1: 0x800223F0] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480054, returning 0x0.
+11:35:29.5891 [WARNING] sysbus: [U74_1: 0x800223F8] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480054, value 0x80000000.
+11:35:29.5893 [WARNING] sysbus: [U74_1: 0x80022436] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800164, returning 0x0.
+11:35:29.5893 [WARNING] sysbus: [U74_1: 0x80022450] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800164, value 0x80000000.
+11:35:29.5893 [WARNING] sysbus: [U74_1: 0x80022454] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800170, returning 0x0.
+11:35:29.5894 [WARNING] sysbus: [U74_1: 0x8002246A] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800170, value 0x80000000.
+11:35:29.5894 [WARNING] sysbus: [U74_1: 0x8002246E] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480064, returning 0x0.
+11:35:29.5894 [WARNING] sysbus: [U74_1: 0x8002247E] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480064, value 0x80000000.
+11:35:29.5894 [WARNING] sysbus: [U74_1: 0x80022480] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480068, returning 0x0.
+11:35:29.5895 [WARNING] sysbus: [U74_1: 0x8002248C] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480068, value 0x80000000.
+11:35:29.5895 [WARNING] sysbus: [U74_1: 0x8002248E] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x10480060, returning 0x0.
+11:35:29.5895 [WARNING] sysbus: [U74_1: 0x8002249A] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x10480060, value 0x80000000.
+11:35:29.5898 [WARNING] sysbus: [U74_1: 0x8002252C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910378, returning 0x0.
+11:35:29.5898 [WARNING] sysbus: [U74_1: 0x8002253E] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910378, value 0x1.
+11:35:29.5898 [WARNING] sysbus: [U74_1: 0x80022542] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x104A0020, returning 0x0.
+11:35:29.5899 [WARNING] sysbus: [U74_1: 0x80022552] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x104A0020, value 0x2.
+11:35:29.5899 [WARNING] sysbus: [U74_1: 0x80022554] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x104A003C, returning 0x0.
+11:35:29.5899 [WARNING] sysbus: [U74_1: 0x80022560] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x104A003C, value 0x800000.
+11:35:29.5900 [WARNING] sysbus: [U74_1: 0x80022562] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x104A003C, returning 0x0.
+11:35:29.5900 [WARNING] sysbus: [U74_1: 0x80022574] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x104A003C, value 0x2000000.
+11:35:29.5900 [WARNING] sysbus: [U74_1: 0x80022576] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x104A003C, returning 0x0.
+11:35:29.5900 [WARNING] sysbus: [U74_1: 0x80022586] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x104A003C, value 0x40000.
+11:35:29.5901 [WARNING] sysbus: [U74_1: 0x80022588] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x104A003C, returning 0x0.
+11:35:29.5901 [WARNING] sysbus: [U74_1: 0x8002259A] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x104A003C, value 0x80000.
+11:35:29.5901 [WARNING] sysbus: [U74_1: 0x8002259C] (tag: 'DOM_AUDIO') ReadDoubleWord from non existing peripheral at 0x104A002C, returning 0x0.
+11:35:29.5902 [WARNING] sysbus: [U74_1: 0x800225AE] (tag: 'DOM_AUDIO') WriteDoubleWord to non existing peripheral at 0x104A002C, value 0x200000.
+11:35:29.5902 [WARNING] sysbus: [U74_1: 0x800225B4] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800154, returning 0x0.
+11:35:29.5902 [WARNING] sysbus: [U74_1: 0x800225C2] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800154, value 0x80000000.
+11:35:29.5903 [WARNING] sysbus: [U74_1: 0x800225E0] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800080, returning 0x0.
+11:35:29.5903 [WARNING] sysbus: [U74_1: 0x800225FA] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800080, value 0x80000000.
+11:35:29.5904 [WARNING] sysbus: [U74_1: 0x800225FE] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180007C, returning 0x0.
+11:35:29.5904 [WARNING] sysbus: [U74_1: 0x8002260E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180007C, value 0x80000000.
+11:35:29.5904 [WARNING] sysbus: [U74_1: 0x80022610] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800084, returning 0x0.
+11:35:29.5905 [WARNING] sysbus: [U74_1: 0x8002261E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800084, value 0x80000000.
+11:35:29.5906 [WARNING] sysbus: [U74_1: 0x80022660] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001C8, returning 0x0.
+11:35:29.5906 [WARNING] sysbus: [U74_1: 0x80022678] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001C8, value 0x80000000.
+11:35:29.5907 [WARNING] sysbus: [U74_1: 0x8002267C] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001CC, returning 0x0.
+11:35:29.5907 [WARNING] sysbus: [U74_1: 0x8002268C] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001CC, value 0x80000000.
+11:35:29.5908 [WARNING] sysbus: [U74_1: 0x800226B0] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102B4, returning 0x0.
+11:35:29.5908 [WARNING] sysbus: [U74_1: 0x800226C6] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102B4, value 0x39.
+11:35:29.5909 [WARNING] sysbus: [U74_1: 0x800226CA] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191020C, returning 0x0.
+11:35:29.5909 [WARNING] sysbus: [U74_1: 0x800226E0] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191020C, value 0x1.
+11:35:29.5909 [WARNING] sysbus: [U74_1: 0x800226E4] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910200, returning 0x0.
+11:35:29.5909 [WARNING] sysbus: [U74_1: 0x800226FA] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910200, value 0x36.
+11:35:29.5910 [WARNING] sysbus: [U74_1: 0x800226FE] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910204, returning 0x0.
+11:35:29.5910 [WARNING] sysbus: [U74_1: 0x8002270C] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910204, value 0x0.
+11:35:29.5910 [WARNING] sysbus: [U74_1: 0x80022710] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101FC, returning 0x0.
+11:35:29.5911 [WARNING] sysbus: [U74_1: 0x80022722] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101FC, value 0x80000000.
+11:35:29.5911 [WARNING] sysbus: [U74_1: 0x80022726] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101FC, returning 0x0.
+11:35:29.5911 [WARNING] sysbus: [U74_1: 0x80022738] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101FC, value 0x37.
+11:35:29.5911 [WARNING] sysbus: [U74_1: 0x8002273C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101F8, returning 0x0.
+11:35:29.5912 [WARNING] sysbus: [U74_1: 0x8002274A] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101F8, value 0x38.
+11:35:29.5912 [WARNING] sysbus: [U74_1: 0x8002274E] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102BC, returning 0x0.
+11:35:29.5912 [WARNING] sysbus: [U74_1: 0x8002275C] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102BC, value 0x37.
+11:35:29.5913 [WARNING] sysbus: [U74_1: 0x80022760] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x118580E8, returning 0x0.
+11:35:29.5913 [WARNING] sysbus: [U74_1: 0x80022764] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x118580E8, value 0xC000C0.
+11:35:29.5913 [WARNING] sysbus: [U74_1: 0x80022768] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101DC, returning 0x0.
+11:35:29.5914 [WARNING] sysbus: [U74_1: 0x80022776] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101DC, value 0x80000000.
+11:35:29.5914 [WARNING] sysbus: [U74_1: 0x8002277A] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101E4, returning 0x0.
+11:35:29.5914 [WARNING] sysbus: [U74_1: 0x80022788] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101E4, value 0x80000000.
+11:35:29.5914 [WARNING] sysbus: [U74_1: 0x8002278C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101EC, returning 0x0.
+11:35:29.5915 [WARNING] sysbus: [U74_1: 0x8002279A] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101EC, value 0x80000000.
+11:35:29.5915 [WARNING] sysbus: [U74_1: 0x8002279E] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101F4, returning 0x0.
+11:35:29.5915 [WARNING] sysbus: [U74_1: 0x800227AC] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101F4, value 0x80000000.
+11:35:29.5916 [WARNING] sysbus: [U74_1: 0x800227B0] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101DC, returning 0x0.
+11:35:29.5916 [WARNING] sysbus: [U74_1: 0x800227BE] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101DC, value 0x39.
+11:35:29.5917 [WARNING] sysbus: [U74_1: 0x800227C2] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101D8, returning 0x0.
+11:35:29.5917 [WARNING] sysbus: [U74_1: 0x800227D0] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101D8, value 0x41.
+11:35:29.5917 [WARNING] sysbus: [U74_1: 0x800227D4] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102C0, returning 0x0.
+11:35:29.5918 [WARNING] sysbus: [U74_1: 0x800227E2] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102C0, value 0x33.
+11:35:29.5918 [WARNING] sysbus: [U74_1: 0x800227E6] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x118580E0, returning 0x0.
+11:35:29.5918 [WARNING] sysbus: [U74_1: 0x800227EA] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x118580E0, value 0xC000C0.
+11:35:29.5918 [WARNING] sysbus: [U74_1: 0x800227EE] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101E4, returning 0x0.
+11:35:29.5919 [WARNING] sysbus: [U74_1: 0x800227FC] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101E4, value 0x3A.
+11:35:29.5919 [WARNING] sysbus: [U74_1: 0x80022800] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101E0, returning 0x0.
+11:35:29.5919 [WARNING] sysbus: [U74_1: 0x8002280E] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101E0, value 0x42.
+11:35:29.5920 [WARNING] sysbus: [U74_1: 0x80022812] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102C4, returning 0x0.
+11:35:29.5920 [WARNING] sysbus: [U74_1: 0x80022820] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102C4, value 0x34.
+11:35:29.5920 [WARNING] sysbus: [U74_1: 0x80022824] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101EC, returning 0x0.
+11:35:29.5920 [WARNING] sysbus: [U74_1: 0x80022832] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101EC, value 0x3B.
+11:35:29.5921 [WARNING] sysbus: [U74_1: 0x80022836] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101E8, returning 0x0.
+11:35:29.5921 [WARNING] sysbus: [U74_1: 0x80022844] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101E8, value 0x43.
+11:35:29.5921 [WARNING] sysbus: [U74_1: 0x80022848] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102C8, returning 0x0.
+11:35:29.5922 [WARNING] sysbus: [U74_1: 0x80022856] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102C8, value 0x35.
+11:35:29.5922 [WARNING] sysbus: [U74_1: 0x8002285A] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x118580E4, returning 0x0.
+11:35:29.5922 [WARNING] sysbus: [U74_1: 0x8002285E] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x118580E4, value 0xC000C0.
+11:35:29.5923 [WARNING] sysbus: [U74_1: 0x80022862] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101F4, returning 0x0.
+11:35:29.5923 [WARNING] sysbus: [U74_1: 0x80022870] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101F4, value 0x3C.
+11:35:29.5923 [WARNING] sysbus: [U74_1: 0x80022874] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101F0, returning 0x0.
+11:35:29.5923 [WARNING] sysbus: [U74_1: 0x80022882] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101F0, value 0x44.
+11:35:29.5924 [WARNING] sysbus: [U74_1: 0x80022886] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102CC, returning 0x0.
+11:35:29.5924 [WARNING] sysbus: [U74_1: 0x80022894] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102CC, value 0x36.
+11:35:29.5924 [WARNING] sysbus: [U74_1: 0x80022898] (tag: 'SYSCTRL') ReadDoubleWord from non existing peripheral at 0x118580E8, returning 0x0.
+11:35:29.5925 [WARNING] sysbus: [U74_1: 0x8002289C] (tag: 'SYSCTRL') WriteDoubleWord to non existing peripheral at 0x118580E8, value 0xC000C0.
+11:35:29.5925 [WARNING] sysbus: [U74_1: 0x800228A0] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001D4, returning 0x0.
+11:35:29.5925 [WARNING] sysbus: [U74_1: 0x800228AE] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001D4, value 0x80000000.
+11:35:29.5926 [WARNING] sysbus: [U74_1: 0x800228B2] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001D8, returning 0x0.
+11:35:29.5926 [WARNING] sysbus: [U74_1: 0x800228C0] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001D8, value 0x80000000.
+11:35:29.5927 [WARNING] sysbus: [U74_1: 0x800228E0] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910158, returning 0x0.
+11:35:29.5927 [WARNING] sysbus: [U74_1: 0x800228F6] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910158, value 0x4B.
+11:35:29.5928 [WARNING] sysbus: [U74_1: 0x800228FA] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191015C, returning 0x0.
+11:35:29.5928 [WARNING] sysbus: [U74_1: 0x8002290C] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191015C, value 0x0.
+11:35:29.5928 [WARNING] sysbus: [U74_1: 0x80022910] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191013C, returning 0x0.
+11:35:29.5929 [WARNING] sysbus: [U74_1: 0x80022922] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191013C, value 0x80000000.
+11:35:29.5929 [WARNING] sysbus: [U74_1: 0x80022926] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191013C, returning 0x0.
+11:35:29.5929 [WARNING] sysbus: [U74_1: 0x80022938] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191013C, value 0x4C.
+11:35:29.5929 [WARNING] sysbus: [U74_1: 0x8002293C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910138, returning 0x0.
+11:35:29.5930 [WARNING] sysbus: [U74_1: 0x8002294A] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910138, value 0x4D.
+11:35:29.5930 [WARNING] sysbus: [U74_1: 0x8002294E] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102E8, returning 0x0.
+11:35:29.5930 [WARNING] sysbus: [U74_1: 0x8002295C] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102E8, value 0x1F.
+11:35:29.5931 [WARNING] sysbus: [U74_1: 0x80022960] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910174, returning 0x0.
+11:35:29.5931 [WARNING] sysbus: [U74_1: 0x8002296E] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910174, value 0x80000000.
+11:35:29.5931 [WARNING] sysbus: [U74_1: 0x80022972] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910144, returning 0x0.
+11:35:29.5931 [WARNING] sysbus: [U74_1: 0x80022980] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910144, value 0x80000000.
+11:35:29.5932 [WARNING] sysbus: [U74_1: 0x80022984] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910164, returning 0x0.
+11:35:29.5932 [WARNING] sysbus: [U74_1: 0x80022992] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910164, value 0x80000000.
+11:35:29.5932 [WARNING] sysbus: [U74_1: 0x80022996] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191014C, returning 0x0.
+11:35:29.5933 [WARNING] sysbus: [U74_1: 0x800229A4] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191014C, value 0x80000000.
+11:35:29.5933 [WARNING] sysbus: [U74_1: 0x800229A8] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910174, returning 0x0.
+11:35:29.5933 [WARNING] sysbus: [U74_1: 0x800229B6] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910174, value 0x4E.
+11:35:29.5933 [WARNING] sysbus: [U74_1: 0x800229BA] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910170, returning 0x0.
+11:35:29.5934 [WARNING] sysbus: [U74_1: 0x800229C8] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910170, value 0x56.
+11:35:29.5934 [WARNING] sysbus: [U74_1: 0x800229CC] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102EC, returning 0x0.
+11:35:29.5934 [WARNING] sysbus: [U74_1: 0x800229DA] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102EC, value 0x26.
+11:35:29.5935 [WARNING] sysbus: [U74_1: 0x800229DE] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910144, returning 0x0.
+11:35:29.5936 [WARNING] sysbus: [U74_1: 0x800229EC] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910144, value 0x4F.
+11:35:29.5936 [WARNING] sysbus: [U74_1: 0x800229F0] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910140, returning 0x0.
+11:35:29.5936 [WARNING] sysbus: [U74_1: 0x800229FE] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910140, value 0x57.
+11:35:29.5936 [WARNING] sysbus: [U74_1: 0x80022A02] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102F0, returning 0x0.
+11:35:29.5937 [WARNING] sysbus: [U74_1: 0x80022A10] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102F0, value 0x20.
+11:35:29.5937 [WARNING] sysbus: [U74_1: 0x80022A14] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910164, returning 0x0.
+11:35:29.5937 [WARNING] sysbus: [U74_1: 0x80022A22] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910164, value 0x50.
+11:35:29.5938 [WARNING] sysbus: [U74_1: 0x80022A26] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910160, returning 0x0.
+11:35:29.5938 [WARNING] sysbus: [U74_1: 0x80022A34] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910160, value 0x58.
+11:35:29.5938 [WARNING] sysbus: [U74_1: 0x80022A38] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102F4, returning 0x0.
+11:35:29.5938 [WARNING] sysbus: [U74_1: 0x80022A46] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102F4, value 0x24.
+11:35:29.5939 [WARNING] sysbus: [U74_1: 0x80022A4A] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191014C, returning 0x0.
+11:35:29.5939 [WARNING] sysbus: [U74_1: 0x80022A58] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191014C, value 0x51.
+11:35:29.5939 [WARNING] sysbus: [U74_1: 0x80022A5C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910148, returning 0x0.
+11:35:29.5940 [WARNING] sysbus: [U74_1: 0x80022A6A] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910148, value 0x59.
+11:35:29.5940 [WARNING] sysbus: [U74_1: 0x80022A6E] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119102F8, returning 0x0.
+11:35:29.5940 [WARNING] sysbus: [U74_1: 0x80022A7C] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119102F8, value 0x21.
+11:35:29.5940 [WARNING] sysbus: [U74_1: 0x80022A80] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800210, returning 0x0.
+11:35:29.5941 [WARNING] sysbus: [U74_1: 0x80022A8E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800210, value 0x80000000.
+11:35:29.5941 [WARNING] sysbus: [U74_1: 0x80022A92] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800214, returning 0x0.
+11:35:29.5941 [WARNING] sysbus: [U74_1: 0x80022AA0] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800214, value 0x80000000.
+11:35:29.5942 [WARNING] sysbus: [U74_1: 0x80022AE0] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800218, returning 0x0.
+11:35:29.5943 [WARNING] sysbus: [U74_1: 0x80022AF6] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800218, value 0x80000000.
+11:35:29.5944 [WARNING] sysbus: [U74_1: 0x80022B16] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800230, returning 0x0.
+11:35:29.5944 [WARNING] sysbus: [U74_1: 0x80022B30] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800230, value 0x80000000.
+11:35:29.5944 [WARNING] sysbus: [U74_1: 0x80022B34] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800234, returning 0x0.
+11:35:29.5944 [WARNING] sysbus: [U74_1: 0x80022B46] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800234, value 0x80000000.
+11:35:29.5945 [WARNING] sysbus: [U74_1: 0x80022B4A] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800238, returning 0x0.
+11:35:29.5945 [WARNING] sysbus: [U74_1: 0x80022B58] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800238, value 0x80000000.
+11:35:29.5945 [WARNING] sysbus: [U74_1: 0x80022B5C] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180023C, returning 0x0.
+11:35:29.5946 [WARNING] sysbus: [U74_1: 0x80022B6A] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180023C, value 0x80000000.
+11:35:29.5947 [WARNING] sysbus: [U74_1: 0x80022BC2] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800248, returning 0x0.
+11:35:29.5948 [WARNING] sysbus: [U74_1: 0x80022BDA] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800248, value 0x80000000.
+11:35:29.5948 [WARNING] sysbus: [U74_1: 0x80022BDE] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180024C, returning 0x0.
+11:35:29.5948 [WARNING] sysbus: [U74_1: 0x80022BEE] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180024C, value 0x80000000.
+11:35:29.5950 [WARNING] sysbus: [U74_1: 0x80022C28] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910358, returning 0x0.
+11:35:29.5950 [WARNING] sysbus: [U74_1: 0x80022C3E] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910358, value 0x2A.
+11:35:29.5950 [WARNING] sysbus: [U74_1: 0x80022C42] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910194, returning 0x0.
+11:35:29.5951 [WARNING] sysbus: [U74_1: 0x80022C58] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910194, value 0x1.
+11:35:29.5951 [WARNING] sysbus: [U74_1: 0x80022C5C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910198, returning 0x0.
+11:35:29.5951 [WARNING] sysbus: [U74_1: 0x80022C6C] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910198, value 0x7F.
+11:35:29.5951 [WARNING] sysbus: [U74_1: 0x80022C70] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191019C, returning 0x0.
+11:35:29.5952 [WARNING] sysbus: [U74_1: 0x80022C7E] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191019C, value 0x0.
+11:35:29.5952 [WARNING] sysbus: [U74_1: 0x80022C82] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101A0, returning 0x0.
+11:35:29.5952 [WARNING] sysbus: [U74_1: 0x80022C90] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101A0, value 0x7E.
+11:35:29.5953 [WARNING] sysbus: [U74_1: 0x80022C94] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101A4, returning 0x0.
+11:35:29.5953 [WARNING] sysbus: [U74_1: 0x80022C9E] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x119101A4, value 0x0.
+11:35:29.5953 [WARNING] sysbus: [U74_1: 0x80022CA2] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910348, returning 0x0.
+11:35:29.5954 [WARNING] sysbus: [U74_1: 0x80022CB0] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910348, value 0x29.
+11:35:29.5954 [WARNING] sysbus: [U74_1: 0x80022CB4] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191018C, returning 0x0.
+11:35:29.5954 [WARNING] sysbus: [U74_1: 0x80022CC2] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191018C, value 0x1.
+11:35:29.5954 [WARNING] sysbus: [U74_1: 0x80022CC6] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191016C, returning 0x0.
+11:35:29.5955 [WARNING] sysbus: [U74_1: 0x80022CD0] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191016C, value 0x0.
+11:35:29.5955 [WARNING] sysbus: [U74_1: 0x80022CD4] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910168, returning 0x0.
+11:35:29.5955 [WARNING] sysbus: [U74_1: 0x80022CE2] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910168, value 0x1.
+11:35:29.5956 [WARNING] sysbus: [U74_1: 0x80022CE6] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800250, returning 0x0.
+11:35:29.5956 [WARNING] sysbus: [U74_1: 0x80022CF6] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800250, value 0x80000000.
+11:35:29.5956 [WARNING] sysbus: [U74_1: 0x80022CFA] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800254, returning 0x0.
+11:35:29.5956 [WARNING] sysbus: [U74_1: 0x80022D0E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800254, value 0x80000000.
+11:35:29.5958 [WARNING] sysbus: [U74_1: 0x80022D44] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800258, returning 0x0.
+11:35:29.5958 [WARNING] sysbus: [U74_1: 0x80022D5C] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800258, value 0x80000000.
+11:35:29.5958 [WARNING] sysbus: [U74_1: 0x80022D60] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180025C, returning 0x0.
+11:35:29.5959 [WARNING] sysbus: [U74_1: 0x80022D70] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180025C, value 0x80000000.
+11:35:29.5960 [WARNING] sysbus: [U74_1: 0x80022DAC] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800260, returning 0x0.
+11:35:29.5960 [WARNING] sysbus: [U74_1: 0x80022DC4] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800260, value 0x80000000.
+11:35:29.5960 [WARNING] sysbus: [U74_1: 0x80022DC8] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800264, returning 0x0.
+11:35:29.5960 [WARNING] sysbus: [U74_1: 0x80022DD8] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800264, value 0x80000000.
+11:35:29.5962 [WARNING] sysbus: [U74_1: 0x80022E16] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800268, returning 0x0.
+11:35:29.5962 [WARNING] sysbus: [U74_1: 0x80022E2E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800268, value 0x80000000.
+11:35:29.5962 [WARNING] sysbus: [U74_1: 0x80022E32] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180026C, returning 0x0.
+11:35:29.5963 [WARNING] sysbus: [U74_1: 0x80022E42] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180026C, value 0x80000000.
+11:35:29.5964 [WARNING] sysbus: [U74_1: 0x80022E86] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800270, returning 0x0.
+11:35:29.5964 [WARNING] sysbus: [U74_1: 0x80022E9E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800270, value 0x80000000.
+11:35:29.5964 [WARNING] sysbus: [U74_1: 0x80022EA2] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800274, returning 0x0.
+11:35:29.5965 [WARNING] sysbus: [U74_1: 0x80022EB2] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800274, value 0x80000000.
+11:35:29.5966 [WARNING] sysbus: [U74_1: 0x80022EF6] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800240, returning 0x0.
+11:35:29.5966 [WARNING] sysbus: [U74_1: 0x80022F04] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800240, value 0x80000000.
+11:35:29.5967 [WARNING] sysbus: [U74_1: 0x80022F1E] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800244, returning 0x0.
+11:35:29.5967 [WARNING] sysbus: [U74_1: 0x80022F2C] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800244, value 0x80000000.
+11:35:29.5968 [WARNING] sysbus: [U74_1: 0x80022F46] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118002D0, returning 0x0.
+11:35:29.5968 [WARNING] sysbus: [U74_1: 0x80022F50] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118002D0, value 0x80000000.
+11:35:29.5969 [WARNING] sysbus: [U74_1: 0x80022F74] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180028C, returning 0x0.
+11:35:29.5969 [WARNING] sysbus: [U74_1: 0x80022F8C] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180028C, value 0x80000000.
+11:35:29.5969 [WARNING] sysbus: [U74_1: 0x80022F90] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800290, returning 0x0.
+11:35:29.5970 [WARNING] sysbus: [U74_1: 0x80022FA0] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800290, value 0x80000000.
+11:35:29.5971 [WARNING] sysbus: [U74_1: 0x80022FE4] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800294, returning 0x0.
+11:35:29.5971 [WARNING] sysbus: [U74_1: 0x80022FFC] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800294, value 0x80000000.
+11:35:29.5971 [WARNING] sysbus: [U74_1: 0x80023000] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800298, returning 0x0.
+11:35:29.5972 [WARNING] sysbus: [U74_1: 0x80023010] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800298, value 0x80000000.
+11:35:29.5973 [WARNING] sysbus: [U74_1: 0x80023054] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180027C, returning 0x0.
+11:35:29.5973 [WARNING] sysbus: [U74_1: 0x8002306C] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180027C, value 0x80000000.
+11:35:29.5974 [WARNING] sysbus: [U74_1: 0x80023070] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x11800280, returning 0x0.
+11:35:29.5974 [WARNING] sysbus: [U74_1: 0x80023080] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x11800280, value 0x80000000.
+11:35:29.5975 [WARNING] sysbus: [U74_1: 0x800230C4] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x1180029C, returning 0x0.
+11:35:29.5975 [WARNING] sysbus: [U74_1: 0x800230DE] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x1180029C, value 0x80000000.
+11:35:29.5976 [WARNING] sysbus: [U74_1: 0x800230E2] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118002A0, returning 0x0.
+11:35:29.5976 [WARNING] sysbus: [U74_1: 0x800230F6] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118002A0, value 0x80000000.
+11:35:29.5977 [WARNING] sysbus: [U74_1: 0x80023122] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118002A4, returning 0x0.
+11:35:29.5977 [WARNING] sysbus: [U74_1: 0x8002313A] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118002A4, value 0x80000000.
+11:35:29.5978 [WARNING] sysbus: [U74_1: 0x8002313E] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118002A8, returning 0x0.
+11:35:29.5978 [WARNING] sysbus: [U74_1: 0x8002314E] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118002A8, value 0x80000000.
+11:35:29.5979 [WARNING] sysbus: [U74_1: 0x80023176] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001B4, returning 0x0.
+11:35:29.5979 [WARNING] sysbus: [U74_1: 0x80023190] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001B4, value 0x80000000.
+11:35:29.5980 [WARNING] sysbus: [U74_1: 0x80023194] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001C0, returning 0x0.
+11:35:29.5980 [WARNING] sysbus: [U74_1: 0x800231A6] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001C0, value 0x80000000.
+11:35:29.5980 [WARNING] sysbus: [U74_1: 0x800231AA] (tag: 'CLKGEN_CSR') ReadDoubleWord from non existing peripheral at 0x118001C4, returning 0x0.
+11:35:29.5980 [WARNING] sysbus: [U74_1: 0x800231BC] (tag: 'CLKGEN_CSR') WriteDoubleWord to non existing peripheral at 0x118001C4, value 0x80000000.
+11:35:29.5982 [WARNING] sysbus: [U74_1: 0x8002321C] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240004, returning 0x0.
+11:35:29.5983 [WARNING] sysbus: [U74_1: 0x80023232] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240004, value 0x80000000.
+11:35:29.5983 [WARNING] sysbus: [U74_1: 0x80023234] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240008, returning 0x0.
+11:35:29.5983 [WARNING] sysbus: [U74_1: 0x80023246] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240008, value 0x80000000.
+11:35:29.5983 [WARNING] sysbus: [U74_1: 0x80023248] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x1224000C, returning 0x0.
+11:35:29.5984 [WARNING] sysbus: [U74_1: 0x80023252] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x1224000C, value 0x80000000.
+11:35:29.5984 [WARNING] sysbus: [U74_1: 0x80023254] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240010, returning 0x0.
+11:35:29.5984 [WARNING] sysbus: [U74_1: 0x8002325E] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240010, value 0x80000000.
+11:35:29.5985 [WARNING] sysbus: [U74_1: 0x80023260] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240014, returning 0x0.
+11:35:29.5985 [WARNING] sysbus: [U74_1: 0x8002326A] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240014, value 0x80000000.
+11:35:29.5985 [WARNING] sysbus: [U74_1: 0x8002326C] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240018, returning 0x0.
+11:35:29.5985 [WARNING] sysbus: [U74_1: 0x80023276] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240018, value 0x80000000.
+11:35:29.5986 [WARNING] sysbus: [U74_1: 0x80023278] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x1224001C, returning 0x0.
+11:35:29.5986 [WARNING] sysbus: [U74_1: 0x80023282] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x1224001C, value 0x80000000.
+11:35:29.5986 [WARNING] sysbus: [U74_1: 0x80023284] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240020, returning 0x0.
+11:35:29.5987 [WARNING] sysbus: [U74_1: 0x8002328E] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240020, value 0x80000000.
+11:35:29.5987 [WARNING] sysbus: [U74_1: 0x80023290] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240024, returning 0x0.
+11:35:29.5987 [WARNING] sysbus: [U74_1: 0x8002329A] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240024, value 0x80000000.
+11:35:29.5987 [WARNING] sysbus: [U74_1: 0x8002329C] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240028, returning 0x0.
+11:35:29.5988 [WARNING] sysbus: [U74_1: 0x800232A6] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240028, value 0x80000000.
+11:35:29.5988 [WARNING] sysbus: [U74_1: 0x800232A8] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x1224002C, returning 0x0.
+11:35:29.5988 [WARNING] sysbus: [U74_1: 0x800232B2] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x1224002C, value 0x80000000.
+11:35:29.5989 [WARNING] sysbus: [U74_1: 0x800232B4] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240030, returning 0x0.
+11:35:29.5989 [WARNING] sysbus: [U74_1: 0x800232BE] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240030, value 0x80000000.
+11:35:29.5990 [WARNING] sysbus: [U74_1: 0x800232C0] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240034, returning 0x0.
+11:35:29.5990 [WARNING] sysbus: [U74_1: 0x800232CA] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240034, value 0x80000000.
+11:35:29.5990 [WARNING] sysbus: [U74_1: 0x800232CC] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x1224003C, returning 0x0.
+11:35:29.5990 [WARNING] sysbus: [U74_1: 0x800232D6] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x1224003C, value 0x80000000.
+11:35:29.5991 [WARNING] sysbus: [U74_1: 0x800232D8] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240038, returning 0x0.
+11:35:29.5991 [WARNING] sysbus: [U74_1: 0x800232E2] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240038, value 0x80000000.
+11:35:29.5991 [WARNING] sysbus: [U74_1: 0x800232E4] (tag: 'VOUT') ReadDoubleWord from non existing peripheral at 0x12240040, returning 0x0.
+11:35:29.5992 [WARNING] sysbus: [U74_1: 0x800232EE] (tag: 'VOUT') WriteDoubleWord to non existing peripheral at 0x12240040, value 0x80000000.
+11:35:29.6793 [INFO] uart3: [host:   0.95s (+0.17s)|virt:  0.15s (+0.11s)] ofnode_read_u32_array: ranges: ofnode_read_u32_array: ranges: ofnode_read_u32_index: timebase-frequency: (not found)
+11:35:29.6803 [INFO] uart3: [host:  0.95s (+1.02ms)|virt:  0.15s (+0.1ms)] ofnode_read_u32_index: timebase-frequency: 0x5f5e10 (6250000)
+11:35:29.6819 [INFO] uart3: [host:  0.95s (+1.67ms)|virt:  0.15s (+1.6ms)] ofnode_read_u32_index: timebase-frequency: (not found)
+11:35:29.6822 [INFO] uart3: [host:  0.95s (+0.26ms)|virt:  0.15s (+0.1ms)] ofnode_read_u32_index: timebase-frequency: 0x5f5e10 (6250000)
+11:35:29.6850 [INFO] uart3: [host:  0.95s (+2.83ms)|virt:  0.16s (+1.5ms)] MMC:   VIC DWMMC0: 0
+11:35:29.7118 [INFO] uart3: [host: 0.98s (+26.78ms)|virt: 0.18s (+23.8ms)] In:    serial
+11:35:29.7119 [INFO] uart3: [host:  0.98s (+0.12ms)|virt:     0.18s (+0s)] Out:   serial
+11:35:29.7120 [INFO] uart3: [host:    0.98s (+92µs)|virt:     0.18s (+0s)] Err:   serial
+11:35:29.7140 [INFO] uart3: [host:  0.98s (+1.96ms)|virt:  0.18s (+1.3ms)] Model: sifive,freedom-u74-arty
+11:35:29.7196 [INFO] uart3: [host:   0.99s (+5.6ms)|virt:  0.18s (+1.9ms)] Net:   ofnode_read_prop: tick-timer: <not found>
+11:35:29.7215 [WARNING] ethernet.phy: Unhandled write to offset 0x0, value 0x8000.
+11:35:29.7222 [WARNING] ethernet.phy: Unhandled write to offset 0x4, value 0x1.
+11:35:29.7224 [WARNING] ethernet.phy: Unhandled write to offset 0x0, value 0x1A80.
+11:35:29.7235 [INFO] uart3: [host:  0.99s (+3.92ms)|virt: 0.18s (+0.73ms)] dwmac.10020000
+11:35:29.7356 [INFO] uart3: [host:    1s (+12.04ms)|virt: 0.2s (+16.77ms)] Hit any key to stop autoboot:  0 
+11:35:29.7407 [INFO] uart3: [host:   1.01s (+5.2ms)|virt:   0.2s (+0.7ms)] ## Loading kernel from FIT Image at a0000000 ...
+11:35:29.7416 [INFO] uart3: [host:  1.01s (+0.83ms)|virt:   0.2s (+0.3ms)]    Using 'config-1' configuration
+11:35:29.7420 [INFO] uart3: [host:  1.01s (+0.46ms)|virt:   0.2s (+0.1ms)]    Trying 'vmlinux' kernel subimage
+11:35:29.7423 [INFO] uart3: [host:  1.01s (+0.29ms)|virt:   0.2s (+0.1ms)]      Description:  vmlinux
+11:35:29.7428 [INFO] uart3: [host:  1.01s (+0.44ms)|virt:      0.2s (+0s)]      Type:         Kernel Image
+11:35:29.7431 [INFO] uart3: [host:  1.01s (+0.31ms)|virt:   0.2s (+0.1ms)]      Compression:  uncompressed
+11:35:29.7437 [INFO] uart3: [host:  1.01s (+0.61ms)|virt:   0.2s (+0.3ms)]      Data Start:   0xa00000c8
+11:35:29.7441 [INFO] uart3: [host:   1.01s (+0.4ms)|virt:      0.2s (+0s)]      Data Size:    17660416 Bytes = 16.8 MiB
+11:35:29.7444 [INFO] uart3: [host:  1.01s (+0.29ms)|virt:   0.2s (+0.1ms)]      Architecture: RISC-V
+11:35:29.7447 [INFO] uart3: [host:  1.01s (+0.31ms)|virt:   0.2s (+0.1ms)]      OS:           Linux
+11:35:29.7450 [INFO] uart3: [host:  1.01s (+0.37ms)|virt:   0.2s (+0.1ms)]      Load Address: 0x80200000
+11:35:29.7453 [INFO] uart3: [host:  1.01s (+0.28ms)|virt:   0.2s (+0.1ms)]      Entry Point:  0x80200000
+11:35:29.7460 [INFO] uart3: [host:   1.01s (+0.7ms)|virt:   0.2s (+0.3ms)]    Verifying Hash Integrity ... OK
+11:35:29.7490 [INFO] uart3: [host:  1.02s (+2.91ms)|virt:   0.2s (+1.8ms)] ## Loading fdt from FIT Image at a0000000 ...
+11:35:29.7494 [INFO] uart3: [host:  1.02s (+0.41ms)|virt:   0.2s (+0.3ms)]    Using 'config-1' configuration
+11:35:29.7496 [INFO] uart3: [host:  1.02s (+0.28ms)|virt:   0.2s (+0.2ms)]    Trying 'fdt' fdt subimage
+11:35:29.7499 [INFO] uart3: [host:  1.02s (+0.25ms)|virt:   0.2s (+0.1ms)]      Description:  unavailable
+11:35:29.7500 [INFO] uart3: [host:  1.02s (+0.13ms)|virt:      0.2s (+0s)]      Type:         Flat Device Tree
+11:35:29.7502 [INFO] uart3: [host:  1.02s (+0.23ms)|virt:   0.2s (+0.1ms)]      Compression:  uncompressed
+11:35:29.7505 [INFO] uart3: [host:  1.02s (+0.23ms)|virt:   0.2s (+0.1ms)]      Data Start:   0xa4f297f8
+11:35:29.7507 [INFO] uart3: [host:  1.02s (+0.23ms)|virt:   0.2s (+0.1ms)]      Data Size:    16655 Bytes = 16.3 KiB
+11:35:29.7508 [INFO] uart3: [host:  1.02s (+0.11ms)|virt:      0.2s (+0s)]      Architecture: RISC-V
+11:35:29.7511 [INFO] uart3: [host:  1.02s (+0.27ms)|virt:   0.2s (+0.1ms)]      Load Address: 0x86000000
+11:35:29.7514 [INFO] uart3: [host:  1.02s (+0.36ms)|virt:   0.2s (+0.2ms)]    Verifying Hash Integrity ... OK
+11:35:29.7520 [INFO] uart3: [host:  1.02s (+0.52ms)|virt:  0.21s (+0.3ms)]    Loading fdt from 0xa4f297f8 to 0x86000000
+11:35:29.7607 [INFO] uart3: [host:  1.03s (+8.74ms)|virt:  0.21s (+0.4ms)]    Booting using the fdt blob at 0x86000000
+11:35:29.7619 [INFO] uart3: [host:  1.03s (+1.21ms)|virt:  0.21s (+0.8ms)] ## Loading loadables from FIT Image at a0000000 ...
+11:35:29.7622 [INFO] uart3: [host:  1.03s (+0.24ms)|virt:  0.21s (+0.1ms)]    Trying 'ramdisk' loadables subimage
+11:35:29.7624 [INFO] uart3: [host:  1.03s (+0.25ms)|virt:  0.21s (+0.1ms)]      Description:  buildroot initramfs
+11:35:29.7625 [INFO] uart3: [host:  1.03s (+0.13ms)|virt:     0.21s (+0s)]      Type:         RAMDisk Image
+11:35:29.7628 [INFO] uart3: [host:  1.03s (+0.22ms)|virt:  0.21s (+0.1ms)]      Compression:  uncompressed
+11:35:29.7632 [INFO] uart3: [host:  1.03s (+0.43ms)|virt:  0.21s (+0.3ms)]      Data Start:   0xa10d7b7c
+11:35:29.7633 [INFO] uart3: [host:  1.03s (+0.15ms)|virt:     0.21s (+0s)]      Data Size:    65346560 Bytes = 62.3 MiB
+11:35:29.7636 [INFO] uart3: [host:  1.03s (+0.24ms)|virt:  0.21s (+0.1ms)]      Architecture: RISC-V
+11:35:29.7637 [INFO] uart3: [host:  1.03s (+0.11ms)|virt:     0.21s (+0s)]      OS:           Linux
+11:35:29.7639 [INFO] uart3: [host:  1.03s (+0.22ms)|virt:  0.21s (+0.1ms)]      Load Address: 0x86100000
+11:35:29.7642 [INFO] uart3: [host:  1.03s (+0.28ms)|virt:  0.21s (+0.1ms)]      Entry Point:  unavailable
+11:35:29.7657 [INFO] uart3: [host:  1.03s (+1.55ms)|virt:  0.21s (+0.3ms)]    Verifying Hash Integrity ... OK
+11:35:29.7665 [INFO] uart3: [host:  1.03s (+0.72ms)|virt:  0.21s (+0.6ms)]    Loading loadables from 0xa10d7b7c to 0x86100000
+11:35:31.5900 [INFO] uart3: [host:   2.86s (+1.82s)|virt:  3.48s (+3.27s)]    Loading Kernel Image
+11:35:32.3577 [INFO] uart3: [host:   3.63s (+0.77s)|virt:   3.6s (+0.12s)] ## Flattened Device Tree blob at 86000000
+11:35:32.3579 [INFO] uart3: [host:  3.63s (+0.21ms)|virt:      3.6s (+0s)]    Booting using the fdt blob at 0x86000000
+11:35:32.3654 [INFO] uart3: [host:  3.63s (+7.51ms)|virt:  3.61s (+8.4ms)]    Using Device Tree in place at 0000000086000000, end 000000008600710e
+11:35:32.3752 [INFO] uart3: [host:  3.64s (+9.82ms)|virt: 3.62s (+10.2ms)] 
+11:35:32.3753 [INFO] uart3: [host:    3.64s (+92µs)|virt:     3.62s (+0s)] Starting kernel ...
+11:35:32.3754 [INFO] uart3: [host:    3.64s (+32µs)|virt:     3.62s (+0s)] 
+11:35:32.3773 [WARNING] U74_1: Trying to set unaligned STVEC: 0x10CA, aligning to 4-byte boundary.
+11:35:32.3773 [WARNING] U74_1: STVEC value written to CSR corrected from 0x10ca to 0x10c8 because of the selected interrupt mode and privilege architecture
+11:35:32.4046 [INFO] uart3: [host: 3.67s (+29.17ms)|virt: 3.63s (+15.7ms)] [    0.000000] Linux version 5.10.6-g93604a0a3ecc (root@runner-7005a2b9-project-3475-concurrent-0) (riscv64-buildroot-linux-gnu-gcc.br_real (Buildroot -g2e13b6d) 10.2.0, GNU ld (GNU Binutils) 2.34) #1 SMP Mon Apr 26 09:57:54 UTC 2021
+11:35:32.4059 [INFO] uart3: [host:  3.67s (+1.33ms)|virt:  3.63s (+0.3ms)] [    0.000000] OF: fdt: Ignoring memory range 0x80000000 - 0x80200000
+11:35:32.4069 [INFO] uart3: [host:  3.67s (+0.99ms)|virt:  3.63s (+0.2ms)] [    0.000000] earlycon: sbi0 at I/O port 0x0 (options '')
+11:35:32.4079 [INFO] uart3: [host:  3.68s (+1.01ms)|virt:  3.64s (+0.3ms)] [    0.000000] printk: bootconsole [sbi0] enabled
+11:35:32.4100 [INFO] uart3: [host:  3.68s (+2.09ms)|virt:  3.64s (+0.9ms)] [    0.000000] efi: UEFI not found.
+11:35:32.4125 [INFO] uart3: [host:  3.68s (+2.55ms)|virt:  3.64s (+0.3ms)] [    0.000000] Initial ramdisk at: 0x(____ptrval____) (99614720 bytes)
+11:35:32.4196 [INFO] uart3: [host:  3.69s (+7.06ms)|virt:  3.64s (+3.3ms)] [    0.000000] Reserved memory: created CMA memory pool at 0x00000000a0000000, size 640 MiB
+11:35:32.4211 [INFO] uart3: [host:  3.69s (+1.53ms)|virt:  3.64s (+0.4ms)] [    0.000000] OF: reserved mem: initialized node linux,cma, compatible id shared-dma-pool
+11:35:32.4593 [INFO] uart3: [host: 3.73s (+38.18ms)|virt:  3.65s (+6.4ms)] [    0.000000] Zone ranges:
+11:35:32.4613 [INFO] uart3: [host:     3.73s (+2ms)|virt:  3.65s (+0.3ms)] [    0.000000]   DMA32    [mem 0x0000000080200000-0x00000000ffffffff]
+11:35:32.4625 [INFO] uart3: [host:  3.73s (+1.25ms)|virt:  3.65s (+0.4ms)] [    0.000000]   Normal   [mem 0x0000000100000000-0x000000027fffffff]
+11:35:32.4633 [INFO] uart3: [host:  3.73s (+0.82ms)|virt:  3.65s (+0.2ms)] [    0.000000] Movable zone start for each node
+11:35:32.4641 [INFO] uart3: [host:  3.73s (+0.78ms)|virt:  3.65s (+0.2ms)] [    0.000000] Early memory node ranges
+11:35:32.4654 [INFO] uart3: [host:  3.73s (+1.23ms)|virt:  3.65s (+0.3ms)] [    0.000000]   node   0: [mem 0x0000000080200000-0x000000027fffffff]
+11:35:32.4669 [INFO] uart3: [host:  3.73s (+1.59ms)|virt:  3.65s (+0.4ms)] [    0.000000] Initmem setup node 0 [mem 0x0000000080200000-0x000000027fffffff]
+11:35:32.4683 [INFO] uart3: [host:  3.74s (+1.34ms)|virt:  3.65s (+0.2ms)] [    0.000000] On node 0 totalpages: 2096640
+11:35:32.7239 [INFO] uart3: [host:   3.99s (+0.26s)|virt:   3.8s (+0.16s)] [    0.000000]   DMA32 zone: 7161 pages used for memmap
+11:35:32.7253 [INFO] uart3: [host:  3.99s (+1.36ms)|virt:   3.8s (+0.2ms)] [    0.000000]   DMA32 zone: 0 pages reserved
+11:35:32.7264 [INFO] uart3: [host:  3.99s (+1.16ms)|virt:  3.81s (+0.3ms)] [    0.000000]   DMA32 zone: 523776 pages, LIFO batch:63
+11:35:32.8221 [INFO] uart3: [host: 4.09s (+95.62ms)|virt:  3.94s (+0.13s)] [    0.000000]   Normal zone: 21504 pages used for memmap
+11:35:32.8231 [INFO] uart3: [host:  4.09s (+1.06ms)|virt:  3.94s (+0.3ms)] [    0.000000]   Normal zone: 1572864 pages, LIFO batch:63
+11:35:33.2718 [INFO] uart3: [host:   4.54s (+0.45s)|virt:  4.45s (+0.52s)] [    0.000000] software IO TLB: mapped [mem 0x00000000fbfff000-0x00000000fffff000] (64MB)
+11:35:33.2728 [INFO] uart3: [host:  4.54s (+0.98ms)|virt:  4.45s (+0.2ms)] [    0.000000] SBI specification v0.2 detected
+11:35:33.2738 [INFO] uart3: [host:  4.54s (+0.99ms)|virt:  4.45s (+0.3ms)] [    0.000000] SBI implementation ID=0x1 Version=0x9
+11:35:33.2746 [INFO] uart3: [host:  4.54s (+0.88ms)|virt:  4.45s (+0.2ms)] [    0.000000] SBI v0.2 TIME extension detected
+11:35:33.2754 [INFO] uart3: [host:   4.54s (+0.8ms)|virt:  4.45s (+0.3ms)] [    0.000000] SBI v0.2 IPI extension detected
+11:35:33.2763 [INFO] uart3: [host:  4.54s (+0.81ms)|virt:  4.45s (+0.2ms)] [    0.000000] SBI v0.2 RFENCE extension detected
+11:35:33.2770 [INFO] uart3: [host:  4.54s (+0.78ms)|virt:  4.45s (+0.2ms)] [    0.000000] SBI v0.2 HSM extension detected
+11:35:33.2793 [INFO] uart3: [host:  4.55s (+2.31ms)|virt:  4.46s (+0.4ms)] [    0.000000] riscv: ISA extensions acdfim
+11:35:33.2801 [INFO] uart3: [host:  4.55s (+0.77ms)|virt:  4.46s (+0.2ms)] [    0.000000] riscv: ELF capabilities acdfim
+11:35:33.2912 [INFO] uart3: [host: 4.56s (+11.07ms)|virt:  4.46s (+0.9ms)] [    0.000000] percpu: Embedded 17 pages/cpu s30888 r8192 d30552 u69632
+11:35:33.2938 [INFO] uart3: [host:  4.56s (+2.64ms)|virt:  4.46s (+0.5ms)] [    0.000000] pcpu-alloc: s30888 r8192 d30552 u69632 alloc=17*4096
+11:35:33.2951 [INFO] uart3: [host:   4.56s (+1.3ms)|virt:  4.46s (+0.3ms)] [    0.000000] pcpu-alloc: [0] 0 [0] 1 
+11:35:33.3001 [INFO] uart3: [host:  4.57s (+4.95ms)|virt:  4.46s (+0.9ms)] [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 2067975
+11:35:33.3019 [INFO] uart3: [host:   4.57s (+1.8ms)|virt:  4.46s (+0.4ms)] [    0.000000] Kernel command line: console=ttyS0,115200  debug rootwait  earlycon=sbi
+11:35:33.3209 [INFO] uart3: [host: 4.59s (+18.99ms)|virt:   4.47s (+12ms)] [    0.000000] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+11:35:33.3294 [INFO] uart3: [host:   4.6s (+8.55ms)|virt:    4.48s (+6ms)] [    0.000000] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+11:35:33.3302 [INFO] uart3: [host:   4.6s (+0.77ms)|virt:  4.48s (+0.2ms)] [    0.000000] Sorting __ex_table...
+11:35:33.3332 [INFO] uart3: [host:   4.6s (+3.04ms)|virt:  4.48s (+2.5ms)] [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+11:35:33.6050 [INFO] uart3: [host:   4.87s (+0.27s)|virt:  4.95s (+0.47s)] [    0.000000] Memory: 6735000K/8386560K available (6771K kernel code, 4266K rwdata, 4096K rodata, 230K init, 392K bss, 996200K reserved, 655360K cma-reserved)
+11:35:33.6210 [INFO] uart3: [host: 4.89s (+15.99ms)|virt:  4.95s (+1.3ms)] [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+11:35:33.6328 [INFO] uart3: [host:  4.9s (+11.86ms)|virt:  4.95s (+1.2ms)] [    0.000000] rcu: Hierarchical RCU implementation.
+11:35:33.6339 [INFO] uart3: [host:   4.9s (+1.08ms)|virt:  4.95s (+0.2ms)] [    0.000000] rcu: RCU debug extended QS entry/exit.
+11:35:33.6349 [INFO] uart3: [host:   4.9s (+1.07ms)|virt:  4.95s (+0.3ms)] [    0.000000] Tracing variant of Tasks RCU enabled.
+11:35:33.6365 [INFO] uart3: [host:   4.9s (+1.56ms)|virt:  4.95s (+0.4ms)] [    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+11:35:33.6386 [INFO] uart3: [host:  4.91s (+2.11ms)|virt:  4.95s (+0.3ms)] [    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+11:35:33.6437 [INFO] uart3: [host:  4.91s (+5.06ms)|virt:  4.95s (+1.1ms)] [    0.000000] riscv-intc: 64 local interrupts mapped
+11:35:33.6642 [INFO] uart3: [host: 4.93s (+20.46ms)|virt:    4.95s (+4ms)] [    0.000000] plic: disable L2 cache irq 1 in plic
+11:35:33.6653 [INFO] uart3: [host:  4.93s (+1.14ms)|virt:  4.96s (+0.3ms)] [    0.000000] plic: disable L2 cache irq 2 in plic
+11:35:33.6663 [INFO] uart3: [host:  4.93s (+1.06ms)|virt:  4.96s (+0.3ms)] [    0.000000] plic: disable L2 cache irq 3 in plic
+11:35:33.6674 [INFO] uart3: [host:  4.94s (+1.06ms)|virt:  4.96s (+0.3ms)] [    0.000000] plic: Can't get L2 cache irq(#3).
+11:35:33.6772 [INFO] uart3: [host:  4.95s (+9.75ms)|virt:  4.96s (+0.8ms)] [    0.000000] plic: disable L2 cache irq 1 in plic
+11:35:33.6783 [INFO] uart3: [host:  4.95s (+1.13ms)|virt:  4.96s (+0.3ms)] [    0.000000] plic: disable L2 cache irq 2 in plic
+11:35:33.6793 [INFO] uart3: [host:  4.95s (+1.03ms)|virt:  4.96s (+0.3ms)] [    0.000000] plic: disable L2 cache irq 3 in plic
+11:35:33.6803 [INFO] uart3: [host:     4.95s (+1ms)|virt:  4.96s (+0.3ms)] [    0.000000] plic: Can't get L2 cache irq(#3).
+11:35:33.6806 [WARNING] plic: Unhandled write to offset 0x201000, value 0x0.
+11:35:33.6825 [INFO] uart3: [host:  4.95s (+2.18ms)|virt:  4.96s (+0.4ms)] [    0.000000] plic: plic@c000000: mapped 127 interrupts with 2 handlers for 4 contexts.
+11:35:33.6958 [INFO] uart3: [host: 4.96s (+13.36ms)|virt:  4.96s (+2.2ms)] [    0.000000] random: get_random_bytes called from start_kernel+0x31c/0x48e with crng_init=0
+11:35:33.6971 [INFO] uart3: [host:  4.96s (+1.22ms)|virt:  4.96s (+0.3ms)] [    0.000000] riscv_timer_init_dt: Registering clocksource cpuid [0] hartid [0]
+11:35:33.6995 [INFO] uart3: [host:  4.97s (+2.49ms)|virt:  4.96s (+0.6ms)] [    0.000000] clocksource: riscv_clocksource: mask: 0xffffffffffffffff max_cycles: 0x171024e6b, max_idle_ns: 440795202301 ns
+11:35:33.7018 [INFO] uart3: [host:  4.97s (+2.22ms)|virt:  4.96s (+0.4ms)] [    0.000034] sched_clock: 64 bits at 6MHz, resolution 160ns, wraps every 4398046511040ns
+11:35:33.7091 [INFO] uart3: [host:  4.98s (+7.26ms)|virt:  4.96s (+0.9ms)] [    0.001081] Console: colour dummy device 80x25
+11:35:33.7134 [INFO] uart3: [host:  4.98s (+4.38ms)|virt:  4.96s (+0.7ms)] [    0.001413] Calibrating delay loop (skipped), value calculated using timer frequency.. 12.50 BogoMIPS (lpj=62500)
+11:35:33.7145 [INFO] uart3: [host:  4.98s (+1.04ms)|virt:  4.96s (+0.2ms)] [    0.001930] pid_max: default: 32768 minimum: 301
+11:35:33.7188 [INFO] uart3: [host:  4.99s (+4.32ms)|virt:  4.96s (+1.4ms)] [    0.003147] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+11:35:33.7207 [INFO] uart3: [host:  4.99s (+1.89ms)|virt:  4.97s (+0.7ms)] [    0.003725] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+11:35:33.7682 [INFO] uart3: [host: 5.04s (+47.54ms)|virt:  4.97s (+6.5ms)] [    0.010142] rcu: Hierarchical SRCU implementation.
+11:35:33.7788 [INFO] uart3: [host: 5.05s (+10.54ms)|virt:    4.97s (+1ms)] [    0.011074] EFI services will not be available.
+11:35:33.7847 [INFO] uart3: [host:  5.05s (+5.97ms)|virt:  4.97s (+1.1ms)] [    0.012187] smp: Bringing up secondary CPUs ...
+11:35:36.0922 [INFO] uart3: [host:   7.36s (+2.31s)|virt:  6.05s (+1.07s)] [    1.043304] CPU1: failed to come online
+11:35:36.0980 [INFO] uart3: [host:  7.37s (+5.82ms)|virt:  6.05s (+0.4ms)] [    1.043633] smp: Brought up 1 node, 1 CPU
+11:35:36.1333 [INFO] uart3: [host:  7.4s (+35.35ms)|virt:  6.05s (+5.4ms)] [    1.048848] devtmpfs: initialized
+11:35:36.2066 [INFO] uart3: [host: 7.47s (+73.23ms)|virt: 6.07s (+19.4ms)] [    1.067259] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+11:35:36.2092 [INFO] uart3: [host:  7.48s (+2.65ms)|virt:  6.07s (+0.4ms)] [    1.067742] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+11:35:36.2665 [INFO] uart3: [host: 7.53s (+57.28ms)|virt:   6.13s (+59ms)] [    1.124483] NET: Registered protocol family 16
+11:35:36.3518 [INFO] uart3: [host: 7.62s (+85.32ms)|virt: 6.17s (+40.7ms)] [    1.163474] OF: /soc/usb@104c0000: could not get #phy-cells for /soc/usb3-phy
+11:35:36.3542 [INFO] uart3: [host:  7.62s (+2.37ms)|virt:  6.17s (+1.1ms)] [    1.164612] OF: /soc/i2c@118c0000: could not find phandle
+11:35:36.3567 [INFO] uart3: [host:  7.62s (+2.52ms)|virt:  6.18s (+0.7ms)] [    1.165250] OF: /soc/i2c@12450000: could not find phandle
+11:35:36.3703 [INFO] uart3: [host: 7.64s (+13.57ms)|virt: 6.19s (+10.4ms)] [    1.175180] OF: /soc/usb@104c0000: could not get #phy-cells for /soc/usb3-phy
+11:35:36.3730 [INFO] uart3: [host:  7.64s (+2.74ms)|virt:  6.19s (+1.4ms)] [    1.176594] OF: /soc/i2c@118c0000: could not find phandle
+11:35:36.3750 [INFO] uart3: [host:  7.64s (+1.99ms)|virt:    6.19s (+1ms)] [    1.177543] OF: /soc/i2c@12450000: could not find phandle
+11:35:36.4505 [INFO] uart3: [host: 7.72s (+75.49ms)|virt: 6.24s (+53.8ms)] [    1.229095] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+11:35:36.4517 [INFO] uart3: [host:  7.72s (+1.23ms)|virt:  6.24s (+0.3ms)] [    1.229439] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+11:35:36.4845 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910054, returning 0x0.
+11:35:36.4846 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191005C, returning 0x0.
+11:35:36.4846 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910064, returning 0x0.
+11:35:36.4846 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191006C, returning 0x0.
+11:35:36.4846 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910074, returning 0x0.
+11:35:36.4847 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191007C, returning 0x0.
+11:35:36.4847 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910084, returning 0x0.
+11:35:36.4847 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191008C, returning 0x0.
+11:35:36.4848 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910094, returning 0x0.
+11:35:36.4848 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191009C, returning 0x0.
+11:35:36.4848 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100A4, returning 0x0.
+11:35:36.4848 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100AC, returning 0x0.
+11:35:36.4849 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100B4, returning 0x0.
+11:35:36.4849 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100BC, returning 0x0.
+11:35:36.4849 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100C4, returning 0x0.
+11:35:36.4850 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100CC, returning 0x0.
+11:35:36.4850 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100D4, returning 0x0.
+11:35:36.4850 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100DC, returning 0x0.
+11:35:36.4850 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100E4, returning 0x0.
+11:35:36.4851 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100EC, returning 0x0.
+11:35:36.4851 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100F4, returning 0x0.
+11:35:36.4851 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119100FC, returning 0x0.
+11:35:36.4851 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910104, returning 0x0.
+11:35:36.4852 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191010C, returning 0x0.
+11:35:36.4852 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910114, returning 0x0.
+11:35:36.4853 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191011C, returning 0x0.
+11:35:36.4853 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910124, returning 0x0.
+11:35:36.4853 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191012C, returning 0x0.
+11:35:36.4854 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910134, returning 0x0.
+11:35:36.4854 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191013C, returning 0x0.
+11:35:36.4854 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910144, returning 0x0.
+11:35:36.4854 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191014C, returning 0x0.
+11:35:36.4855 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910154, returning 0x0.
+11:35:36.4855 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191015C, returning 0x0.
+11:35:36.4855 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910164, returning 0x0.
+11:35:36.4855 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191016C, returning 0x0.
+11:35:36.4856 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910174, returning 0x0.
+11:35:36.4856 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191017C, returning 0x0.
+11:35:36.4856 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910184, returning 0x0.
+11:35:36.4857 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191018C, returning 0x0.
+11:35:36.4857 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910194, returning 0x0.
+11:35:36.4857 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191019C, returning 0x0.
+11:35:36.4857 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101A4, returning 0x0.
+11:35:36.4858 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101AC, returning 0x0.
+11:35:36.4858 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101B4, returning 0x0.
+11:35:36.4858 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101BC, returning 0x0.
+11:35:36.4858 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101C4, returning 0x0.
+11:35:36.4859 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101CC, returning 0x0.
+11:35:36.4859 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101D4, returning 0x0.
+11:35:36.4859 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101DC, returning 0x0.
+11:35:36.4860 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101E4, returning 0x0.
+11:35:36.4860 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101EC, returning 0x0.
+11:35:36.4860 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101F4, returning 0x0.
+11:35:36.4860 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x119101FC, returning 0x0.
+11:35:36.4861 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910204, returning 0x0.
+11:35:36.4861 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191020C, returning 0x0.
+11:35:36.4861 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910214, returning 0x0.
+11:35:36.4862 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191021C, returning 0x0.
+11:35:36.4862 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910224, returning 0x0.
+11:35:36.4862 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191022C, returning 0x0.
+11:35:36.4863 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910234, returning 0x0.
+11:35:36.4863 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191023C, returning 0x0.
+11:35:36.4863 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x11910244, returning 0x0.
+11:35:36.4864 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191024C, returning 0x0.
+11:35:36.4937 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051FB5C] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191002C, value 0x0.
+11:35:36.4937 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051FB92] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910028, value 0x0.
+11:35:36.4974 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051FC10] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910000, value 0x1.
+11:35:36.4993 [INFO] uart3: [host: 7.77s (+47.56ms)|virt: 6.25s (+11.2ms)] [    1.240158] starfive_gpio 11910000.gpio: SiFive GPIO chip registered 64 GPIOs
+11:35:36.5066 [INFO] uart3: [host:  7.77s (+7.33ms)|virt:  6.26s (+2.7ms)] [    1.242895] SCSI subsystem initialized
+11:35:36.5104 [INFO] uart3: [host:  7.78s (+3.77ms)|virt:  6.26s (+1.3ms)] [    1.244016] usbcore: registered new interface driver usbfs
+11:35:36.5130 [INFO] uart3: [host:  7.78s (+2.68ms)|virt:  6.26s (+0.6ms)] [    1.244630] usbcore: registered new interface driver hub
+11:35:36.5144 [INFO] uart3: [host:   7.78s (+1.4ms)|virt:  6.26s (+0.4ms)] [    1.245084] usbcore: registered new device driver usb
+11:35:36.5206 [INFO] uart3: [host:  7.79s (+6.18ms)|virt:  6.26s (+1.8ms)] [    1.246644] i2c_designware 118b0000.i2c: Using the static setting value: 49500
+11:35:36.5209 [WARNING] sysbus: [U74_1: 0xFFFFFFE0006B11FA] (tag: 'I2C0') ReadDoubleWord from non existing peripheral at 0x118B00FC, returning 0x0.
+11:35:36.5226 [INFO] uart3: [host:  7.79s (+1.95ms)|virt:  6.26s (+0.4ms)] [    1.247013] i2c_designware 118b0000.i2c: Unknown Synopsys component type: 0x00000000
+11:35:36.5288 [INFO] uart3: [host:   7.8s (+6.15ms)|virt:  6.26s (+1.3ms)] [    1.248378] OF: /soc/i2c@118c0000: could not find phandle
+11:35:36.5303 [INFO] uart3: [host:   7.8s (+1.61ms)|virt:  6.26s (+0.4ms)] [    1.248681] i2c_designware 118c0000.i2c: Using 'clocks' : 49500000 / 1000
+11:35:36.5304 [WARNING] sysbus: [U74_1: 0xFFFFFFE0006B11FA] (tag: 'I2C1') ReadDoubleWord from non existing peripheral at 0x118C00FC, returning 0x0.
+11:35:36.5319 [INFO] uart3: [host:   7.8s (+1.52ms)|virt:  6.26s (+0.4ms)] [    1.249032] i2c_designware 118c0000.i2c: Unknown Synopsys component type: 0x00000000
+11:35:36.5339 [INFO] uart3: [host:   7.8s (+2.05ms)|virt:  6.26s (+0.8ms)] [    1.249930] OF: /soc/i2c@12450000: could not find phandle
+11:35:36.5353 [INFO] uart3: [host:   7.8s (+1.39ms)|virt:  6.26s (+0.4ms)] [    1.250232] i2c_designware 12450000.i2c: Using 'clocks' : 50000000 / 1000
+11:35:36.5353 [WARNING] sysbus: [U74_1: 0xFFFFFFE0006B11FA] (tag: 'I2C1') ReadDoubleWord from non existing peripheral at 0x124500FC, returning 0x0.
+11:35:36.5368 [INFO] uart3: [host:   7.8s (+1.48ms)|virt:  6.26s (+0.4ms)] [    1.250584] i2c_designware 12450000.i2c: Unknown Synopsys component type: 0x00000000
+11:35:36.5533 [INFO] uart3: [host: 7.82s (+16.51ms)|virt:  6.27s (+3.4ms)] [    1.254063] Bluetooth: Core ver 2.22
+11:35:36.5549 [INFO] uart3: [host:  7.82s (+1.64ms)|virt:  6.27s (+0.5ms)] [    1.254489] NET: Registered protocol family 31
+11:35:36.5562 [INFO] uart3: [host:  7.82s (+1.29ms)|virt:  6.27s (+0.3ms)] [    1.254727] Bluetooth: HCI device and connection manager initialized
+11:35:36.5574 [INFO] uart3: [host:  7.83s (+1.23ms)|virt:  6.27s (+0.3ms)] [    1.255055] Bluetooth: HCI socket layer initialized
+11:35:36.5588 [INFO] uart3: [host:  7.83s (+1.35ms)|virt:  6.27s (+0.3ms)] [    1.255327] Bluetooth: L2CAP socket layer initialized
+11:35:36.5601 [INFO] uart3: [host:  7.83s (+1.31ms)|virt:  6.27s (+0.3ms)] [    1.255638] Bluetooth: SCO socket layer initialized
+11:35:36.5654 [INFO] uart3: [host:  7.83s (+5.33ms)|virt:  6.27s (+0.8ms)] [    1.256313] clocksource: Switched to clocksource riscv_clocksource
+11:35:36.6219 [INFO] uart3: [host:  7.89s (+56.5ms)|virt:  6.3s (+30.6ms)] [    1.285723] NET: Registered protocol family 2
+11:35:36.6359 [INFO] uart3: [host:  7.9s (+13.98ms)|virt:   6.3s (+3.9ms)] [    1.289366] tcp_listen_portaddr_hash hash table entries: 4096 (order: 5, 163840 bytes, linear)
+11:35:36.6387 [INFO] uart3: [host:  7.91s (+2.85ms)|virt:  6.31s (+1.7ms)] [    1.291008] TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+11:35:36.6455 [INFO] uart3: [host:  7.91s (+6.79ms)|virt:  6.31s (+7.8ms)] [    1.298469] TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+11:35:36.6619 [INFO] uart3: [host: 7.93s (+16.36ms)|virt: 6.33s (+19.4ms)] [    1.317161] TCP: Hash tables configured (established 65536 bind 65536)
+11:35:36.6656 [INFO] uart3: [host:  7.93s (+3.69ms)|virt:  6.33s (+0.8ms)] [    1.317934] UDP hash table entries: 4096 (order: 6, 393216 bytes, linear)
+11:35:36.6700 [INFO] uart3: [host:  7.94s (+4.46ms)|virt:  6.34s (+3.2ms)] [    1.320982] UDP-Lite hash table entries: 4096 (order: 6, 393216 bytes, linear)
+11:35:36.6762 [INFO] uart3: [host:  7.94s (+6.14ms)|virt:  6.34s (+3.5ms)] [    1.324450] NET: Registered protocol family 1
+11:35:36.6868 [INFO] uart3: [host: 7.95s (+10.61ms)|virt:  6.34s (+2.4ms)] [    1.326709] RPC: Registered named UNIX socket transport module.
+11:35:36.6878 [INFO] uart3: [host:  7.96s (+1.03ms)|virt:  6.34s (+0.3ms)] [    1.327005] RPC: Registered udp transport module.
+11:35:36.6887 [INFO] uart3: [host:  7.96s (+0.88ms)|virt:  6.34s (+0.2ms)] [    1.327251] RPC: Registered tcp transport module.
+11:35:36.6899 [INFO] uart3: [host:  7.96s (+1.24ms)|virt:  6.34s (+0.4ms)] [    1.327499] RPC: Registered tcp NFSv4.1 backchannel transport module.
+11:35:36.7060 [INFO] uart3: [host: 7.97s (+16.05ms)|virt:  6.35s (+6.5ms)] [    1.333925] Unpacking initramfs...
+11:35:46.2106 [INFO] uart3: [host:   17.48s (+9.5s)|virt: 17.87s (+11.52s)] [   12.395305] Freeing initrd memory: 97280K
+11:35:46.2369 [INFO] uart3: [host: 17.5s (+26.38ms)|virt:  17.88s (+2.2ms)] [   12.397374] Initialise system trusted keyrings
+11:35:46.2633 [INFO] uart3: [host: 17.53s (+26.36ms)|virt:  17.88s (+1.1ms)] [   12.398397] workingset: timestamp_bits=62 max_order=21 bucket_order=0
+11:35:46.3462 [INFO] uart3: [host: 17.61s (+82.86ms)|virt: 17.93s (+55.5ms)] [   12.451750] NFS: Registering the id_resolver key type
+11:35:46.3476 [INFO] uart3: [host:  17.62s (+1.41ms)|virt:  17.93s (+0.3ms)] [   12.452064] Key type id_resolver registered
+11:35:46.3484 [INFO] uart3: [host:  17.62s (+0.86ms)|virt:  17.93s (+0.2ms)] [   12.452288] Key type id_legacy registered
+11:35:46.3509 [INFO] uart3: [host:  17.62s (+2.46ms)|virt:    17.93s (+1ms)] [   12.453070] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+11:35:46.3523 [INFO] uart3: [host:   17.62s (+1.4ms)|virt:  17.93s (+0.3ms)] [   12.453483] ntfs: driver 2.1.32 [Flags: R/W].
+11:35:46.3615 [INFO] uart3: [host:  17.63s (+9.18ms)|virt: 17.94s (+2.52ms)] [   12.455902] fuse: init (API version 7.32)
+11:35:46.9198 [INFO] uart3: [host:   18.19s (+0.56s)|virt:  18.33s (+0.39s)] [   12.831040] NET: Registered protocol family 38
+11:35:46.9217 [INFO] uart3: [host:  18.19s (+1.99ms)|virt:  18.33s (+0.3ms)] [   12.831293] Key type asymmetric registered
+11:35:46.9228 [INFO] uart3: [host:  18.19s (+1.05ms)|virt:  18.33s (+0.2ms)] [   12.831515] Asymmetric key parser 'x509' registered
+11:35:46.9297 [INFO] uart3: [host:   18.2s (+6.96ms)|virt:  18.33s (+0.5ms)] [   12.831874] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 251)
+11:35:46.9310 [INFO] uart3: [host:   18.2s (+1.29ms)|virt:  18.33s (+0.3ms)] [   12.832230] io scheduler mq-deadline registered
+11:35:46.9320 [INFO] uart3: [host:   18.2s (+0.95ms)|virt:  18.33s (+0.2ms)] [   12.832470] io scheduler kyber registered
+11:35:46.9437 [INFO] uart3: [host: 18.21s (+11.74ms)|virt:  18.33s (+2.1ms)] [   12.834573] start plist test
+11:35:46.9748 [INFO] uart3: [host: 18.24s (+31.03ms)|virt: 18.37s (+39.4ms)] [   12.872352] end plist test
+11:35:47.0063 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C464] (tag: 'sgdam2') ReadDoubleWord from non existing peripheral at 0x100B0010, returning 0x0.
+11:35:47.0063 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C478] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0010, value 0x1.
+11:35:47.0064 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4A8] (tag: 'sgdam2') ReadDoubleWord from non existing peripheral at 0x100B0010, returning 0x0.
+11:35:47.0064 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4BC] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0010, value 0x2.
+11:35:47.0065 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0180, value 0x0.
+11:35:47.0066 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C590] (tag: 'sgdam2') ReadDoubleWord from non existing peripheral at 0x100B0018, returning 0x0.
+11:35:47.0067 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0018, value 0x100.
+11:35:47.0067 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0280, value 0x0.
+11:35:47.0068 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C590] (tag: 'sgdam2') ReadDoubleWord from non existing peripheral at 0x100B0018, returning 0x0.
+11:35:47.0068 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0018, value 0x200.
+11:35:47.0069 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0380, value 0x0.
+11:35:47.0069 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C590] (tag: 'sgdam2') ReadDoubleWord from non existing peripheral at 0x100B0018, returning 0x0.
+11:35:47.0069 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0018, value 0x400.
+11:35:47.0070 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0480, value 0x0.
+11:35:47.0070 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C590] (tag: 'sgdam2') ReadDoubleWord from non existing peripheral at 0x100B0018, returning 0x0.
+11:35:47.0070 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam2') WriteDoubleWord to non existing peripheral at 0x100B0018, value 0x800.
+11:35:47.0155 [INFO] uart3: [host: 18.28s (+40.75ms)|virt:  18.38s (+8.3ms)] [   12.880141] dw_axi_dmac_platform 100b0000.sgdma2p: DesignWare AXI DMA Controller, 4 channels
+11:35:47.0235 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C464] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500010, returning 0x0.
+11:35:47.0235 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C478] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500010, value 0x1.
+11:35:47.0235 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4A8] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500010, returning 0x0.
+11:35:47.0236 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4BC] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500010, value 0x2.
+11:35:47.0236 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500180, value 0x0.
+11:35:47.0237 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0237 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x10000.
+11:35:47.0237 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500280, value 0x0.
+11:35:47.0238 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0238 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x20000.
+11:35:47.0239 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500380, value 0x0.
+11:35:47.0239 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0239 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x40000.
+11:35:47.0240 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500480, value 0x0.
+11:35:47.0240 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0241 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x80000.
+11:35:47.0241 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500580, value 0x0.
+11:35:47.0241 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0242 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x100000.
+11:35:47.0242 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500680, value 0x0.
+11:35:47.0242 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0243 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x200000.
+11:35:47.0243 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500780, value 0x0.
+11:35:47.0243 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0244 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x400000.
+11:35:47.0244 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500880, value 0x0.
+11:35:47.0244 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0244 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x800000.
+11:35:47.0245 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500980, value 0x0.
+11:35:47.0245 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0245 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x1000000.
+11:35:47.0246 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500A80, value 0x0.
+11:35:47.0246 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0246 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x2000000.
+11:35:47.0246 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500B80, value 0x0.
+11:35:47.0247 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0247 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x4000000.
+11:35:47.0247 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500C80, value 0x0.
+11:35:47.0248 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0248 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x8000000.
+11:35:47.0248 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500D80, value 0x0.
+11:35:47.0248 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0249 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x10000000.
+11:35:47.0249 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500E80, value 0x0.
+11:35:47.0249 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0249 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x20000000.
+11:35:47.0250 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500F80, value 0x0.
+11:35:47.0250 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0251 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x40000000.
+11:35:47.0251 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C55E] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10501080, value 0x0.
+11:35:47.0251 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C4EE] (tag: 'sgdam1') ReadDoubleWord from non existing peripheral at 0x10500018, returning 0x0.
+11:35:47.0251 [WARNING] sysbus: [U74_1: 0xFFFFFFE00053C51C] (tag: 'sgdam1') WriteDoubleWord to non existing peripheral at 0x10500018, value 0x80000000.
+11:35:47.0325 [INFO] uart3: [host:  18.3s (+16.92ms)|virt:  18.38s (+5.9ms)] [   12.885766] dw_axi_dmac_platform 10500000.sgdma1p: DesignWare AXI DMA Controller, 16 channels
+11:35:47.0452 [INFO] uart3: [host: 18.31s (+12.73ms)|virt:  18.39s (+1.8ms)] [   12.887680] L2CACHE: No. of Banks in the cache: 0
+11:35:47.0462 [INFO] uart3: [host:  18.31s (+1.01ms)|virt:  18.39s (+0.3ms)] [   12.887925] L2CACHE: No. of ways per bank: 0
+11:35:47.0470 [INFO] uart3: [host:  18.31s (+0.81ms)|virt:  18.39s (+0.2ms)] [   12.888150] L2CACHE: Sets per bank: 1
+11:35:47.0478 [INFO] uart3: [host:  18.32s (+0.87ms)|virt:  18.39s (+0.2ms)] [   12.888352] L2CACHE: Bytes per cache block: 1
+11:35:47.0490 [INFO] uart3: [host:  18.32s (+1.14ms)|virt:  18.39s (+0.3ms)] [   12.888584] L2CACHE: Index of the largest way enabled: 0
+11:35:47.3180 [INFO] uart3: [host:   18.59s (+0.27s)|virt:  18.57s (+0.18s)] [   13.061149] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+11:35:47.3270 [WARNING] uart3: Unhandled read from offset 0xF8.
+11:35:47.3351 [INFO] uart3: [host:  18.6s (+17.08ms)|virt:  18.57s (+5.9ms)] [   13.066871] printk: console [ttyS0] disabled
+11:35:47.3509 [INFO] uart3: [host: 18.62s (+15.84ms)|virt:  18.58s (+3.8ms)] [   13.070321] 12440000.serial: ttyS0 at MMIO 0x12440000 (irq = 6, base_baud = 6250000) is a 16550A
+11:35:47.3655 [INFO] uart3: [host:  18.63s (+14.6ms)|virt:  18.58s (+2.1ms)] [   13.072702] printk: console [ttyS0] enabled
+11:35:47.3664 [INFO] uart3: [host:  18.63s (+0.95ms)|virt:  18.58s (+0.2ms)] [   13.072702] printk: console [ttyS0] enabled
+11:35:47.3668 [INFO] uart3: [host:  18.63s (+0.41ms)|virt:  18.58s (+0.1ms)] [   13.072980] printk: bootconsole [sbi0] disabled
+11:35:47.3677 [INFO] uart3: [host:  18.64s (+0.83ms)|virt:  18.58s (+0.2ms)] [   13.072980] printk: bootconsole [sbi0] disabled
+11:35:47.3716 [WARNING] uart1: Unhandled read from offset 0xF8.
+11:35:47.3881 [INFO] uart3: [host: 18.66s (+20.46ms)|virt:  18.59s (+7.4ms)] [   13.080228] 11880000.hs_serial: ttyS1 at MMIO 0x11880000 (irq = 8, base_baud = 4640625) is a 16550A
+11:35:47.3927 [WARNING] uart0: Unhandled read from offset 0xF8.
+11:35:47.4081 [INFO] uart3: [host: 18.68s (+19.95ms)|virt:  18.59s (+7.1ms)] [   13.087006] 11870000.hs_serial: ttyS2 at MMIO 0x11870000 (irq = 10, base_baud = 4640625) is a 16550A
+11:35:47.4181 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D7DC] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D0014, returning 0x0.
+11:35:47.4181 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D7EC] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0014, value 0x0.
+11:35:47.4182 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D822] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0018, value 0x0.
+11:35:47.4183 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D84A] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0008, value 0x2.
+11:35:47.4183 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D86A] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4184 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D880] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0000, value 0x1.
+11:35:47.4184 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D8A0] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4185 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D8BE] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0010, value 0x8000001F.
+11:35:47.4185 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D8DE] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4186 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D8F4] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0000, value 0xF.
+11:35:47.4186 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D912] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4189 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D942] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4189 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D958] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0000, value 0xF.
+11:35:47.4190 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D988] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4190 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D99E] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0000, value 0x1.
+11:35:47.4191 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D9BE] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4191 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D9D4] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0000, value 0x3.
+11:35:47.4192 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056D9F4] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4193 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056DA16] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0004, value 0x0.
+11:35:47.4193 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056DA36] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4193 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056DA4C] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0000, value 0x6.
+11:35:47.4194 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056DA6C] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4194 [WARNING] sysbus: [U74_1: 0xFFFFFFE000514368] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D0024, returning 0x0.
+11:35:47.4195 [WARNING] sysbus: [U74_1: 0xFFFFFFE000514368] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D0028, returning 0x0.
+11:35:47.4195 [WARNING] sysbus: [U74_1: 0xFFFFFFE000514368] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D002C, returning 0x0.
+11:35:47.4195 [WARNING] sysbus: [U74_1: 0xFFFFFFE000514368] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D0030, returning 0x0.
+11:35:47.4196 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056DA8C] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4196 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056DAA2] (tag: 'TRNG') WriteDoubleWord to non existing peripheral at 0x118D0000, value 0xF.
+11:35:47.4197 [WARNING] sysbus: [U74_1: 0xFFFFFFE00056DAC2] (tag: 'TRNG') ReadDoubleWord from non existing peripheral at 0x118D000C, returning 0x0.
+11:35:47.4203 [INFO] uart3: [host: 18.69s (+12.18ms)|virt:     18.6s (+7ms)] [   13.093837] vic-rng 118d0000.trng: Initialized
+11:35:47.4921 [INFO] uart3: [host: 18.76s (+71.83ms)|virt: 18.64s (+40.7ms)] [   13.132912] loop: module loaded
+11:35:47.5212 [INFO] uart3: [host: 18.79s (+29.06ms)|virt: 18.65s (+4.59ms)] [   13.137314] libphy: Fixed MDIO Bus: probed
+11:35:47.5439 [INFO] uart3: [host: 18.81s (+22.74ms)|virt:  18.65s (+7.1ms)] [   13.144097] stmmaceth 10020000.gmac: IRQ eth_lpi not found
+11:35:47.5503 [INFO] uart3: [host:   18.82s (+6.4ms)|virt:  18.65s (+0.6ms)] [   13.144621] stmmaceth 10020000.gmac: force_sf_dma_mode is ignored if force_thresh_dma_mode is set.
+11:35:47.5531 [INFO] uart3: [host:  18.82s (+2.82ms)|virt:  18.65s (+0.3ms)] [   13.144933] stmmaceth 10020000.gmac: PTP uses main clock
+11:35:47.5538 [INFO] uart3: [host:   18.82s (+0.7ms)|virt:  18.65s (+0.1ms)] [   13.145077] stmmaceth 10020000.gmac: no reset control found
+11:35:47.5735 [WARNING] ethernet: Unhandled read from offset 0x20.
+11:35:47.5740 [INFO] uart3: [host: 18.84s (+20.15ms)|virt:  18.65s (+0.7ms)] [   13.145672] stmmaceth 10020000.gmac: Version ID not available
+11:35:47.5746 [INFO] uart3: [host:  18.84s (+0.63ms)|virt:  18.66s (+0.1ms)] [   13.145818] stmmaceth 10020000.gmac: DWMAC1000
+11:35:47.5749 [WARNING] ethernet: Unhandled read from offset 0x1058.
+11:35:47.5754 [INFO] uart3: [host:  18.84s (+0.85ms)|virt:  18.66s (+0.2ms)] [   13.145948] stmmaceth 10020000.gmac: DMA HW capability register supported
+11:35:47.5762 [INFO] uart3: [host:  18.84s (+0.73ms)|virt:  18.66s (+0.1ms)] [   13.146144] stmmaceth 10020000.gmac: Normal descriptors
+11:35:47.5767 [INFO] uart3: [host:  18.84s (+0.57ms)|virt:  18.66s (+0.2ms)] [   13.146279] stmmaceth 10020000.gmac: Ring mode enabled
+11:35:47.5776 [INFO] uart3: [host:  18.85s (+0.84ms)|virt:  18.66s (+0.1ms)] [   13.146420] stmmaceth 10020000.gmac: device MAC address 66:34:b0:6c:de:ad
+11:35:47.5856 [WARNING] ethernet: Access to unknown phy 0 (3)
+11:35:47.7050 [WARNING] ethernet: Access to unknown phy 1 (2)
+11:35:47.7501 [WARNING] ethernet: Access to unknown phy 2 (2)
+11:35:47.7960 [WARNING] ethernet: Access to unknown phy 3 (2)
+11:35:47.8403 [WARNING] ethernet: Access to unknown phy 4 (2)
+11:35:47.8847 [WARNING] ethernet: Access to unknown phy 5 (2)
+11:35:47.9304 [WARNING] ethernet: Access to unknown phy 6 (2)
+11:35:48.0199 [WARNING] ethernet: Access to unknown phy 8 (2)
+11:35:48.0632 [WARNING] ethernet: Access to unknown phy 9 (2)
+11:35:48.1089 [WARNING] ethernet: Access to unknown phy 10 (2)
+11:35:48.1540 [WARNING] ethernet: Access to unknown phy 11 (2)
+11:35:48.1968 [WARNING] ethernet: Access to unknown phy 12 (2)
+11:35:48.2433 [WARNING] ethernet: Access to unknown phy 13 (2)
+11:35:48.2895 [WARNING] ethernet: Access to unknown phy 14 (2)
+11:35:48.3370 [WARNING] ethernet: Access to unknown phy 15 (2)
+11:35:48.3833 [WARNING] ethernet: Access to unknown phy 16 (2)
+11:35:48.4289 [WARNING] ethernet: Access to unknown phy 17 (2)
+11:35:48.4760 [WARNING] ethernet: Access to unknown phy 18 (2)
+11:35:48.5221 [WARNING] ethernet: Access to unknown phy 19 (2)
+11:35:48.5688 [WARNING] ethernet: Access to unknown phy 20 (2)
+11:35:48.6155 [WARNING] ethernet: Access to unknown phy 21 (2)
+11:35:48.6630 [WARNING] ethernet: Access to unknown phy 22 (2)
+11:35:48.7494 [WARNING] ethernet: Access to unknown phy 23 (2)
+11:35:48.8472 [WARNING] ethernet: Access to unknown phy 24 (2)
+11:35:48.8933 [WARNING] ethernet: Access to unknown phy 25 (2)
+11:35:48.9394 [WARNING] ethernet: Access to unknown phy 26 (2)
+11:35:48.9881 [WARNING] ethernet: Access to unknown phy 27 (2)
+11:35:49.0360 [WARNING] ethernet: Access to unknown phy 28 (2)
+11:35:49.0824 [WARNING] ethernet: Access to unknown phy 29 (2)
+11:35:49.1321 [WARNING] ethernet: Access to unknown phy 30 (2)
+11:35:49.1795 [WARNING] ethernet: Access to unknown phy 31 (2)
+11:35:49.2303 [INFO] uart3: [host:    20.5s (+1.65s)|virt:     19s (+0.34s)] [   13.475269] libphy: stmmac: probed
+11:35:49.2333 [INFO] uart3: [host:   20.5s (+3.07ms)|virt:     19s (+0.2ms)] [   13.475398] mdio_bus stmmac-0:00: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:00, irq=POLL)
+11:35:49.2341 [INFO] uart3: [host:   20.5s (+0.83ms)|virt:     19s (+0.2ms)] [   13.475602] mdio_bus stmmac-0:01: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:01, irq=POLL)
+11:35:49.2348 [INFO] uart3: [host:   20.5s (+0.63ms)|virt:     19s (+0.2ms)] [   13.475807] mdio_bus stmmac-0:02: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:02, irq=POLL)
+11:35:49.2356 [INFO] uart3: [host:   20.5s (+0.82ms)|virt:     19s (+0.2ms)] [   13.476011] mdio_bus stmmac-0:03: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:03, irq=POLL)
+11:35:49.2366 [INFO] uart3: [host:   20.5s (+1.01ms)|virt:     19s (+0.3ms)] [   13.476316] mdio_bus stmmac-0:04: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:04, irq=POLL)
+11:35:49.2372 [INFO] uart3: [host:  20.51s (+0.65ms)|virt:     19s (+0.2ms)] [   13.476521] mdio_bus stmmac-0:05: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:05, irq=POLL)
+11:35:49.2380 [INFO] uart3: [host:  20.51s (+0.75ms)|virt:     19s (+0.3ms)] [   13.476725] mdio_bus stmmac-0:06: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:06, irq=POLL)
+11:35:49.2387 [INFO] uart3: [host:  20.51s (+0.71ms)|virt:     19s (+0.2ms)] [   13.476933] Micrel KSZ9031 Gigabit PHY stmmac-0:07: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=stmmac-0:07, irq=POLL)
+11:35:49.2393 [INFO] uart3: [host:  20.51s (+0.59ms)|virt:     19s (+0.2ms)] [   13.477176] mdio_bus stmmac-0:08: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:08, irq=POLL)
+11:35:49.2399 [INFO] uart3: [host:  20.51s (+0.58ms)|virt:     19s (+0.2ms)] [   13.477381] mdio_bus stmmac-0:09: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:09, irq=POLL)
+11:35:49.2406 [INFO] uart3: [host:   20.51s (+0.7ms)|virt:     19s (+0.3ms)] [   13.477585] mdio_bus stmmac-0:0a: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0a, irq=POLL)
+11:35:49.2415 [INFO] uart3: [host:  20.51s (+0.87ms)|virt:     19s (+0.2ms)] [   13.477790] mdio_bus stmmac-0:0b: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0b, irq=POLL)
+11:35:49.2422 [INFO] uart3: [host:  20.51s (+0.79ms)|virt:     19s (+0.2ms)] [   13.477994] mdio_bus stmmac-0:0c: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0c, irq=POLL)
+11:35:49.2431 [INFO] uart3: [host:  20.51s (+0.87ms)|virt:     19s (+0.2ms)] [   13.478199] mdio_bus stmmac-0:0d: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0d, irq=POLL)
+11:35:49.2440 [INFO] uart3: [host:   20.51s (+0.9ms)|virt:     19s (+0.2ms)] [   13.478403] mdio_bus stmmac-0:0e: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0e, irq=POLL)
+11:35:49.2449 [INFO] uart3: [host:  20.51s (+0.89ms)|virt:     19s (+0.2ms)] [   13.478609] mdio_bus stmmac-0:0f: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:0f, irq=POLL)
+11:35:49.2457 [INFO] uart3: [host:   20.51s (+0.8ms)|virt:     19s (+0.2ms)] [   13.478813] mdio_bus stmmac-0:10: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:10, irq=POLL)
+11:35:49.2466 [INFO] uart3: [host:   20.51s (+0.9ms)|virt:     19s (+0.2ms)] [   13.479018] mdio_bus stmmac-0:11: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:11, irq=POLL)
+11:35:49.2476 [INFO] uart3: [host:  20.52s (+0.96ms)|virt:     19s (+0.3ms)] [   13.479222] mdio_bus stmmac-0:12: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:12, irq=POLL)
+11:35:49.2482 [INFO] uart3: [host:  20.52s (+0.62ms)|virt:     19s (+0.2ms)] [   13.479427] mdio_bus stmmac-0:13: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:13, irq=POLL)
+11:35:49.2488 [INFO] uart3: [host:  20.52s (+0.66ms)|virt:     19s (+0.2ms)] [   13.479632] mdio_bus stmmac-0:14: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:14, irq=POLL)
+11:35:49.2504 [INFO] uart3: [host:  20.52s (+1.59ms)|virt:     19s (+0.2ms)] [   13.479837] mdio_bus stmmac-0:15: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:15, irq=POLL)
+11:35:49.2510 [INFO] uart3: [host:  20.52s (+0.63ms)|virt:     19s (+0.2ms)] [   13.480041] mdio_bus stmmac-0:16: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:16, irq=POLL)
+11:35:49.2517 [INFO] uart3: [host:  20.52s (+0.71ms)|virt:     19s (+0.2ms)] [   13.480246] mdio_bus stmmac-0:17: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:17, irq=POLL)
+11:35:49.2524 [INFO] uart3: [host:   20.52s (+0.7ms)|virt:     19s (+0.2ms)] [   13.480450] mdio_bus stmmac-0:18: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:18, irq=POLL)
+11:35:49.2533 [INFO] uart3: [host:  20.52s (+0.84ms)|virt:     19s (+0.3ms)] [   13.480655] mdio_bus stmmac-0:19: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:19, irq=POLL)
+11:35:49.2540 [INFO] uart3: [host:   20.52s (+0.7ms)|virt:     19s (+0.2ms)] [   13.480860] mdio_bus stmmac-0:1a: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1a, irq=POLL)
+11:35:49.2545 [INFO] uart3: [host:  20.52s (+0.55ms)|virt:     19s (+0.2ms)] [   13.481064] mdio_bus stmmac-0:1b: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1b, irq=POLL)
+11:35:49.2551 [INFO] uart3: [host:  20.52s (+0.57ms)|virt:     19s (+0.2ms)] [   13.481269] mdio_bus stmmac-0:1c: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1c, irq=POLL)
+11:35:49.2557 [INFO] uart3: [host:  20.52s (+0.58ms)|virt:     19s (+0.2ms)] [   13.481473] mdio_bus stmmac-0:1d: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1d, irq=POLL)
+11:35:49.2562 [INFO] uart3: [host:  20.52s (+0.51ms)|virt:     19s (+0.2ms)] [   13.481678] mdio_bus stmmac-0:1e: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1e, irq=POLL)
+11:35:49.2567 [INFO] uart3: [host:  20.52s (+0.54ms)|virt:  19.01s (+0.2ms)] [   13.481882] mdio_bus stmmac-0:1f: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:1f, irq=POLL)
+11:35:49.2973 [WARNING] sysbus: [U74_1: 0xFFFFFFE000688766] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104C0000, returning 0x0.
+11:35:49.2974 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068878E] (tag: 'USB30') WriteDoubleWord to non existing peripheral at 0x104C0040, value 0x1.
+11:35:49.2975 [WARNING] sysbus: [U74_1: 0xFFFFFFE0006887BC] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104C0004, returning 0x0.
+11:35:49.3078 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068880C] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104C0004, returning 0x0.
+11:35:49.3084 [WARNING] sysbus: [U74_1: 0xFFFFFFE000688374] (tag: 'USB30') WriteDoubleWord to non existing peripheral at 0x104C0000, value 0xA.
+11:35:49.3085 [WARNING] sysbus: [U74_1: 0xFFFFFFE0006883B6] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104C0004, returning 0x0.
+11:35:54.3292 [WARNING] sysbus: [U74_1: 0xFFFFFFE0006883E4] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104C0004, returning 0x0. (51834)
+11:35:54.3293 [WARNING] sysbus: [U74_1: 0xFFFFFFE000688406] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104C0004, returning 0x0.
+11:35:54.3300 [INFO] uart3: [host:    25.6s (+5.07s)|virt:  19.12s (+0.11s)] [   13.589209] cdns-usb3 104c0000.usb: timeout waiting for xhci_ready
+11:35:54.3376 [INFO] uart3: [host:  25.61s (+7.66ms)|virt:  19.12s (+3.1ms)] [   13.592188] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+11:35:54.3389 [INFO] uart3: [host:  25.61s (+1.32ms)|virt:  19.12s (+0.2ms)] [   13.592398] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+11:35:54.3397 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A7A2] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0000, returning 0x0.
+11:35:54.3398 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A7BC] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0018, returning 0x0.
+11:35:54.3398 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A7D6] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0004, returning 0x0.
+11:35:54.3398 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A7E6] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0008, returning 0x0.
+11:35:54.3398 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A7F6] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D000C, returning 0x0.
+11:35:54.3399 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A804] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0000, returning 0x0.
+11:35:54.3399 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A81C] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0010, returning 0x0.
+11:35:54.3401 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A1B0] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0004, returning 0x0.
+11:35:54.3401 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A1B8] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0000, returning 0x0.
+11:35:54.3401 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A1CC] (tag: 'USB30') WriteDoubleWord to non existing peripheral at 0x104D0000, value 0x0.
+11:35:54.3402 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A0A4] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0004, returning 0x0.
+11:35:55.1390 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A0DA] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0004, returning 0x0. (8289)
+11:35:55.1390 [WARNING] sysbus: [U74_1: 0xFFFFFFE00068A0F6] (tag: 'USB30') ReadDoubleWord from non existing peripheral at 0x104D0004, returning 0x0.
+11:35:55.1397 [INFO] uart3: [host:    26.41s (+0.8s)|virt: 19.14s (+16.9ms)] [   13.608591] xhci-hcd xhci-hcd.0.auto: Host halt failed, -110
+11:35:55.1401 [INFO] uart3: [host:  26.41s (+0.47ms)|virt:  19.14s (+0.1ms)] [   13.608733] xhci-hcd xhci-hcd.0.auto: can't setup: -110
+11:35:55.1409 [INFO] uart3: [host:  26.41s (+0.74ms)|virt:  19.14s (+0.2ms)] [   13.608876] xhci-hcd xhci-hcd.0.auto: USB bus 1 deregistered
+11:35:55.1477 [INFO] uart3: [host:  26.42s (+6.84ms)|virt:  19.14s (+0.5ms)] [   13.609395] xhci-hcd: probe of xhci-hcd.0.auto failed with error -110
+11:35:55.1531 [INFO] uart3: [host:  26.42s (+5.29ms)|virt:  19.14s (+0.8ms)] [   13.610153] usbcore: registered new interface driver uas
+11:35:55.1546 [INFO] uart3: [host:  26.42s (+1.54ms)|virt:  19.14s (+0.4ms)] [   13.610503] usbcore: registered new interface driver usb-storage
+11:35:55.1556 [INFO] uart3: [host:  26.42s (+1.06ms)|virt: 19.14s (+0.52ms)] [   13.611081] i2c /dev entries driver
+11:35:55.1584 [INFO] uart3: [host:  26.43s (+2.78ms)|virt: 19.14s (+1.18ms)] [   13.612141] Bluetooth: HCI UART driver ver 2.3
+11:35:55.1589 [INFO] uart3: [host:  26.43s (+0.49ms)|virt:  19.14s (+0.1ms)] [   13.612258] Bluetooth: HCI UART protocol H4 registered
+11:35:55.1615 [INFO] uart3: [host:  26.43s (+2.58ms)|virt:  19.14s (+1.3ms)] [   13.613525] sdhci: Secure Digital Host Controller Interface driver
+11:35:55.1618 [INFO] uart3: [host:  26.43s (+0.32ms)|virt:  19.14s (+0.1ms)] [   13.613653] sdhci: Copyright(c) Pierre Ossman
+11:35:55.1625 [INFO] uart3: [host:  26.43s (+0.68ms)|virt:  19.14s (+0.3ms)] [   13.613887] Synopsys Designware Multimedia Card Interface Driver
+11:35:55.1637 [INFO] uart3: [host:  26.43s (+1.26ms)|virt:  19.14s (+0.9ms)] [   13.614715] sdhci-pltfm: SDHCI platform and OF driver helper
+11:35:55.1664 [INFO] uart3: [host:  26.43s (+2.69ms)|virt:  19.14s (+1.3ms)] [   13.616003] usbcore: registered new interface driver usbhid
+11:35:55.1671 [INFO] uart3: [host:  26.44s (+0.71ms)|virt:  19.14s (+0.2ms)] [   13.616192] usbhid: USB HID core driver
+11:35:55.1931 [INFO] uart3: [host: 26.46s (+25.91ms)|virt:  19.15s (+9.1ms)] [   13.624982] NET: Registered protocol family 17
+11:35:55.1989 [INFO] uart3: [host:  26.47s (+5.89ms)|virt:  19.16s (+0.9ms)] [   13.625768] Bluetooth: RFCOMM TTY layer initialized
+11:35:55.1995 [INFO] uart3: [host:  26.47s (+0.59ms)|virt:  19.16s (+0.1ms)] [   13.625902] Bluetooth: RFCOMM socket layer initialized
+11:35:55.2005 [INFO] uart3: [host:  26.47s (+1.01ms)|virt:  19.16s (+0.2ms)] [   13.626056] Bluetooth: RFCOMM ver 1.11
+11:35:55.2012 [INFO] uart3: [host:  26.47s (+0.64ms)|virt:  19.16s (+0.2ms)] [   13.626287] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+11:35:55.2015 [INFO] uart3: [host:  26.47s (+0.37ms)|virt:  19.16s (+0.1ms)] [   13.626410] Bluetooth: BNEP filters: protocol multicast
+11:35:55.2020 [INFO] uart3: [host:   26.47s (+0.5ms)|virt:  19.16s (+0.2ms)] [   13.626549] Bluetooth: BNEP socket layer initialized
+11:35:55.2025 [INFO] uart3: [host:  26.47s (+0.43ms)|virt:  19.16s (+0.1ms)] [   13.626670] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+11:35:55.2029 [INFO] uart3: [host:  26.47s (+0.43ms)|virt: 19.16s (+0.11ms)] [   13.626817] Bluetooth: HIDP socket layer initialized
+11:35:55.2067 [INFO] uart3: [host:  26.47s (+3.81ms)|virt:  19.16s (+1.2ms)] [   13.627966] 9pnet: Installing 9P2000 support
+11:35:55.2098 [INFO] uart3: [host:  26.48s (+3.06ms)|virt:  19.16s (+0.3ms)] [   13.628256] Key type dns_resolver registered
+11:35:55.2124 [INFO] uart3: [host:   26.48s (+2.6ms)|virt: 19.16s (+0.49ms)] [   13.628725] Loading compiled-in X.509 certificates
+11:35:55.2305 [INFO] uart3: [host:  26.5s (+18.14ms)|virt:  19.17s (+7.7ms)] [   13.636039] [dhd] dhd_module_init: in Dongle Host Driver, version 100.10.545.13 (r826445-20200914-2)
+11:35:55.2314 [INFO] uart3: [host:   26.5s (+0.88ms)|virt:  19.17s (+0.2ms)] [   13.636282] [dhd] ======== dhd_wlan_init_plat_data ========
+11:35:55.2319 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F27C] (tag: 'GPIO') ReadDoubleWord from non existing peripheral at 0x1191017C, returning 0x0.
+11:35:55.2323 [INFO] uart3: [host:   26.5s (+0.91ms)|virt: 19.17s (+0.11ms)] [   13.636415] [dhd] dhd_wlan_init_gpio: WL_REG_ON=37
+11:35:55.2328 [INFO] uart3: [host:   26.5s (+0.49ms)|virt: 19.17s (+0.19ms)] [   13.636528] [dhd] dhd_wifi_platform_load: Enter
+11:35:55.2333 [INFO] uart3: [host:   26.5s (+0.47ms)|virt:  19.17s (+0.1ms)] [   13.636639] [dhd] Power-up adapter 'DHD generic adapter'
+11:35:55.2341 [INFO] uart3: [host:   26.5s (+0.85ms)|virt:  19.17s (+0.2ms)] [   13.636879] [dhd] wifi_platform_set_power = 1, delay: 200 msec
+11:35:55.2346 [INFO] uart3: [host:   26.5s (+0.53ms)|virt:  19.17s (+0.2ms)] [   13.637008] [dhd] ======== PULL WL_REG_ON(37) HIGH! ========
+11:35:55.2349 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F2D0] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191017C, value 0x0.
+11:35:55.2349 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F2DC] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910178, value 0x1.
+11:35:59.7582 [INFO] uart3: [host:   31.03s (+4.52s)|virt:   19.5s (+0.33s)] [   13.956158] [dhd] wifi_platform_bus_enumerate device present 1
+11:35:59.7587 [INFO] uart3: [host:  31.03s (+0.53ms)|virt:   19.5s (+0.2ms)] [   13.956285] [dhd] ======== Card detection to detect SDIO card! ========
+11:35:59.7591 [INFO] uart3: [host:  31.03s (+0.39ms)|virt:   19.5s (+0.1ms)] [   13.956422] sdio: host isn't  initialization successfully.
+11:36:03.9039 [INFO] uart3: [host:   35.17s (+4.14s)|virt:  21.63s (+2.14s)] [   16.006156] [dhd] failed to power up DHD generic adapter, 0 retry left
+11:36:03.9438 [INFO] uart3: [host: 35.21s (+39.93ms)|virt: 21.65s (+16.9ms)] [   16.022457] [dhd] wifi_platform_set_power = 0, delay: 0 msec
+11:36:03.9448 [INFO] uart3: [host:  35.21s (+1.04ms)|virt:  21.65s (+0.2ms)] [   16.022582] [dhd] ======== PULL WL_REG_ON(37) LOW! ========
+11:36:03.9450 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F2D0] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x1191017C, value 0x0.
+11:36:03.9451 [WARNING] sysbus: [U74_1: 0xFFFFFFE00051F2DC] (tag: 'GPIO') WriteDoubleWord to non existing peripheral at 0x11910178, value 0x0.
+11:36:03.9461 [INFO] uart3: [host:  35.21s (+1.23ms)|virt:  21.65s (+0.1ms)] [   16.022716] [dhd] wifi_platform_bus_enumerate device present 0
+11:36:03.9469 [INFO] uart3: [host:  35.21s (+0.86ms)|virt:  21.65s (+0.1ms)] [   16.022841] [dhd] ======== Card detection to remove SDIO card! ========
+11:36:03.9479 [INFO] uart3: [host:  35.22s (+1.01ms)|virt:  21.65s (+0.2ms)] [   16.022979] sdio: host isn't  initialization successfully.
+11:36:03.9489 [INFO] uart3: [host:  35.22s (+0.93ms)|virt:  21.65s (+0.1ms)] [   16.023105] [dhd] failed to power up DHD generic adapter, max retry reached**
+11:36:03.9499 [INFO] uart3: [host:  35.22s (+1.08ms)|virt:  21.65s (+0.1ms)] [   16.023248] [dhd] unregister wifi platform drivers
+11:36:03.9510 [INFO] uart3: [host:  35.22s (+1.05ms)|virt:  21.65s (+0.2ms)] [   16.023367] [dhd] wifi_platform_bus_enumerate device present 0
+11:36:03.9519 [INFO] uart3: [host:  35.22s (+0.89ms)|virt:  21.65s (+0.1ms)] [   16.023493] [dhd] ======== Card detection to remove SDIO card! ========
+11:36:03.9526 [INFO] uart3: [host:  35.22s (+0.68ms)|virt:  21.65s (+0.1ms)] [   16.023631] sdio: host isn't  initialization successfully.
+11:36:03.9535 [INFO] uart3: [host:  35.22s (+0.96ms)|virt:  21.65s (+0.2ms)] [   16.023754] [dhd] ======== dhd_wlan_deinit_plat_data ========
+11:36:03.9544 [INFO] uart3: [host:   35.22s (+0.9ms)|virt:  21.65s (+0.1ms)] [   16.023886] [dhd] dhd_wlan_deinit_gpio: gpio_free(WL_REG_ON 37)
+11:36:03.9565 [INFO] uart3: [host:  35.22s (+2.06ms)|virt:  21.65s (+0.2ms)] [   16.024029] [dhd] dhd_module_init: Failed to load the driver, try cnt 0
+11:36:03.9584 [INFO] uart3: [host:  35.23s (+1.86ms)|virt:  21.65s (+0.4ms)] [   16.024434] [dhd] dhd_module_init: Failed to load driver max retry reached**
+11:36:03.9591 [INFO] uart3: [host:  35.23s (+0.75ms)|virt:  21.65s (+0.1ms)] [   16.024577] [dhd] dhd_module_init: Exit err=-19
+11:36:03.9656 [INFO] uart3: [host:  35.23s (+6.52ms)|virt:  21.66s (+1.4ms)] [   16.025904] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+11:36:04.0861 [INFO] uart3: [host:   35.35s (+0.12s)|virt: 21.69s (+31.1ms)] [   16.055780] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+11:36:04.0952 [INFO] uart3: [host:  35.36s (+9.11ms)|virt:    21.69s (+2ms)] [   16.057636] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+11:36:04.0960 [INFO] uart3: [host:  35.36s (+0.76ms)|virt:  21.69s (+0.1ms)] [   16.057805] cfg80211: failed to load regulatory.db
+11:36:04.1223 [INFO] uart3: [host: 35.39s (+26.36ms)|virt:  21.69s (+3.3ms)] [   16.060943] Freeing unused kernel memory: 228K
+11:36:04.1372 [INFO] uart3: [host: 35.41s (+14.84ms)|virt:     21.7s (+8ms)] [   16.068656] Run /init as init process
+11:36:04.1375 [INFO] uart3: [host:  35.41s (+0.33ms)|virt:   21.7s (+0.1ms)] [   16.068750]   with arguments:
+11:36:04.1377 [INFO] uart3: [host:  35.41s (+0.28ms)|virt:   21.7s (+0.1ms)] [   16.068837]     /init
+11:36:04.1381 [INFO] uart3: [host:  35.41s (+0.32ms)|virt:   21.7s (+0.1ms)] [   16.068914]   with environment:
+11:36:04.1383 [INFO] uart3: [host:  35.41s (+0.27ms)|virt:   21.7s (+0.1ms)] [   16.069003]     HOME=/
+11:36:04.1386 [INFO] uart3: [host:   35.41s (+0.3ms)|virt:   21.7s (+0.1ms)] [   16.069083]     TERM=linux
+11:36:04.3459 [INFO] uart3: [host:   35.61s (+0.21s)|virt: 21.74s (+41.57ms)] abcd
+11:36:05.2258 [INFO] uart3: [host:   36.49s (+0.88s)|virt:   21.91s (+0.17s)] Starting syslogd: OK
+11:36:05.3861 [INFO] uart3: [host:   36.65s (+0.16s)|virt: 21.95s (+40.61ms)] Starting klogd: OK
+11:36:06.0260 [INFO] uart3: [host:   37.29s (+0.64s)|virt:   22.12s (+0.17s)] Running sysctl: OK
+11:36:06.1678 [INFO] uart3: [host:   37.44s (+0.14s)|virt: 22.16s (+39.67ms)] Starting mdev... OK
+11:36:13.8517 [INFO] uart3: [host:   45.12s (+7.68s)|virt:    25.8s (+3.64s)] modprobe: can't change directory to '/lib/modules': No such file or directory
+11:36:14.1172 [INFO] uart3: [host:   45.39s (+0.27s)|virt: 25.87s (+66.87ms)] Saving random seed: [   20.069750] random: dd: uninitialized urandom read (512 bytes read)
+11:36:14.1306 [INFO] uart3: [host:  45.4s (+13.34ms)|virt:  25.87s (+2.98ms)] OK
+11:36:14.5005 [INFO] uart3: [host:   45.77s (+0.37s)|virt: 25.94s (+68.42ms)] Starting system message bus: [   20.138262] random: dbus-uuidgen: uninitialized urandom read (12 bytes read)
+11:36:14.5037 [INFO] uart3: [host:  45.77s (+3.24ms)|virt:   25.94s (+0.4ms)] [   20.138635] random: dbus-uuidgen: uninitialized urandom read (8 bytes read)
+11:36:14.6770 [INFO] uart3: [host:   45.94s (+0.17s)|virt: 25.98s (+36.33ms)] done
+11:36:15.7757 [WARNING] ethernet: Access to unknown phy 0 (2)
+11:36:15.7807 [INFO] uart3: [host:    47.05s (+1.1s)|virt:   26.21s (+0.23s)] Starting network: [   20.397978] stmmaceth 10020000.gmac eth0: validation of rgmii-txid with support 0000000,00000000,00006280 and advertisement 0000000,00000000,00006280 failed: -22
+11:36:15.7829 [WARNING] ethernet: Access to unknown phy 0 (2)
+11:36:15.7858 [INFO] uart3: [host:  47.05s (+5.07ms)|virt:   26.21s (+0.4ms)] [   20.398411] stmmaceth 10020000.gmac eth0: stmmac_open: Cannot attach to PHY (error: -22)
+11:36:15.8072 [INFO] uart3: [host: 47.08s (+21.34ms)|virt:  26.21s (+1.72ms)] ip: SIOCSIFFLAGS: Invalid argument
+11:36:15.8440 [INFO] uart3: [host: 47.11s (+36.85ms)|virt:  26.22s (+4.96ms)] FAIL
+11:36:16.2674 [INFO] uart3: [host:   47.54s (+0.42s)|virt:    26.32s (+0.1s)] Starting dropbear sshd: OK
+11:36:16.9953 [INFO] uart3: [host:   48.26s (+0.73s)|virt:   26.54s (+0.23s)] Starting DHCP server: FAIL
+11:36:17.2605 [INFO] uart3: [host:   48.53s (+0.27s)|virt:   26.66s (+0.12s)] 
+11:36:17.2669 [INFO] uart3: [host:  48.53s (+6.37ms)|virt:  26.66s (+0.29ms)] Welcome to Buildroot

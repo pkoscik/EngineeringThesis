@@ -1,0 +1,3 @@
+htime,haddend,hcum,vtime,vaddend,vcum,mess
+0.13s,0.13s,130.0,35µs,35µs,0.035, *** Booting Zephyr OS build zephyr-v3.1.0  ***
+0.13s,1.02ms,131.02,0.1ms,65µs,0.1, Hello World! beaglev_starlight_jh7100

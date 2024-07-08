@@ -1,0 +1,217 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bachelor's & Master's Thesis Template        %%
+%% Copyleft by Dawid Weiss & Marta Szachniuk    %%
+%% Faculty of Computing and Telecommunication   %%
+%% Poznan University of Technology, 2020        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Szkielet dla pracy licencjackiej pisanej w języku polskim.
+
+\documentclass[english,bachelor,a4paper,oneside]{ppfcmthesis}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[OT4]{fontenc}
+
+% Fix footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% Better table formatting
+\usepackage{makecell}               % Makecell for breaking a long text
+\renewcommand{\cellalign}{tl}       % Makecell left alignment
+\renewcommand{\arraystretch}{1.75}  % More vertical padding
+
+% Code snippets
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{multicol}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+\usepackage{pdfpages}
+
+\definecolor{codegreen}{rgb}{0.00,0.60,0.00}
+\definecolor{preprocesorbrown}{rgb}{0.50,0.25,0.23} 
+\definecolor{codelightblue}{rgb}{0.30,0.70,0.60}
+
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{codelightblue},
+  commentstyle=\color{codegreen},
+  stringstyle=\color{preprocesorbrown},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2,
+  captionpos=b
+}
+
+% Lists without bulletpoints
+\usepackage{enumitem}
+
+\lstdefinestyle{lstC}
+{
+	language = C,
+	keywordstyle     =   \color{blue}\ttfamily,
+  	commentstyle     =   \color{codegreen}\ttfamily,
+  	stringstyle      =   \color{red},
+  	emphstyle        =   \color{codelightblue}\ttfamily,
+  	directivestyle   =   \color{preprocesorbrown}\ttfamily,
+     morekeywords   =   {inline, target_ulong, uint32_t, uint64_t, no_inline, BOOL, _Bool},
+}
+
+\lstdefinestyle{lstCsharp} 
+{
+	language = C++, % No C# support
+	keywordstyle     =\color{blue}\ttfamily,
+  	commentstyle     =\color{codegreen}\ttfamily,
+  	stringstyle      =\color{red},
+  	emphstyle        =\color{codelightblue}\ttfamily,
+  	directivestyle   =\color{preprocesorbrown}\ttfamily,
+  	morekeywords     ={var,async,await,using,byte,string,get,set,uint, checked},
+  	emph             ={Descendants,First,FormUrlEncodedContent,HttpClient,
+  					   HttpWebRequest,HttpWebResponse,JObject,JProperty,
+  					   KeyValuePair,Length,List,OfType,
+  					   PropertyChangedEventHandler,Stream,StreamReader,
+  					   Value,WebRequest,Where}
+}
+
+%--------------------------------------
+% Strona tytułowa
+%--------------------------------------
+
+% Autorzy pracy, jeśli jest ich więcej niż jeden
+% wstaw między nimi separator \and
+\author
+{%
+   Patryk Kościk \album{144635}
+}
+\authortitle{}                                % Do not change.
+
+\title
+{%
+   Performance analysis of different emulation methods 
+   in control systems and IoT devices on the example of
+   the Renode Framework
+}
+
+% Your supervisor comes here.
+\ppsupervisor{dr inż.~Adam Turkot} 
+
+% Year of final submission (not graduation!)
+\ppyear{2023}                                 
+
+
+\begin{document}
+
+% Front matter starts here
+\frontmatter\pagestyle{empty}%
+\maketitle\cleardoublepage%
+
+%--------------------------------------
+% Miejsce na kartę pracy dyplomowej
+%--------------------------------------
+
+\thispagestyle{empty}\vspace*{\fill}%
+\begin{center}Tutaj będzie karta pracy dyplomowej;\\oryginał wstawiamy do wersji dla archiwum PP, w pozostałych kopiach wstawiamy ksero.\end{center}%
+\vfill\cleardoublepage%
+
+
+% \thispagestyle{empty}\vspace*{\fill}%
+
+\begin{vplace}
+
+\begin{center}
+   \huge{\textit{Abstract}}
+\end{center}
+
+In the context of control systems, embedded systems, and IoT devices, emulation refers to a collection of software
+techniques that enable developers or end-users to execute unmodified software intended for different hardware
+architectures. This technology had become an inseparable part of the development cycle in the Industry 4.0 era, thus the
+effort arose to improve the performance capabilities of this techniques. Many of the emulation optimization efforts had
+negative side effects on the portability and maintainability, limiting the possible scope of numerous projects.
+Simulation by translation classifies as one of these optimization methods. In further chapters, this work will
+present the differences between translation and interpretation CPU simulation, focusing mainly on the underlying code,
+modes of operation, and speed.
+
+\end{vplace}
+
+\newpage
+
+\begin{vplace}
+
+\begin{center}
+   \huge{\textit{Streszczenie}}
+\end{center}
+
+W kontekście systemów sterowania, systemów wbudowanych oraz urządzeń IoT, emulacja odnosi się do zbioru technik
+programistycznych, które umożliwiają programistom oraz użytkownikom końcowym uruchomienie niezmodyfikowanego
+oprogramowania zaprojektowanego dla niekompatybilnych architektur sprzętowych. Technologia ta stała się nieodłącznym
+elementem cyklu rozwoju w erze Przemysłu 4.0, dlatego też pojawiły się wysiłki mające na celu poprawę wydajności
+emulatorów. Wiele z działań mających na celu optymalizację emulacji miało negatywne efekty uboczne na przenośność i
+łatwość utrzymania projektów, ograniczając możliwość wykorzystania ich w wielu projektach. Symulacja przez translację
+klasyfikuje się jako jedna z tych metod optymalizacji. W dalszych rozdziałach niniejszej pracy przedstawione zostaną
+różnice pomiędzy symulacją translacyjną a interpretacyjną procesora, skupiając się głównie na kodzie źródłowym,
+mechanizmach, oraz szybkości działania.
+
+\end{vplace}
+
+\newpage
+
+%--------------------------------------
+% Spis treści
+%--------------------------------------
+
+\pagenumbering{Roman}\pagestyle{ppfcmthesis}%
+\tableofcontents* 
+\cleardoublepage % Zaczynamy od nieparzystej strony
+
+%--------------------------------------
+% Rozdziały
+%--------------------------------------
+
+%Najwygodniej jeśli każdy rozdział znajduje się w oddzielnym pliku
+\mainmatter%
+\input{chapters/01-introduction.tex}
+\input{chapters/02-simulation_basics.tex}
+\input{chapters/03-translation.tex}
+\input{chapters/04-interpretation.tex}
+\input{chapters/05-implementation.tex}
+\input{chapters/06-analysis.tex}
+\input{chapters/07-conclusions.tex}
+
+%--------------------------------------
+% Literatura
+%--------------------------------------
+
+\bibliographystyle{unsrt}{\raggedright\sloppy\small\bibliography{bibliografia}}
+
+%--------------------------------------
+% Dodatki
+%--------------------------------------
+
+\cleardoublepage\appendix%
+\newpage
+% Removing all includes from this section breaks some conditional
+\if
+
+% \begin{appendices}
+%    % \include{chapters/A-definitions.tex}
+% \end{appendices}
+
+%--------------------------------------
+% Informacja o prawach autorskich
+%--------------------------------------
+
+\ppcolophon
+
+\end{document}
